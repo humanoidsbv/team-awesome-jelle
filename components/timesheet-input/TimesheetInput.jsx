@@ -1,5 +1,5 @@
 import React from 'react';
-import './TimesheetInput.scss';
+import './timesheet-input.scss';
 
 const TimesheetInput = () => (
 
