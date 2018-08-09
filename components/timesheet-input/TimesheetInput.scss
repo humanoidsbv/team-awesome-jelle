@@ -17,13 +17,15 @@
     display: grid;
     font-family: $font-primary;
     margin-left: 5%;
-    margin-top: 16px;
+    margin-top: 2.5%;
 
     @include desktop {
       display: inline-grid;
     }
 
     &--full {
+      margin-left: 5%;
+      // margin-top: 10%;
       width: 90%;
       @include desktop {
         width: 20%;
@@ -32,70 +34,87 @@
 
     &--half {
       display: inline-grid;
-      width: 45%;
+      width: 40%;
 
       @include desktop {
         display: inherit;
-        width: 5%;
+        width: 10%;
       }
     }
 
     &--last {
       display: inline-grid;
-      margin-left: 0;
+      margin-left: 5%;
       width: 45%;
 
       @include desktop {
         display: inherit;
         margin-left: 5%;
-        width: 5%;
+        width: 10%;
       }
     }
   }
 
   &__button {
-    background: $color-accent-alt-6;
+
     border-radius: 4px;
-    color: $color-monochrome-1;
     display: grid;
-    font-size: 14px;
-    height: 36px;
-    margin: auto;
-    margin-bottom: 16px;
-    margin-top: 16px;
-    width: 90%;
+
+    &--new {
+      background: linear-gradient($color-accent-alt-7, $color-accent-alt-8 98%);
+      width: 90%;
+    }
 
     &--add {
       background: $color-accent-alt-6;
+      color: $color-monochrome-1;
+      font-size: 14px;
+      height: 36px;
+      margin: auto;
+      margin-bottom: 16px;
+      margin-top: 16px;
+      width: 90%;
       //Green button for 'Add' and 'Add timesheet//
     }
 
-    &--cancel {
-      //Cross, right-handcorner when open
+    &--close {
+      -webkit-mask: url("/static/icons/close.svg")   no-repeat;
+      -webkit-mask-size: 7px 7px;
+      background-color: $color-monochrome-6;
+      border-style: none;
+      border-width: 0;
+      display: grid;
+      height: 7px;
+      margin-left: 95%;
+      margin-top: 16px;
+      // position: relative;
     }
+
+    // &--cancel {
+    //   //Cross, right-handcorner when open
+    // }
   }
 
+  &__label {
+    color: $color-accent-4;
+    font-size: 12px;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: normal;
+    line-height: normal;
+    margin-bottom: 12px;
+    opacity: .5;
+  }
+
+  &__select {
+    background: linear-gradient($color-accent-alt-5, $color-monochrome-1);
+    border: solid 1px $color-accent-3;
+    border-radius: 4px;
+    font-size: 14px;
+    font-style: normal;
+    height: 36px;
+    width: 100%;
+  }
   //styling for <label> and <input> need to be added.
-
-}
-
-.timesheet-field-label {
-  color: $color-accent-4;
-  font-size: 12px;
-  font-stretch: normal;
-  font-style: normal;
-  font-weight: 600;
-  letter-spacing: normal;
-  line-height: normal;
-  margin-bottom: 12px;
-  opacity: .5;
-}
-
-.timesheet-field-select {
-  background: linear-gradient($color-accent-alt-5, $color-monochrome-1);
-  border: solid 1px $color-accent-3;
-  border-radius: 4px;
-  font-size: 14px;
-  font-style: normal;
-  height: 36px;
 }

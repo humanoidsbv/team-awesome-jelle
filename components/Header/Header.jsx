@@ -44,9 +44,10 @@ class Header extends React.Component {
             />
           </button>
         </header>
-        <nav className={`
-          main-navigation main-navigation${menu ? '--open' : ''}
-        `}
+        <nav className={
+          `main-navigation
+          main-navigation--${menu ? 'open' : 'close'}`
+        }
         >
           <a
             href="#link"
