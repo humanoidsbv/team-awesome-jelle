@@ -7,7 +7,7 @@
     "build": "next build",
     "dev": "next",
     "lint": "eslint --ext js,jsx .",
-    "now-start": "NODE_ENV=production npm run build && NODE_ENV=production npm start",
+    "now-start": "npm run build && npm start",
     "start": "next start"
   },
   "repository": {
