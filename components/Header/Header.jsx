@@ -7,13 +7,16 @@ class Header extends React.Component {
     menu: false
   }
 
+  onClickToggle = () => {
+
+  }
 
   render() {
     const { menu } = this.state;
 
     return (
-      <div>
-        <header className="header">
+      <header className="header">
+        <div className="header__mobile">
           <a
             className="company-name"
             href="#link"
@@ -43,11 +46,11 @@ class Header extends React.Component {
               src="/static/icons/close.svg"
             />
           </button>
-        </header>
-        <nav className={
-          `main-navigation
-          main-navigation--${menu ? 'open' : ''}`
-        }
+        </div>
+        <nav className={`
+          main-navigation
+          main-navigation--${menu ? 'open' : 'close'}
+        `}
         >
           <a
             href="#link"
@@ -79,25 +82,25 @@ class Header extends React.Component {
           >
              Documents
           </a>
-          <button
-            className="main-navigation__profile-button"
-            type="submit"
-          >
-            <img
-              src="/../../static/icons/1_humanoids_logo.png"
-              alt=""
-              className="main-navigation__profile-button--company-logo"
-            />
-            <img
-              src="/../../static/icons/jelle.jpg"
-              width="32px"
-              height="32px"
-              alt=""
-              className="main-navigation__profile-button--user-icon"
-            />
-          </button>
         </nav>
-      </div>
+        <button
+          className="main-navigation__profile-button"
+          type="submit"
+        >
+          <img
+            src="/../../static/icons/1_humanoids_logo.png"
+            alt=""
+            className="main-navigation__profile-button--company-logo"
+          />
+          <img
+            src="/../../static/icons/jelle.jpg"
+            width="32px"
+            height="32px"
+            alt=""
+            className="main-navigation__profile-button--user-icon"
+          />
+        </button>
+      </header>
     );
   }
 }

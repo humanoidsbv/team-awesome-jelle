@@ -26,6 +26,12 @@ input {
   font-weight: $font-weight-book;
 }
 
+button {
+  font-family: $font-primary;
+  font-weight: $font-weight-bold;
+  outline: none;
+}
+
 h1,
 h2,
 h3,
@@ -46,11 +52,6 @@ h2 {
 
 p {
   @include paragraph;
-}
-
-button {
-  font-family: $font-primary;
-  font-weight: $font-weight-bold;
 }
 
 select {
