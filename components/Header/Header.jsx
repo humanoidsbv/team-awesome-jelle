@@ -1,11 +1,10 @@
 import React from 'react';
 
-import './headers.scss';
+import './header.scss';
 
 class Header extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { menu: false };
+  state = {
+    menu: false
   }
 
 
