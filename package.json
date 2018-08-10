@@ -4,8 +4,9 @@
   "description": "Team Awesome repository for Jelle",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
     "build": "next build",
+    "dev": "next",
+    "lint": "eslint --ext js,jsx .",
     "start": "next start"
   },
   "repository": {
