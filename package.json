@@ -4,11 +4,11 @@
   "description": "Team Awesome repository for Jelle",
   "main": "index.js",
   "scripts": {
-    "build": "next build",
+    "build": "NODE_ENV=production next build",
     "dev": "next",
     "lint": "eslint --ext js,jsx .",
     "now-start": "npm run build && npm start",
-    "start": "next start"
+    "start": "NODE_ENV=production next start"
   },
   "repository": {
     "type": "git",
