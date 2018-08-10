@@ -157,7 +157,8 @@
 }
 
 .menu-button {
-  display: block;
+  // display: block;
+  box-sizing: none;
   padding: 0;
   position: absolute;
   right: 10px;
