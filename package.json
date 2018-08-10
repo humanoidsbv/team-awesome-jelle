@@ -4,11 +4,10 @@
   "description": "Team Awesome repository for Jelle",
   "main": "index.js",
   "scripts": {
-    "build": "NODE_ENV=production next build",
+    "build": "next build",
     "dev": "next",
     "lint": "eslint --ext js,jsx .",
-    "now-start": "npm run build && npm start",
-    "start": "NODE_ENV=production next start"
+    "start": "next start"
   },
   "repository": {
     "type": "git",
@@ -21,13 +20,16 @@
   },
   "homepage": "https://github.com/humanoidsbv/team-awesome-jelle#readme",
   "dependencies": {
+    "@zeit/next-sass": "^0.2.0",
     "babel-eslint": "^8.2.6",
+    "micro": "^9.3.3",
+    "micro-route": "^2.5.0",
     "next": "^6.1.1",
     "node-sass": "^4.9.2",
+    "now": "^11.3.9",
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
-    "react-dom": "^16.4.2",
-    "@zeit/next-sass": "^0.2.0"
+    "react-dom": "^16.4.2"
   },
   "devDependencies": {
     "eslint": "^5.3.0",
