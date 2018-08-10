@@ -4,15 +4,17 @@ import './header.scss';
 
 class Header extends React.Component {
   state = {
-    menu: false
+    isMenuVisible: false
   }
 
-  onClickToggle = () => {
-
+  toggleMenu = () => {
+    this.setState(({ isMenuVisible }) => ({
+      isMenuVisible: !isMenuVisible
+    }));
   }
 
   render() {
-    const { menu } = this.state;
+    const { isMenuVisible } = this.state;
 
     return (
       <header className="header">
@@ -26,10 +28,10 @@ class Header extends React.Component {
 
           <button
             className={`
-              menu-button menu-button${menu ? '--clicked' : ''}
+              menu-button menu-button${isMenuVisible ? '--clicked' : ''}
               `}
             type="submit"
-            onClick={() => this.setState({ menu: !menu })}
+            onClick={this.toggleMenu}
           >
             <img
               alt="menu-button"
@@ -49,7 +51,7 @@ class Header extends React.Component {
         </div>
         <nav className={`
           main-navigation
-          main-navigation--${menu ? 'open' : 'close'}
+          main-navigation--${isMenuVisible ? 'open' : 'close'}
         `}
         >
           <a
