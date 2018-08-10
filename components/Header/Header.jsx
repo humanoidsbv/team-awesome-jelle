@@ -46,7 +46,7 @@ class Header extends React.Component {
         </header>
         <nav className={
           `main-navigation
-          main-navigation--${menu ? 'open' : 'close'}`
+          main-navigation--${menu ? 'open' : ''}`
         }
         >
           <a

@@ -1,5 +1,13 @@
 @import "../../shared/styles/main";
 
+.timesheet-wrapper {
+  padding-top: 20px;
+
+  @include tablet {
+    padding-top: 60px;
+  }
+}
+
 .timesheet-field {
   background-color: $color-accent-2;
   border: solid 1px $color-accent-3;

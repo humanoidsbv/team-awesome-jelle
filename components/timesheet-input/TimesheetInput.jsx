@@ -3,6 +3,7 @@ import React from 'react';
 import './timesheet-input.scss';
 
 const TimesheetInput = () => (
+  <main className="timesheet-wrapper">
 
   <div className="timesheet-field">
     <button
@@ -11,6 +12,7 @@ const TimesheetInput = () => (
     >
       + New time entry
     </button>
+
     <button
       className="timesheet-field__button timesheet-field__button--close"
       type="submit"
@@ -123,6 +125,7 @@ const TimesheetInput = () => (
         Add
     </button>
   </div>
+  </main>
 );
 
 export default TimesheetInput;
