@@ -157,9 +157,9 @@
 }
 
 .menu-button {
+  outline: none;
   padding: 0;
   position: absolute;
-  outline: none;
   right: 10px;
   top: 30%;
   @include tablet {
