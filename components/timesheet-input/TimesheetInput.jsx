@@ -8,7 +8,13 @@ const TimesheetInput = () => (
       className="timesheet-field__button timesheet-field__button--new"
       type="submit"
     >
-      + New time entry
+      <img
+        alt="plus sign"
+        className="timesheet-field__plus-svg"
+        src="/static/icons/plus.svg"
+      />
+      {' '}
+      New time entry
     </button>
 
     <button
