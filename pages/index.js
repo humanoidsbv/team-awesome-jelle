@@ -1,11 +1,11 @@
 import React from 'react';
 import Header from '../components/header/Header';
-import TimesheetInput from '../components/timesheet-input/TimesheetInput';
+import TimesheetPage from '../components/timesheet-page/TimesheetPage';
 
 
 export default () => (
   <div>
     <Header />
-    <TimesheetInput />
+    <TimesheetPage />
   </div>
 );
