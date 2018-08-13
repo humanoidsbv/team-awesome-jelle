@@ -3,7 +3,7 @@ import React from 'react';
 import './timesheet-entry.scss';
 
 const TimesheetEntry = () => (
-  <div className="timesheet-entry-wrapper timesheet-entry-wrapper__good">
+  <div className="timesheet-entry-wrapper">
     <p className="timesheet-entry__employer">
       Port of Rotterdam
     </p>

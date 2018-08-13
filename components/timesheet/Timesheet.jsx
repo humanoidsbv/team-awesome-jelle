@@ -1,5 +1,5 @@
 import React from 'react';
-import TimesheetEntry from './timesheet-entry/TimesheetEntry';
+import TimesheetEntry from '../timesheet-entry/TimesheetEntry';
 
 import './timesheet.scss';
 
