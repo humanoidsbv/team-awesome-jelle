@@ -1,0 +1,26 @@
+[
+  {
+    "employer": "Port of Rotterdam",
+    "startTime": "09:00",
+    "endTime": "17:00",
+    "date": "29-07-2018"
+  },
+  {
+    "employer": "Hike One",
+    "startTime": "9:00",
+    "endTime": "12:00",
+    "date": "28-07-2018"
+  },
+  {
+    "employer": "Hike One",
+    "startTime": "13:00",
+    "endTime": "18:00",
+    "date": "28-07-2018"
+  },
+  {
+    "employer": "Hike One",
+    "startTime": "09:00",
+    "endTime": "17:00",
+    "date": "27-07-2018"
+  }
+]
