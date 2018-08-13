@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/humanoidsbv/team-awesome-jelle/issues"
   },
-  "homepage": "https://github.com/humanoidsbv/team-awesome-jelle#readme",
+  "homepage": "https://team-awesome-jelle.now.sh",
   "dependencies": {
     "@zeit/next-sass": "^0.2.0",
     "babel-eslint": "^8.2.6",
