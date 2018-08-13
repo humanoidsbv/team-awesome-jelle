@@ -1,11 +1,13 @@
 import React from 'react';
-import Header from '../components/header/Header';
-import TimesheetInput from '../components/timesheet-input/TimesheetInput';
 
+import './index.scss';
+import TimesheetInput from '../components/timesheet-input/TimesheetInput';
+import Timesheet from '../components/timesheet/Timesheet';
 
 export default () => (
-  <div>
-    <Header />
+  <main className="timesheet-page-wrapper">
     <TimesheetInput />
-  </div>
+    <Timesheet />
+    <Timesheet />
+  </main>
 );
