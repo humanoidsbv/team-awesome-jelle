@@ -4,8 +4,8 @@ import TimesheetPage from '../components/timesheet-page/TimesheetPage';
 
 
 export default () => (
-  <div>
+  <React.Fragment>
     <Header />
     <TimesheetPage />
-  </div>
+  </React.Fragment>
 );

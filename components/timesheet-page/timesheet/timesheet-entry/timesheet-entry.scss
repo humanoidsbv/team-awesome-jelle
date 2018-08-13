@@ -2,14 +2,11 @@
 
 .timesheet-entry-wrapper {
   border: solid 1px $color-accent-2;
+  border-left: solid 4px $color-primary;
   display: flex;
   justify-content: space-between;
   padding: 30px 16px 33px;
-  // padding-bottom: 33;
 
-  &__good {
-    border-left: solid 4px $color-primary;
-  }
 }
 
 .timesheet-entry {
