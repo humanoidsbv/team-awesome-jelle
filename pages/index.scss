@@ -1,0 +1,12 @@
+@import "../shared/styles/main";
+
+.timesheet-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-top: 70px;
+
+  @include tablet {
+    padding-top: 80px;
+
+  }
+}

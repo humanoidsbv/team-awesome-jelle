@@ -1,0 +1,22 @@
+@import "../../shared/styles/main";
+
+.timesheet-entry-wrapper {
+  border: solid 1px $color-accent-2;
+  border-left: solid 4px $color-primary;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 16px 33px;
+
+}
+
+.timesheet-entry {
+  &__employer {
+    color: $color-accent-5;
+    font-size: 16px;
+  }
+
+  &__date {
+    color: $color-accent-5;
+    font-size: 16px;
+  }
+}

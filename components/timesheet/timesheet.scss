@@ -1,0 +1,11 @@
+@import "../../shared/styles/main";
+
+.timesheet-wrapper {
+  background-color: $color-monochrome-1;
+  margin: 20px auto 0;
+  width: 90%;
+
+  &__date {
+    color: $color-accent-6;
+  }
+}
