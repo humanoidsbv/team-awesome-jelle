@@ -1,5 +1,5 @@
 {
-  "alias": "team-awesome-jelle.now.sh",
+  "alias": "team-awesome-jelle",
   "env": {
     "NODE_ENV": "production"
   },
