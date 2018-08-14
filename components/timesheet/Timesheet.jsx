@@ -1,30 +1,35 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import TimesheetEntry from '../timesheet-entry/TimesheetEntry';
+
+import data from '../../pages/mock-timesheet-entries.json';
 
 import './timesheet.scss';
 
-const Timesheet = ({ date, employer, startTime, endTime }) => {
-  Timesheet.propTypes = {
-    date: PropTypes.string.isRequired,
-    employer: PropTypes.string.isRequired,
-    startTime: PropTypes.string.isRequired,
-    endTime: PropTypes.string.isRequired
-  };
-  return (
+const displayTimesheets = data.map((currentTimesheet, index, array) => (
 
-    <div className="timesheet-wrapper">
-      <p className="timesheet-wrapper__date">
-        {date}
-      </p>
+  // (1 != 2 && 1===1 || 1===3) ? return iets : return iets anders;
+  (index !== 0 && currentTimesheet.date === array[index - 1].date)
+    ? (
       <TimesheetEntry
-        employer={employer}
-        startTime={startTime}
-        endTime={endTime}
+        {...currentTimesheet}
       />
-    </div>
-  );
-};
+    )
+    : (
+      <React.Fragment>
+        <p className="timesheet-wrapper__date">
+          {currentTimesheet.date}
+        </p>
+        <TimesheetEntry
+          {...currentTimesheet}
+        />
+      </React.Fragment>
+    )
+));
 
+const Timesheet = () => (
+  <div className="timesheet-wrapper">
+    {displayTimesheets}
+  </div>
+);
 
 export default Timesheet;

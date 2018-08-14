@@ -1,26 +1,26 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
+import PropTypes from 'prop-types';
 
 import './timesheet-entry.scss';
 
-const TimesheetEntry = ({ employer, endTime, startTime }) => {
-  TimesheetEntry.propTypes = {
-    employer: PropTypes.string.isRequired,
-    startTime: PropTypes.string.isRequired,
-    endTime: PropTypes.string.isRequired
-  };
+const TimesheetEntry = ({ employer, endTime, startTime }) => (
 
-  return (
-    <div className="timesheet-entry-wrapper">
-      <p className="timesheet-entry__employer">
-        {employer}
-      </p>
-      <p className="timesheet-entry__time">
-        {`${startTime} - ${endTime}`}
-      </p>
-    </div>
-  );
+  <div className="timesheet-entry-wrapper">
+    <p className="timesheet-entry__employer">
+      {employer}
+    </p>
+    <p className="timesheet-entry__time">
+      {`${startTime} - ${endTime}`}
+    </p>
+  </div>
+);
+
+
+TimesheetEntry.propTypes = {
+  employer: PropTypes.string.isRequired,
+  startTime: PropTypes.string.isRequired,
+  endTime: PropTypes.string.isRequired
 };
 
 
