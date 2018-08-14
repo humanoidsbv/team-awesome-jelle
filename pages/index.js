@@ -6,22 +6,16 @@ import TimesheetInput from '../components/timesheet-input/TimesheetInput';
 import Timesheet from '../components/timesheet/Timesheet';
 
 export default () => {
-  const displayTimesheets = () => {
-    data.map(mappedTimesheet => (
-      <Timesheet
-        date={mappedTimesheet.date}
-        employer={mappedTimesheet.employer}
-        endTime={mappedTimesheet.endTime}
-        startTime={mappedTimesheet.startTime}
-      />
-    ));
-  };
-
+  const displayTimesheets = data.map(mappedTimesheet => (
+    <Timesheet
+      {...mappedTimesheet}
+    />
+  ));
 
   return (
     <main className="timesheet-page-wrapper">
       <TimesheetInput />
-      {displayTimesheets(data)}
+      {displayTimesheets}
     </main>
   );
 };

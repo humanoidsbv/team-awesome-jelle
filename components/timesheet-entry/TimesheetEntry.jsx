@@ -10,12 +10,6 @@ const TimesheetEntry = ({ employer, endTime, startTime }) => {
     startTime: PropTypes.string.isRequired,
     endTime: PropTypes.string.isRequired
   };
-  // TimesheetEntry.defaultProps = {
-  //   date: '01-01-1970',
-  //   employer: 'Humanoids',
-  //   startTime: '00:00',
-  //   endTime: '00:00'
-  // };
 
   return (
     <div className="timesheet-entry-wrapper">
@@ -23,11 +17,7 @@ const TimesheetEntry = ({ employer, endTime, startTime }) => {
         {employer}
       </p>
       <p className="timesheet-entry__time">
-        {startTime}
-        {' '}
-        -
-        {' '}
-        {endTime}
+        {`${startTime} - ${endTime}`}
       </p>
     </div>
   );

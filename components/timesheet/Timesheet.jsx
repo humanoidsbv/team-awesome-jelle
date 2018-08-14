@@ -4,31 +4,23 @@ import TimesheetEntry from '../timesheet-entry/TimesheetEntry';
 
 import './timesheet.scss';
 
-const Timesheet = ({ data }) => {
+const Timesheet = ({ date, employer, startTime, endTime }) => {
   Timesheet.propTypes = {
-    data: PropTypes.shape({
-      date: PropTypes.string.isRequired,
-      employer: PropTypes.string.isRequired,
-      startTime: PropTypes.string.isRequired,
-      endTime: PropTypes.string.isRequired
-    })
-  };
-  Timesheet.defaultProps = {
-    data: {
-      date: '01-01-1970',
-      employer: 'Humanoids',
-      startTime: '00:00',
-      endTime: '00:00'
-    }
+    date: PropTypes.string.isRequired,
+    employer: PropTypes.string.isRequired,
+    startTime: PropTypes.string.isRequired,
+    endTime: PropTypes.string.isRequired
   };
   return (
 
     <div className="timesheet-wrapper">
       <p className="timesheet-wrapper__date">
-        {data.date}
+        {date}
       </p>
       <TimesheetEntry
-        data={data}
+        employer={employer}
+        startTime={startTime}
+        endTime={endTime}
       />
     </div>
   );
