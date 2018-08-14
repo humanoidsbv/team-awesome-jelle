@@ -6,8 +6,6 @@ import data from '../../pages/mock-timesheet-entries.json';
 import './timesheet.scss';
 
 const displayTimesheets = data.map((currentTimesheet, index, array) => (
-
-  // (1 != 2 && 1===1 || 1===3) ? return iets : return iets anders;
   (index !== 0 && currentTimesheet.date === array[index - 1].date)
     ? (
       <TimesheetEntry
