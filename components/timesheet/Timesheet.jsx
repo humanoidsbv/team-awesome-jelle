@@ -4,9 +4,9 @@ import TimesheetEntry from '../timesheet-entry/TimesheetEntry';
 
 import './timesheet.scss';
 
-const Timesheet = (props) => {
+const Timesheet = ({ data }) => {
   Timesheet.propTypes = {
-    data: React.PropTypes.shape({
+    data: PropTypes.shape({
       date: PropTypes.string.isRequired,
       employer: PropTypes.string.isRequired,
       startTime: PropTypes.string.isRequired,
@@ -14,21 +14,21 @@ const Timesheet = (props) => {
     })
   };
   Timesheet.defaultProps = {
-    data:
-  }
-  AddAddressComponent.defaultProps = {
-  cityList: [],
-  provinceList: [],
-};
+    data: {
+      date: '01-01-1970',
+      employer: 'Humanoids',
+      startTime: '00:00',
+      endTime: '00:00'
+    }
+  };
   return (
+
     <div className="timesheet-wrapper">
       <p className="timesheet-wrapper__date">
-        29-07-2018
+        {data.date}
       </p>
       <TimesheetEntry
-        employer={props.employer}
-        startTime={props.startTime}
-        endTime={props.endTime}
+        data={data}
       />
     </div>
   );
