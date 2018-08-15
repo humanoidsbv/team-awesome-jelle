@@ -1,16 +1,27 @@
 import React from 'react';
 
+import PropTypes from 'prop-types';
+
 import './timesheet-entry.scss';
 
-const TimesheetEntry = () => (
+const TimesheetEntry = ({ employer, endTime, startTime }) => (
+
   <div className="timesheet-entry-wrapper">
     <p className="timesheet-entry__employer">
-      Port of Rotterdam
+      {employer}
     </p>
-    <p className="timesheet-entry__date">
-      09:00 - 17:00
+    <p className="timesheet-entry__time">
+      {`${startTime} - ${endTime}`}
     </p>
   </div>
 );
+
+
+TimesheetEntry.propTypes = {
+  employer: PropTypes.string.isRequired,
+  startTime: PropTypes.string.isRequired,
+  endTime: PropTypes.string.isRequired
+};
+
 
 export default TimesheetEntry;

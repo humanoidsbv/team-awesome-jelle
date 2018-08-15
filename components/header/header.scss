@@ -180,7 +180,9 @@
       }
 
     .menu-button__icon--close {
+      border: none;
       display: block;
+      outline: none;
     }
   }
 }
