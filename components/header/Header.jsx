@@ -8,9 +8,10 @@ class Header extends React.Component {
   }
 
   toggleMenu = () => {
-    this.setState(({ isMenuVisible }) => ({
-      isMenuVisible: !isMenuVisible
-    }));
+    this.setState(({ isMenuVisible }) => (
+      {
+        isMenuVisible: !isMenuVisible
+      }));
   }
 
   render() {
@@ -28,7 +29,8 @@ class Header extends React.Component {
 
           <button
             className={`
-              menu-button menu-button${isMenuVisible ? '--clicked' : ''}
+              menu-button
+              menu-button--${isMenuVisible ? 'clicked' : ''}
               `}
             type="submit"
             onClick={this.toggleMenu}

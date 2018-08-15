@@ -1,6 +1,6 @@
 import React from 'react';
 import Document, { Head, Main, NextScript } from 'next/document';
-import Header from '../components/header/Header';
+// import Header from '../components/header/Header';
 
 export default class MyDocument extends Document {
   render() {
@@ -11,7 +11,7 @@ export default class MyDocument extends Document {
           <link rel="stylesheet" href="/_next/static/style.css" />
         </Head>
         <body>
-          <Header />
+          {/* <Header /> */}
           <Main />
           <NextScript />
         </body>
