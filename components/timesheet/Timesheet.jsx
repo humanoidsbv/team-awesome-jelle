@@ -18,7 +18,9 @@ const Timesheet = () => (
         />
         )}
         <TimesheetEntry
-          {...timesheetEntry}
+          employer={timesheetEntry.employer}
+          startTime={timesheetEntry.startTime}
+          endTime={timesheetEntry.endTime}
         />
       </React.Fragment>
     ))}
