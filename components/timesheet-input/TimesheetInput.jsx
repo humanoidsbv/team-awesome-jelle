@@ -9,6 +9,8 @@ class TimesheetInput extends React.Component {
   };
 
   state = {
+    employer: 'Port of Rotterdam',
+    activity: 'Design',
     isFormVisible: false
   }
 
@@ -38,7 +40,7 @@ render() {
 
   return (
     <form>
-      <div className="timesheet-input-wrapper">
+      <div className="timesheet-input__wrapper">
         <button
           className={`
             timesheet-input__new-button

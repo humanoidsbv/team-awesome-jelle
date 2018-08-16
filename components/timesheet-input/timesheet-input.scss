@@ -3,8 +3,13 @@
 .timesheet-input {
 
   &__wrapper {
+    display: flex;
+    flex-direction: column;
 
     @include tablet {
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-evenly;
     }
   }
 
@@ -52,6 +57,10 @@
     margin: 16px auto 8px;
     width: 90%;
 
+    @include tablet {
+      width: 30%;
+    }
+
     &--from {
       width: 40%;
     }
@@ -67,8 +76,13 @@
     border-radius: 4px;
     color: $color-monochrome-1;
     padding: 9px 0 8px;
-    text-align: center;
     width: 100%;
+
+    @include tablet {
+      height: 36px;
+      margin: auto;
+      width: 90px;
+    }
   }
 
   &__close-button {
@@ -81,6 +95,10 @@
     height: 7px;
     margin-left: 95%;
     margin-top: 16px;
+
+    @include tablet {
+      display: none;
+    }
   }
 
   &__label {
@@ -103,184 +121,15 @@
     font-style: normal;
     height: 36px;
     width: 100%;
+
+    @include tablet {
+      width: 80%;
+    }
   }
 
   &__time-wrapper {
     display: flex;
     flex-direction: row;
+    margin: 16px auto 8px;
   }
 }
-
-
-//
-// .timesheet-input-form {
-//
-//   background-color: $color-accent-2;
-//   display: flex;
-//   flex-direction: column;
-//   position: relative;
-//
-//   @include tablet {
-//     flex-direction: row;
-//   }
-//
-//   &--open {
-//     display: flex;
-//   }
-//
-//   &--closed {
-//     display: none;
-//
-//     @include tablet {
-//       display: flex;
-//     }
-//   }
-//
-//   &__field-item {
-//     margin: 16px auto 8px;
-//     width: 90%;
-//
-//     &--from {
-//       width: 40%;
-//     }
-//
-//     &--to {
-//       width: 40%;
-//     }
-//   }
-//
-//   &__add-button {
-//     background: linear-gradient($color-accent-alt-7, $color-accent-alt-8 98%);
-//     border: none;
-//     border-radius: 4px;
-//     color: $color-monochrome-1;
-//     padding: 9px 0 8px;
-//     text-align: center;
-//     width: 100%;
-//   }
-//
-//   &__close-button {
-//     -webkit-mask: url("/static/icons/close.svg")   no-repeat;
-//     -webkit-mask-size: 7px 7px;
-//     background-color: $color-monochrome-6;
-//     border-style: none;
-//     border-width: 0;
-//     display: inline;
-//     height: 7px;
-//     margin-left: 95%;
-//     margin-top: 16px;
-//   }
-//
-//   &__label {
-//     color: $color-accent-4;
-//     font-size: 12px;
-//     font-stretch: normal;
-//     font-style: normal;
-//     font-weight: 600;
-//     letter-spacing: normal;
-//     line-height: normal;
-//     margin-bottom: 12px;
-//     opacity: .5;
-//   }
-//
-//   &__select {
-//     background: linear-gradient($color-accent-alt-5, $color-monochrome-1);
-//     border: solid 1px $color-accent-3;
-//     border-radius: 4px;
-//     font-size: 14px;
-//     font-style: normal;
-//     height: 36px;
-//     width: 100%;
-//   }
-//
-//   &__time-wrapper {
-//     display: flex;
-//     flex-direction: row;
-//   }
-// }
-
-
-// .timesheet-field {
-//   background-color: $color-accent-2;
-//   border: solid 1px $color-accent-3;
-//   border-radius: 4px;
-//   margin: auto;
-//   width: 100%;
-//
-//   @include desktop {
-//     flex-direction: row;
-//     margin-left: 12.5%;
-//     width: 75%;
-//   }
-//
-//   &__field-item {
-//
-//     @include desktop {
-//       display: inline-grid;
-//     }
-//
-//     &--full {
-//       margin-left: 5%;
-//       // margin-top: 10%;
-//       width: 90%;
-//       @include desktop {
-//         width: 20%;
-//       }
-//     }
-//
-//     &--half {
-//       display: inline-grid;
-//       width: 40%;
-//
-//       @include desktop {
-//         display: inherit;
-//         width: 10%;
-//       }
-//     }
-//
-//     &--last {
-//       display: inline-grid;
-//       margin-left: 5%;
-//       width: 45%;
-//
-//       @include desktop {
-//         display: inherit;
-//         margin-left: 5%;
-//         width: 10%;
-//       }
-//     }
-//   }
-//
-//   &__button {
-//     border-radius: 4px;
-//     display: grid;
-//
-//     &--new {
-//       background: linear-gradient($color-accent-alt-7, $color-accent-alt-8 98%);
-//       width: 90%;
-//     }
-//
-//     &--add {
-//       background: $color-accent-alt-6;
-//       color: $color-monochrome-1;
-//       font-size: 14px;
-//       height: 36px;
-//       margin: auto;
-//       margin-bottom: 16px;
-//       margin-top: 16px;
-//       width: 90%;
-//     }
-//
-//     &--close {
-//       -webkit-mask: url("/static/icons/close.svg")   no-repeat;
-//       -webkit-mask-size: 7px 7px;
-//       background-color: $color-monochrome-6;
-//       border-style: none;
-//       border-width: 0;
-//       display: grid;
-//       height: 7px;
-//       margin-left: 95%;
-//       margin-top: 16px;
-//     }
-//   }
-// }
