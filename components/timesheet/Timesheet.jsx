@@ -13,14 +13,7 @@ class Timesheet extends React.Component {
     timesheetEntries: mockedTimesheetEntries
   }
 
-  addTimesheetEntry = () => {
-    const newEntry = {
-      employer: 'Port of Antwerp',
-      id: '5',
-      startTime: '15:00',
-      endTime: '15:30',
-      date: '30-07-2018'
-    };
+  handleAddTimesheetEntry = (newEntry) => {
     this.setState(state => ({
       timesheetEntries: [
         newEntry,
@@ -29,19 +22,16 @@ class Timesheet extends React.Component {
     }));
   }
 
+
   render() {
     const { timesheetEntries } = this.state;
     return (
       <div className="timesheet-wrapper">
         <TimesheetInput
-          addTimesheetEntry={this.addTimesheetEntry}
+          // handleChange={this.handleChange}
+          // handleSubmit={this.handleSubmit}
+          onSave={this.handleAddTimesheetEntry}
         />
-        {/*
-        <button
-          className="testbutton"
-          onClick={this.addTimesheetEntry()}
-          type="submit"
-        /> */}
         {timesheetEntries.map((timesheetEntry, index, array) => (
           <React.Fragment key={timesheetEntry.id}>
             {(!index || (timesheetEntry.date !== array[index - 1].date)) && (
