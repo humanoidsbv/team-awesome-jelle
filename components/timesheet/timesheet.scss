@@ -1,12 +1,9 @@
 @import "../../shared/styles/main";
 
 .timesheet-wrapper {
+  @include container;
   background-color: $color-monochrome-1;
+  flex-direction: column;
   margin: 20px auto;
   width: 90%;
-
-  &__date {
-    color: $color-accent-6;
-    margin: 33px 0 25px;
-  }
 }
