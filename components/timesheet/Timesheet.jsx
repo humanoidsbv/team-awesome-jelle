@@ -28,8 +28,6 @@ class Timesheet extends React.Component {
     return (
       <div className="timesheet-wrapper">
         <TimesheetInput
-          // handleChange={this.handleChange}
-          // handleSubmit={this.handleSubmit}
           onSave={this.handleAddTimesheetEntry}
         />
         {timesheetEntries.map((timesheetEntry, index, array) => (
