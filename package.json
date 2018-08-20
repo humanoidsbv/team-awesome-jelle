@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "next build",
-    "dev": "next",
-    "api": "json-server --watch api/db.json",
+    "dev": "next | json-server --watch api/time-entries.json",
     "lint": "eslint --ext js,jsx .",
     "start": "next start"
   },
