@@ -6,6 +6,7 @@
   "scripts": {
     "build": "next build",
     "dev": "next",
+    "api": "json-server --watch api/db.json",
     "lint": "eslint --ext js,jsx .",
     "start": "next start"
   },
