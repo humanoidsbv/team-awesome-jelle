@@ -2,29 +2,29 @@
   {
     "employer": "Port of Rotterdam",
     "id": "1",
-    "startTime": "09:00",
-    "endTime": "17:00",
-    "date": "29-07-2018"
+    "startTime": "2018-07-29T07:00:00.000Z",
+    "endTime": "2018-07-29T15:00:00.000Z",
+    "date": "2018-07-29"
   },
   {
     "employer": "Port of Rotterdam",
     "id": "2",
-    "startTime": "9:00",
-    "endTime": "13:00",
-    "date": "28-07-2018"
+    "startTime": "2018-07-28T07:00:00.000Z",
+    "endTime": "2018-07-28T11:00:00.000Z",
+    "date": "2018-07-28"
   },
   {
     "employer": "Hike One",
     "id": "3",
-    "startTime": "13:00",
-    "endTime": "18:00",
-    "date": "28-07-2018"
+    "startTime": "2018-07-28T11:00:00.000Z",
+    "endTime": "2018-07-28T16:00:00.000Z",
+    "date": "2018-07-28"
   },
   {
     "employer": "Hike One",
     "id": "4",
-    "startTime": "09:00",
-    "endTime": "17:00",
-    "date": "27-07-2018"
+    "startTime": "2018-07-27T07:00:00.000Z",
+    "endTime": "2018-07-27T15:00:00.000Z",
+    "date": "2018-07-27"
   }
 ]

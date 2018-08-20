@@ -11,7 +11,9 @@ const TimesheetEntry = ({ employer, endTime, startTime }) => (
       {employer}
     </p>
     <p className="timesheet-entry__time">
-      {`${startTime} - ${endTime}`}
+      {`${new Date(startTime).toLocaleTimeString('nl-NL', { hour: 'numeric', minute: 'numeric' })}
+       -
+       ${new Date(endTime).toLocaleTimeString('nl-NL', { hour: 'numeric', minute: 'numeric' })}`}
     </p>
   </div>
 );
