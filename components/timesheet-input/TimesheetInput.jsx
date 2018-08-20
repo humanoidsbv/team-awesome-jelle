@@ -44,8 +44,12 @@ class TimesheetInput extends React.Component {
 
     const convertedDate = this.convertDateToUS(date);
 
-    const convertedStartTime = this.convertToISOString(convertedDate, this.convertPointToColon(startTime));
-    const convertedEndTime = this.convertToISOString(convertedDate, this.convertPointToColon(endTime));
+    const convertedStartTime = this.convertToISOString(
+      convertedDate, this.convertPointToColon(startTime)
+    );
+    const convertedEndTime = this.convertToISOString(
+      convertedDate, this.convertPointToColon(endTime)
+    );
 
     return {
       ...prevState.timeEntry,
