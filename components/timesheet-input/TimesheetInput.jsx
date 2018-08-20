@@ -29,6 +29,32 @@ class TimesheetInput extends React.Component {
     ));
   }
 
+  // functe om datum te splitten op '-' en draai om (naar US notatie)
+  convertDateToUS = (date) => {
+    const splittedDate = date.split('-');
+    return `${splittedDate[2]}-${splittedDate[1]}-${splittedDate[0]}`;
+  }
+
+  convertPointToColon = time => time.replace('.', ':')
+
+  convertToISOString = (date, time) => new Date(`${date} ${time}`).toISOString();
+
+  convertDateTime = (prevState) => {
+    const { date, startTime, endTime } = prevState.timeEntry;
+
+    const convertedDate = this.convertDateToUS(date);
+
+    const convertedStartTime = this.convertToISOString(convertedDate, this.convertPointToColon(startTime));
+    const convertedEndTime = this.convertToISOString(convertedDate, this.convertPointToColon(endTime));
+
+    return {
+      ...prevState.timeEntry,
+      date: convertedDate,
+      startTime: convertedStartTime,
+      endTime: convertedEndTime
+    };
+  }
+
   handleChange = ({ target }) => {
     this.setState(prevState => ({
       timeEntry: {
@@ -40,9 +66,10 @@ class TimesheetInput extends React.Component {
 
   handleSubmit = (event) => {
     const { onSave } = this.props;
-    const { timeEntry } = this.state;
     event.preventDefault();
-    onSave(timeEntry);
+
+    const prevState = { ...this.state };
+    onSave(this.convertDateTime(prevState));
     this.setState({ timeEntry: TimesheetInput.defaultFormValues });
     this.toggleForm();
   }

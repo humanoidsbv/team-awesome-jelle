@@ -6,7 +6,11 @@ import './timesheet-date.scss';
 
 const TimesheetDate = ({ date }) => (
   <p className="timesheet-wrapper__date">
-    {date}
+    {`
+      ${new Date(date).toLocaleDateString('en-NL', { weekday: 'long' })}
+      ${new Date(date).toLocaleDateString('nl-NL', { day: 'numeric', month: 'numeric' })}
+
+    `}
   </p>
 );
 
