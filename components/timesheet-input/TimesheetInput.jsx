@@ -1,6 +1,8 @@
 import React from 'react';
 
 import PropTypes from 'prop-types';
+
+import ConvertDateTime from '../../services/convert-date-time/convert-date-time';
 import './timesheet-input.scss';
 
 class TimesheetInput extends React.Component {
@@ -29,35 +31,32 @@ class TimesheetInput extends React.Component {
     ));
   }
 
-  // functe om datum te splitten op '-' en draai om (naar US notatie)
-  convertDateToUS = (date) => {
+  convertDateToUs = (date) => {
     const splittedDate = date.split('-');
     return `${splittedDate[2]}-${splittedDate[1]}-${splittedDate[0]}`;
   }
 
-  convertPointToColon = time => time.replace('.', ':')
+  convertToIsoString = (date, time) => new Date(`${date} ${time}`).toISOString();
 
-  convertToISOString = (date, time) => new Date(`${date} ${time}`).toISOString();
-
-  convertDateTime = (prevState) => {
-    const { date, startTime, endTime } = prevState.timeEntry;
-
-    const convertedDate = this.convertDateToUS(date);
-
-    const convertedStartTime = this.convertToISOString(
-      convertedDate, this.convertPointToColon(startTime)
-    );
-    const convertedEndTime = this.convertToISOString(
-      convertedDate, this.convertPointToColon(endTime)
-    );
-
-    return {
-      ...prevState.timeEntry,
-      date: convertedDate,
-      startTime: convertedStartTime,
-      endTime: convertedEndTime
-    };
-  }
+  // convertDateTime = (prevState) => {
+  //   const { date, startTime, endTime } = prevState.timeEntry;
+  //
+  //   const convertedDate = this.convertDateToUs(date);
+  //
+  //   const convertedStartTime = this.convertToIsoString(
+  //     convertedDate, startTime.replace('.', ':')
+  //   );
+  //   const convertedEndTime = this.convertToIsoString(
+  //     convertedDate, endTime.replace('.', ':')
+  //   );
+  //
+  //   return {
+  //     ...prevState.timeEntry,
+  //     date: convertedDate,
+  //     startTime: convertedStartTime,
+  //     endTime: convertedEndTime
+  //   };
+  // }
 
   handleChange = ({ target }) => {
     this.setState(prevState => ({
@@ -73,7 +72,7 @@ class TimesheetInput extends React.Component {
     event.preventDefault();
 
     const prevState = { ...this.state };
-    onSave(this.convertDateTime(prevState));
+    onSave(ConvertDateTime(prevState));
     this.setState({ timeEntry: TimesheetInput.defaultFormValues });
     this.toggleForm();
   }
