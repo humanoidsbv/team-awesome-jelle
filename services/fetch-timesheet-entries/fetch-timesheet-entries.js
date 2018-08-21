@@ -1,9 +1,9 @@
-const fetchTimesheetEntries = () => (
+export const fetchTimesheetEntries = () => (
   fetch('http://localhost:3001/api/timesheets/')
     .then(response => response.json())
 );
 
-const postTimesheetEntry = timesheetEntry => (
+export const postTimesheetEntry = timesheetEntry => (
   fetch('http://localhost:3001/api/timesheets/', {
     method: 'post',
     headers: {
@@ -12,6 +12,3 @@ const postTimesheetEntry = timesheetEntry => (
     body: JSON.stringify(timesheetEntry)
   })
 );
-
-
-export { fetchTimesheetEntries, postTimesheetEntry };

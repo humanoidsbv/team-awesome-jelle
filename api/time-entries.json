@@ -1,5 +1,5 @@
 {
-  "timesheets":[
+  "timesheets": [
     {
       "employer": "Port of Rotterdam",
       "id": "1",
@@ -27,6 +27,30 @@
       "startTime": "2018-07-27T07:00:00.000Z",
       "endTime": "2018-07-27T15:00:00.000Z",
       "date": "2018-07-27"
+    },
+    {
+      "employer": "Hike One",
+      "activity": "Meeting",
+      "date": "2019-07-30",
+      "startTime": "2019-07-30T11:00:00.000Z",
+      "endTime": "2019-07-30T12:00:00.000Z",
+      "id": "aCc9ioH"
+    },
+    {
+      "employer": "Port of Rotterdam",
+      "activity": "Design",
+      "date": "2019-07-30",
+      "startTime": "2019-07-30T11:00:00.000Z",
+      "endTime": "2019-07-30T12:00:00.000Z",
+      "id": "zc7LuTI"
+    },
+    {
+      "employer": "Port of Rotterdam",
+      "activity": "Design",
+      "date": "2018-12-31",
+      "startTime": "2018-12-31T13:00:00.000Z",
+      "endTime": "2018-12-31T17:00:00.000Z",
+      "id": "T83YZlm"
     }
   ]
 }
