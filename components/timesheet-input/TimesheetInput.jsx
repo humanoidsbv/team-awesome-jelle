@@ -2,7 +2,7 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
-import convertTime from '../../services/convert-time/convert-time';
+import { convertDateToIso, convertTimeToIso } from '../../services/convert-time/convert-time';
 import './timesheet-input.scss';
 
 class TimesheetInput extends React.Component {
@@ -31,11 +31,6 @@ class TimesheetInput extends React.Component {
     ));
   }
 
-  convertDateToUs = (date) => {
-    const splittedDate = date.split('-');
-    return `${splittedDate[2]}-${splittedDate[1]}-${splittedDate[0]}`;
-  }
-
   handleChange = ({ target }) => {
     this.setState(prevState => ({
       timeEntry: {
@@ -49,8 +44,14 @@ class TimesheetInput extends React.Component {
     const { onSave } = this.props;
     event.preventDefault();
 
-    const prevState = { ...this.state };
-    onSave(convertTime(prevState));
+    const { timeEntry } = this.state;
+    const newEntry = {
+      ...timeEntry,
+      date: convertDateToIso(timeEntry.date),
+      startTime: convertTimeToIso(timeEntry.startTime, timeEntry.date),
+      endTime: convertTimeToIso(timeEntry.endTime, timeEntry.date)
+    };
+    onSave(newEntry);
     this.setState({ timeEntry: TimesheetInput.defaultFormValues });
     this.toggleForm();
   }
