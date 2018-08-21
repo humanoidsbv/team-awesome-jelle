@@ -38,26 +38,6 @@ class TimesheetInput extends React.Component {
 
   convertToIsoString = (date, time) => new Date(`${date} ${time}`).toISOString();
 
-  // convertDateTime = (prevState) => {
-  //   const { date, startTime, endTime } = prevState.timeEntry;
-  //
-  //   const convertedDate = this.convertDateToUs(date);
-  //
-  //   const convertedStartTime = this.convertToIsoString(
-  //     convertedDate, startTime.replace('.', ':')
-  //   );
-  //   const convertedEndTime = this.convertToIsoString(
-  //     convertedDate, endTime.replace('.', ':')
-  //   );
-  //
-  //   return {
-  //     ...prevState.timeEntry,
-  //     date: convertedDate,
-  //     startTime: convertedStartTime,
-  //     endTime: convertedEndTime
-  //   };
-  // }
-
   handleChange = ({ target }) => {
     this.setState(prevState => ({
       timeEntry: {
