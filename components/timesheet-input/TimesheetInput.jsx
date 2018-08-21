@@ -2,7 +2,7 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
-import { convertDateToIso, convertTime } from '../../services/convert-time/convert-time';
+import { convertDateToIso, convertTimeToIso } from '../../services/convert-time/convert-time';
 import './timesheet-input.scss';
 
 class TimesheetInput extends React.Component {
@@ -48,8 +48,8 @@ class TimesheetInput extends React.Component {
     const newEntry = {
       ...timeEntry,
       date: convertDateToIso(timeEntry.date),
-      startTime: convertTime(timeEntry.startTime, timeEntry.date),
-      endTime: convertTime(timeEntry.endTime, timeEntry.date)
+      startTime: convertTimeToIso(timeEntry.startTime, timeEntry.date),
+      endTime: convertTimeToIso(timeEntry.endTime, timeEntry.date)
     };
     onSave(newEntry);
     this.setState({ timeEntry: TimesheetInput.defaultFormValues });

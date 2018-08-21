@@ -5,7 +5,7 @@ export const convertDateToIso = date => (
     .join('-')
 );
 
-export const convertTime = (time, date) => {
+export const convertTimeToIso = (time, date) => {
   const convertedTime = new Date(`
     ${convertDateToIso(date)} ${time.replace('.', ':')}
   `).toISOString();
