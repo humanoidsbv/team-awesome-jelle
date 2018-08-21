@@ -7,9 +7,21 @@
   justify-content: space-between;
   padding: 30px 16px 33px;
 
+  @include tablet {
+    &:hover {
+      .timesheet-entry__delete-button {
+        display: block;
+    }
+  }
+}
 }
 
 .timesheet-entry {
+  &__delete-button {
+    background-color: $color-delete-button;
+    display: none;
+  }
+
   &__employer {
     color: $color-accent-5;
     font-size: 16px;

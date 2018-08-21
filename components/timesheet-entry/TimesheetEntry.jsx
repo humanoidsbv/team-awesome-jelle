@@ -10,6 +10,18 @@ const TimesheetEntry = ({ employer, endTime, startTime }) => (
     <p className="timesheet-entry__employer">
       {employer}
     </p>
+
+    <button
+      className="timesheet-entry__delete-button"
+      type="submit"
+    >
+      <img
+        alt="cancel sign"
+        className="timesheet-field__plus-svg"
+        src="../../static/icons/close.svg"
+      />
+      Delete
+    </button>
     <p className="timesheet-entry__time">
       {`${new Date(startTime).toLocaleTimeString('nl-NL', { hour: 'numeric', minute: 'numeric' })}
        -
