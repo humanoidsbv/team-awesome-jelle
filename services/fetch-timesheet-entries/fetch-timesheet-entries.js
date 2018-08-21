@@ -1,12 +1,7 @@
-<<<<<<< HEAD
-export const fetchTimesheetEntries = () => (
-  fetch('http://localhost:3001/api/timesheets/')
-=======
 const api = 'http://localhost:3001/api/timesheets/';
 
-const fetchTimesheetEntries = () => (
+export const fetchTimesheetEntries = () => (
   fetch(api)
->>>>>>> master
     .then(response => response.json())
 );
 
