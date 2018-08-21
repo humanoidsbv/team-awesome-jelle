@@ -36,8 +36,6 @@ class TimesheetInput extends React.Component {
     return `${splittedDate[2]}-${splittedDate[1]}-${splittedDate[0]}`;
   }
 
-  convertToIsoString = (date, time) => new Date(`${date} ${time}`).toISOString();
-
   handleChange = ({ target }) => {
     this.setState(prevState => ({
       timeEntry: {
