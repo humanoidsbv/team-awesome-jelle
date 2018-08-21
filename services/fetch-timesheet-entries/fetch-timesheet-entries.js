@@ -3,7 +3,7 @@ const fetchTimesheetEntries = () => (
     .then(response => response.json())
 );
 
-const pushTimesheetEntry = timesheetEntry => (
+const postTimesheetEntry = timesheetEntry => (
   fetch('http://localhost:3001/api/timesheets/', {
     method: 'post',
     headers: {
@@ -14,4 +14,4 @@ const pushTimesheetEntry = timesheetEntry => (
 );
 
 
-export { fetchTimesheetEntries, pushTimesheetEntry };
+export { fetchTimesheetEntries, postTimesheetEntry };
