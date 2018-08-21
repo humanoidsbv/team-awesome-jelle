@@ -4,13 +4,19 @@ import TimesheetDate from '../timesheet-date/TimesheetDate';
 import TimesheetEntry from '../timesheet-entry/TimesheetEntry';
 import TimesheetInput from '../timesheet-input/TimesheetInput';
 
-import mockedTimesheetEntries from '../../pages/mock-timesheet-entries.json';
+import fetchTimesheetEntries from '../../services/fetch-timesheet-entries/fetch-timesheet-entries';
 
 import './timesheet.scss';
 
 class Timesheet extends React.Component {
   state = {
-    timesheetEntries: mockedTimesheetEntries
+    timesheetEntries: []
+  }
+
+  componentDidMount() {
+    fetchTimesheetEntries().then((timesheetEntries) => {
+      this.setState({ timesheetEntries });
+    });
   }
 
   handleAddTimesheetEntry = (newEntry) => {
@@ -21,7 +27,6 @@ class Timesheet extends React.Component {
       ]
     }));
   }
-
 
   render() {
     const { timesheetEntries } = this.state;
