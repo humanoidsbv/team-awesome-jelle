@@ -4,7 +4,7 @@ import TimesheetDate from '../timesheet-date/TimesheetDate';
 import TimesheetEntry from '../timesheet-entry/TimesheetEntry';
 import TimesheetInput from '../timesheet-input/TimesheetInput';
 
-import fetchTimesheetEntries from '../../services/fetch-timesheet-entries/fetch-timesheet-entries';
+import { fetchTimesheetEntries } from '../../services/fetch-timesheet-entries/fetch-timesheet-entries';
 
 import './timesheet.scss';
 

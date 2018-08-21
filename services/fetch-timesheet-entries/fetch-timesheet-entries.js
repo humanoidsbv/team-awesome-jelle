@@ -3,4 +3,15 @@ const fetchTimesheetEntries = () => (
     .then(response => response.json())
 );
 
-export default fetchTimesheetEntries;
+const putTimesheetEntry = timesheetEntry => (
+  fetch('http://localhost:3001/api/timesheets/', {
+    method: 'post',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(timesheetEntry)
+  })
+);
+
+
+export { fetchTimesheetEntries, putTimesheetEntry };
