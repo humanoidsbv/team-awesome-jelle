@@ -1,5 +1,7 @@
+const ApiAdress = 'http://localhost:3001/api/timesheets/';
+
 const fetchTimesheetEntries = () => (
-  fetch('http://localhost:3001/api/timesheets/')
+  fetch(ApiAdress)
     .then(response => response.json())
 );
 
