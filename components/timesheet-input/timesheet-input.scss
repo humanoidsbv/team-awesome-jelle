@@ -83,6 +83,10 @@
       margin: auto;
       width: 90px;
     }
+
+    &--saving {
+      background: $color-primary;
+    }
   }
 
   &__close-button {

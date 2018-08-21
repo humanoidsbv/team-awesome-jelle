@@ -19,13 +19,13 @@ class Timesheet extends React.Component {
     });
   }
 
-  handleAddTimesheetEntry = (newEntry) => {
+  handleAddTimesheetEntry = newEntry => (
     postTimesheetEntry(newEntry).then(() => {
       fetchTimesheetEntries().then((timesheetEntries) => {
         this.setState({ timesheetEntries });
       });
-    });
-  }
+    })
+  )
 
   render() {
     const { timesheetEntries } = this.state;

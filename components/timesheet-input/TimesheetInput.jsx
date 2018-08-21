@@ -20,13 +20,22 @@ class TimesheetInput extends React.Component {
 
   state = {
     timeEntry: TimesheetInput.defaultFormValues,
-    isFormVisible: false
+    isFormVisible: false,
+    isFormSaving: false
   }
 
   toggleForm = () => {
     this.setState(({ isFormVisible }) => (
       {
         isFormVisible: !isFormVisible
+      }
+    ));
+  }
+
+  toggleSave = () => {
+    this.setState(({ isFormSaving }) => (
+      {
+        isFormSaving: !isFormSaving
       }
     ));
   }
@@ -42,23 +51,26 @@ class TimesheetInput extends React.Component {
 
   handleSubmit = (event) => {
     const { onSave } = this.props;
+    const { timeEntry } = this.state;
     event.preventDefault();
 
-    const { timeEntry } = this.state;
+    this.toggleSave();
+
+
     const newEntry = {
       ...timeEntry,
       date: convertDateToIso(timeEntry.date),
       startTime: convertTimeToIso(timeEntry.startTime, timeEntry.date),
       endTime: convertTimeToIso(timeEntry.endTime, timeEntry.date)
     };
-    onSave(newEntry);
+    onSave(newEntry).then(this.toggleSave());
     this.setState({ timeEntry: TimesheetInput.defaultFormValues });
     this.toggleForm();
   }
 
   render() {
     const {
-      isFormVisible, timeEntry
+      isFormVisible, isFormSaving, timeEntry
     } = this.state;
     const {
       employer, activity, date, startTime, endTime
@@ -194,12 +206,16 @@ class TimesheetInput extends React.Component {
               </div>
             </div>
             <button
-              className="timesheet-input__add-button"
+              className={`
+                timesheet-input__add-button
+                timesheet-input__add-button${isFormSaving ? '--saving' : ''}
+              `}
               type="submit"
               readOnly
               onClick={this.handleSubmit}
+              disabled={isFormSaving}
             >
-                Add
+              {isFormSaving ? 'Add' : 'Saving'}
             </button>
           </div>
         </div>
