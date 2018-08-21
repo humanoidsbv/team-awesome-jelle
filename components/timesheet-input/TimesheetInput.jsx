@@ -2,7 +2,7 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
-import ConvertDateTime from '../../services/convert-date-time/convert-date-time';
+import convertTime from '../../services/convert-time/convert-time';
 import './timesheet-input.scss';
 
 class TimesheetInput extends React.Component {
@@ -50,7 +50,7 @@ class TimesheetInput extends React.Component {
     event.preventDefault();
 
     const prevState = { ...this.state };
-    onSave(ConvertDateTime(prevState));
+    onSave(convertTime(prevState));
     this.setState({ timeEntry: TimesheetInput.defaultFormValues });
     this.toggleForm();
   }

@@ -1,7 +1,7 @@
 import ConvertDateToUs from '../convert-date-to-us/convert-date-to-us';
 import ConvertToIsoString from '../convert-to-iso-string/convert-to-iso-string';
 
-const ConvertDateTime = (prevState) => {
+const convertTime = (prevState) => {
   const { date, startTime, endTime } = prevState.timeEntry;
 
   const convertedDate = ConvertDateToUs(date);
@@ -21,4 +21,4 @@ const ConvertDateTime = (prevState) => {
   };
 };
 
-export default ConvertDateTime;
+export default convertTime;
