@@ -1,17 +1,23 @@
-import ConvertDateToUs from '../convert-date-to-us/convert-date-to-us';
-import ConvertToIsoString from '../convert-to-iso-string/convert-to-iso-string';
+
+const convertDateToUs = (date) => {
+  const splittedDate = date.split('-');
+  return `${splittedDate[2]}-${splittedDate[1]}-${splittedDate[0]}`;
+};
+
 
 const convertTime = (prevState) => {
   const { date, startTime, endTime } = prevState.timeEntry;
 
-  const convertedDate = ConvertDateToUs(date);
+  const convertedDate = convertDateToUs(date);
 
-  const convertedStartTime = ConvertToIsoString(
-    convertedDate, startTime.replace('.', ':')
-  );
-  const convertedEndTime = ConvertToIsoString(
-    convertedDate, endTime.replace('.', ':')
-  );
+  const convertedStartTime = new Date(`
+    ${convertedDate} ${startTime.replace('.', ':')}
+  `).toISOString();
+
+  const convertedEndTime = new Date(`
+    ${convertedDate} ${endTime.replace('.', ':')}
+  `).toISOString();
+
 
   return {
     ...prevState.timeEntry,
