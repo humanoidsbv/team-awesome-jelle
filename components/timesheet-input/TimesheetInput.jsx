@@ -33,11 +33,7 @@ class TimesheetInput extends React.Component {
   }
 
   toggleSaving = () => {
-    this.setState(({ isFormSaving }) => (
-      {
-        isFormSaving: !isFormSaving
-      }
-    ));
+    this.setState(({ isFormSaving }) => ({ isFormSaving: !isFormSaving }));
   }
 
   handleChange = ({ target }) => {
@@ -63,7 +59,7 @@ class TimesheetInput extends React.Component {
       startTime: convertTimeToIso(timeEntry.startTime, timeEntry.date),
       endTime: convertTimeToIso(timeEntry.endTime, timeEntry.date)
     };
-    onSave(newEntry).then(this.toggleSaving());
+    onSave(newEntry).then(this.toggleSaving);
     this.setState({ timeEntry: TimesheetInput.defaultFormValues });
     this.toggleForm();
   }
