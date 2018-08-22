@@ -25,11 +25,7 @@ class TimesheetInput extends React.Component {
   }
 
   toggleForm = () => {
-    this.setState(({ isFormVisible }) => (
-      {
-        isFormVisible: !isFormVisible
-      }
-    ));
+    this.setState(({ isFormVisible }) => ({ isFormVisible: !isFormVisible }));
   }
 
   toggleSaving = () => {
@@ -51,7 +47,6 @@ class TimesheetInput extends React.Component {
     event.preventDefault();
 
     this.toggleSaving();
-
 
     const newEntry = {
       ...timeEntry,

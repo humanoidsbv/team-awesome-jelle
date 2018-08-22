@@ -6,7 +6,7 @@ export const fetchTimesheetEntries = () => (
 );
 
 export const postTimesheetEntry = timesheetEntry => (
-  fetch(api, {
+  fetch(`${api}/timesheets/`, {
     method: 'post',
     headers: {
       'Content-Type': 'application/json'
