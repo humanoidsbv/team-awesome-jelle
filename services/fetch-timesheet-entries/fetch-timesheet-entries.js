@@ -6,13 +6,13 @@ export const fetchTimesheetEntries = () => (
 );
 
 export const postTimesheetEntry = timesheetEntry => (
-  fetch(`${api}/timesheets/`, {
+  fetch(`${api}timesheets/`, {
     method: 'post',
     headers: {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(timesheetEntry)
-  })
+  }).then(response => response.json())
 );
 
 export const deleteTimesheetEntry = (timesheetEntryId) => {

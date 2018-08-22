@@ -46,15 +46,13 @@ class TimesheetInput extends React.Component {
     const { timeEntry } = this.state;
     event.preventDefault();
 
-    this.toggleSaving();
-
     const newEntry = {
       ...timeEntry,
       date: convertDateToIso(timeEntry.date),
       startTime: convertTimeToIso(timeEntry.startTime, timeEntry.date),
       endTime: convertTimeToIso(timeEntry.endTime, timeEntry.date)
     };
-    onSave(newEntry).then(this.toggleSaving);
+    onSave(newEntry);
     this.setState({ timeEntry: TimesheetInput.defaultFormValues });
     this.toggleForm();
   }

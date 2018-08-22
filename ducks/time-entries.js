@@ -6,8 +6,7 @@ const POST_TIME_ENTRY_SUCCES = 'POST_TIME_ENTRY_SUCCES';
 export const initialState = {
   items: [],
   error: '',
-  isLoading: false,
-  isSaving: false
+  isLoading: false
 };
 
 export function timeEntriesReducer(state = initialState, action) {
@@ -17,9 +16,9 @@ export function timeEntriesReducer(state = initialState, action) {
     case REQUEST_TIME_ENTRIES:
       return { ...state, isLoading: true };
     case POST_TIME_ENTRY:
-      return { ...state, isSaving: true };
+      return { ...state };
     case POST_TIME_ENTRY_SUCCES:
-      return { ...state, items: action.timesheetEntry, isSaving: true };
+      return { ...state, items: [...state.items, action.timesheetEntry] };
     default:
       return state;
   }
@@ -34,11 +33,11 @@ export const requestTimeEntriesSucces = timesheetEntries => ({
   timesheetEntries
 });
 
-export const postTimeEntry = () => ({
+export const postTimesheetEntry = () => ({
   type: POST_TIME_ENTRY
 });
 
-export const postTimeEntrySucces = timesheetEntry => ({
+export const postTimesheetEntrySucces = timesheetEntry => ({
   type: POST_TIME_ENTRY_SUCCES,
   timesheetEntry
 });

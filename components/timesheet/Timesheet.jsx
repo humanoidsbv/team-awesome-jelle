@@ -19,7 +19,9 @@ class Timesheet extends React.Component {
       date: PropTypes.string.isRequired
     })).isRequired,
     onRequestTimeEntries: PropTypes.func.isRequired,
-    onRequestTimeEntriesSucces: PropTypes.func.isRequired
+    onRequestTimeEntriesSucces: PropTypes.func.isRequired,
+    onPostTimesheetEntry: PropTypes.func.isRequired,
+    onPostTimesheetEntrySucces: PropTypes.func.isRequired
   }
 
   componentDidMount() {
@@ -30,13 +32,14 @@ class Timesheet extends React.Component {
     });
   }
 
-  handleAddTimesheetEntry = newEntry => (
-    postTimesheetEntry(newEntry).then(() => {
-      this.setState(({ timesheetEntries }) => (
-        { timesheetEntries: [newEntry, ...timesheetEntries] }
-      ));
-    })
-  )
+  handleAddTimesheetEntry = (newEntry) => {
+    const { onPostTimesheetEntry, onPostTimesheetEntrySucces } = this.props;
+    onPostTimesheetEntry();
+    postTimesheetEntry(newEntry).then((postedEntry) => {
+      onPostTimesheetEntrySucces(postedEntry);
+    });
+  };
+
 
   render() {
     const { timesheetEntries } = this.props;
