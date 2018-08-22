@@ -3,7 +3,7 @@ import React from 'react';
 import './index.scss';
 
 import Header from '../components/header/Header';
-import Timesheet from '../components/timesheet/Timesheet';
+import Timesheet from '../components/timesheet';
 
 const Index = () => (
   <React.Fragment>

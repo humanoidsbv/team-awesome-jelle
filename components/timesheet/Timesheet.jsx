@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import TimesheetDate from '../timesheet-date/TimesheetDate';
 import TimesheetEntry from '../timesheet-entry/TimesheetEntry';
@@ -9,13 +10,23 @@ import { fetchTimesheetEntries, postTimesheetEntry } from '../../services/fetch-
 import './timesheet.scss';
 
 class Timesheet extends React.Component {
-  state = {
-    timesheetEntries: []
+  static propTypes = {
+    timesheetEntries: PropTypes.arrayOf(PropTypes.shape({
+      employer: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
+      startTime: PropTypes.string.isRequired,
+      endTime: PropTypes.string.isRequired,
+      date: PropTypes.string.isRequired
+    })).isRequired,
+    onRequestTimeEntries: PropTypes.func.isRequired,
+    onRequestTimeEntriesSucces: PropTypes.func.isRequired
   }
 
   componentDidMount() {
+    const { onRequestTimeEntries, onRequestTimeEntriesSucces } = this.props;
+    onRequestTimeEntries();
     fetchTimesheetEntries().then((timesheetEntries) => {
-      this.setState({ timesheetEntries });
+      onRequestTimeEntriesSucces(timesheetEntries);
     });
   }
 
@@ -28,7 +39,7 @@ class Timesheet extends React.Component {
   )
 
   render() {
-    const { timesheetEntries } = this.state;
+    const { timesheetEntries } = this.props;
     return (
       <div className="timesheet-wrapper">
         <TimesheetInput
@@ -42,6 +53,7 @@ class Timesheet extends React.Component {
             />
             )}
             <TimesheetEntry
+              id={timesheetEntry.id}
               employer={timesheetEntry.employer}
               startTime={timesheetEntry.startTime}
               endTime={timesheetEntry.endTime}

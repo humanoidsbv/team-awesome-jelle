@@ -1,7 +1,7 @@
 const api = 'http://localhost:3001/api/';
 
 export const fetchTimesheetEntries = () => (
-  fetch(api)
+  fetch(`${api}timesheets/`)
     .then(response => response.json())
 );
 
