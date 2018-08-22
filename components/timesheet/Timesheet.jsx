@@ -4,7 +4,7 @@ import TimesheetDate from '../timesheet-date/TimesheetDate';
 import TimesheetEntry from '../timesheet-entry/TimesheetEntry';
 import TimesheetInput from '../timesheet-input/TimesheetInput';
 
-import fetchTimesheetEntries from '../../services/fetch-timesheet-entries/fetch-timesheet-entries';
+import { fetchTimesheetEntries, postTimesheetEntry } from '../../services/fetch-timesheet-entries/fetch-timesheet-entries';
 
 import './timesheet.scss';
 
@@ -19,14 +19,13 @@ class Timesheet extends React.Component {
     });
   }
 
-  handleAddTimesheetEntry = (newEntry) => {
-    this.setState(state => ({
-      timesheetEntries: [
-        newEntry,
-        ...state.timesheetEntries
-      ]
-    }));
-  }
+  handleAddTimesheetEntry = newEntry => (
+    postTimesheetEntry(newEntry).then(() => {
+      this.setState(({ timesheetEntries }) => (
+        { timesheetEntries: [newEntry, ...timesheetEntries] }
+      ));
+    })
+  )
 
   render() {
     const { timesheetEntries } = this.state;
