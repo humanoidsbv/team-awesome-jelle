@@ -1,4 +1,4 @@
-const api = 'http://localhost:3001/api/timesheets/';
+const api = 'http://localhost:3001/api/';
 
 export const fetchTimesheetEntries = () => (
   fetch(api)
@@ -14,3 +14,13 @@ export const postTimesheetEntry = timesheetEntry => (
     body: JSON.stringify(timesheetEntry)
   })
 );
+
+export const deleteTimesheetEntry = (timesheetEntryId) => {
+  fetch(`${api}timesheets/${timesheetEntryId}`, {
+    method: 'delete',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(timesheetEntryId)
+  });
+};
