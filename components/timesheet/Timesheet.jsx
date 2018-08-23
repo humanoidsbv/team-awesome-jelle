@@ -5,7 +5,7 @@ import TimesheetDate from '../timesheet-date/TimesheetDate';
 import TimesheetEntry from '../timesheet-entry/TimesheetEntry';
 import TimesheetInput from '../timesheet-input/TimesheetInput';
 
-import { fetchTimesheetEntries, postTimesheetEntry } from '../../services/fetch-timesheet-entries/fetch-timesheet-entries';
+import { fetchTimesheetEntries, postTimesheetEntry, deleteTimesheetEntry } from '../../services/fetch-timesheet-entries/fetch-timesheet-entries';
 
 import './timesheet.scss';
 
@@ -18,10 +18,12 @@ class Timesheet extends React.Component {
       endTime: PropTypes.string.isRequired,
       date: PropTypes.string.isRequired
     })).isRequired,
-    onRequestTimeEntries: PropTypes.func.isRequired,
-    onRequestTimeEntriesSucces: PropTypes.func.isRequired,
+    onDeleteTimesheetEntry: PropTypes.func.isRequired,
+    onDeleteTimesheetEntrySucces: PropTypes.func.isRequired,
     onPostTimesheetEntry: PropTypes.func.isRequired,
-    onPostTimesheetEntrySucces: PropTypes.func.isRequired
+    onPostTimesheetEntrySucces: PropTypes.func.isRequired,
+    onRequestTimeEntries: PropTypes.func.isRequired,
+    onRequestTimeEntriesSucces: PropTypes.func.isRequired
   }
 
   componentDidMount() {
@@ -40,6 +42,14 @@ class Timesheet extends React.Component {
     });
   };
 
+  handleDeleteTimesheetEntry = (timesheetEntryId) => {
+    const { onDeleteTimesheetEntry, onDeleteTimesheetEntrySucces } = this.props;
+    onDeleteTimesheetEntry();
+    deleteTimesheetEntry(timesheetEntryId).then(() => {
+      onDeleteTimesheetEntrySucces(timesheetEntryId);
+    });
+  }
+
 
   render() {
     const { timesheetEntries } = this.props;
@@ -56,10 +66,11 @@ class Timesheet extends React.Component {
             />
             )}
             <TimesheetEntry
-              id={timesheetEntry.id}
               employer={timesheetEntry.employer}
-              startTime={timesheetEntry.startTime}
               endTime={timesheetEntry.endTime}
+              id={timesheetEntry.id}
+              onDelete={this.handleDeleteTimesheetEntry}
+              startTime={timesheetEntry.startTime}
             />
           </React.Fragment>
         ))}

@@ -6,28 +6,28 @@ import './timesheet-entry.scss';
 
 class TimesheetEntry extends React.Component {
   static propTypes = {
-    id: PropTypes.string.isRequired,
     employer: PropTypes.string.isRequired,
-    startTime: PropTypes.string.isRequired,
-    endTime: PropTypes.string.isRequired
-  }
-
-  state = {
-    isEntryDeleting: false
+    endTime: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    onDelete: PropTypes.func.isRequired,
+    startTime: PropTypes.string.isRequired
   }
 
   toggleDeleting = () => {
     this.setState(({ isEntryDeleting }) => ({ isEntryDeleting: !isEntryDeleting }));
   }
 
-  handleDelete = (event) => {
+  handleDelete = () => {
+    const { onDelete } = this.props;
+    const { id } = this.props;
+
+    onDelete(id);
   }
 
   render() {
-    const { isFormDeleting } = this.state;
     const {
-      id, employer, endTime, startTime
-    } = this.props
+      employer, endTime, startTime
+    } = this.props;
 
     return (
       <div className="timesheet-entry-wrapper">
@@ -37,6 +37,7 @@ class TimesheetEntry extends React.Component {
 
         <button
           className="timesheet-entry__delete-button"
+          onClick={this.handleDelete}
           type="submit"
         >
           <img

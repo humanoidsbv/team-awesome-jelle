@@ -15,12 +15,11 @@ export const postTimesheetEntry = timesheetEntry => (
   }).then(response => response.json())
 );
 
-export const deleteTimesheetEntry = (timesheetEntryId) => {
+export const deleteTimesheetEntry = timesheetEntryId => (
   fetch(`${api}timesheets/${timesheetEntryId}`, {
     method: 'delete',
     headers: {
       'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(timesheetEntryId)
-  });
-};
+    }
+  }).then(response => response.json())
+);

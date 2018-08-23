@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import {
+  deleteTimesheetEntry,
+  deleteTimesheetEntrySucces,
   requestTimeEntries,
   requestTimeEntriesSucces,
   postTimesheetEntry,
@@ -18,6 +20,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
+  onDeleteTimesheetEntry: deleteTimesheetEntry,
+  onDeleteTimesheetEntrySucces: deleteTimesheetEntrySucces,
   onRequestTimeEntries: requestTimeEntries,
   onRequestTimeEntriesSucces: requestTimeEntriesSucces,
   onPostTimesheetEntry: postTimesheetEntry,
