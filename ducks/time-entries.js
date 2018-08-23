@@ -11,6 +11,8 @@ export const initialState = {
   isLoading: false
 };
 
+export const timesheetEntriesSelector = state => state.timesheetEntries.items;
+
 export function timeEntriesReducer(state = initialState, action) {
   switch (action.type) {
     case DELETE_TIMESHEET_ENTRY:
