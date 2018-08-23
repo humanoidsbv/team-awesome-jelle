@@ -3,13 +3,13 @@ import React from 'react';
 import './index.scss';
 
 import Header from '../components/header/Header';
-import Timesheet from '../components/timesheet';
+import TimesheetContainer from '../components/timesheet';
 
 const Index = () => (
   <React.Fragment>
     <Header />
     <main className="timesheet-page-wrapper">
-      <Timesheet />
+      <TimesheetContainer />
     </main>
   </React.Fragment>
 );

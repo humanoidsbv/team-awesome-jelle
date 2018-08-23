@@ -1,16 +1,17 @@
 @import "../../shared/styles/main";
 
 .timesheet-entry-wrapper {
+  align-items: center;
   border: solid 1px $color-accent-2;
   border-left: solid 4px $color-primary;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: 30px 16px 33px;
 
   @include tablet {
     &:hover {
       .timesheet-entry__delete-button {
-        display: block;
+        display: flex;
     }
   }
 }
@@ -19,7 +20,20 @@
 .timesheet-entry {
   &__delete-button {
     background-color: $color-delete-button;
+    border-radius: 4px;
+    color: $color-monochrome-1;
     display: none;
+    flex-direction: row;
+    height: 30px;
+    justify-content: space-around;
+    margin-left: 33px;
+    width: 79px;
+  }
+
+  &__delete-icon {
+    -webkit-mask: url("/static/icons/forbid.svg")   no-repeat;
+    -webkit-mask-size: 16px 16px;
+    background-color: $color-monochrome-1;
   }
 
   &__employer {
@@ -30,5 +44,6 @@
   &__time {
     color: $color-accent-5;
     font-size: 16px;
+    margin-left: auto;
   }
 }

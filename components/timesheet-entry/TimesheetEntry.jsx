@@ -42,10 +42,12 @@ class TimesheetEntry extends React.Component {
         >
           <img
             alt="cancel sign"
-            className="timesheet-field__plus-svg"
-            src="../../static/icons/close.svg"
+            className="timesheet-entry__delete-icon"
+            src="../../static/icons/forbid.svg"
           />
-          Delete
+          <p className="timesheet-entry__delete-button-text">
+            Delete
+          </p>
         </button>
         <p className="timesheet-entry__time">
           {`${new Date(startTime).toLocaleTimeString('nl-NL', { hour: 'numeric', minute: 'numeric' })}

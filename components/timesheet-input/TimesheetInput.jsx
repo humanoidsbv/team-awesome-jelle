@@ -15,21 +15,17 @@ class TimesheetInput extends React.Component {
   }
 
   static propTypes = {
-    onSave: PropTypes.func.isRequired
+    onSave: PropTypes.func.isRequired,
+    isFormSaving: PropTypes.bool.isRequired
   };
 
   state = {
     timeEntry: TimesheetInput.defaultFormValues,
-    isFormVisible: false,
-    isFormSaving: false
+    isFormVisible: false
   }
 
   toggleForm = () => {
     this.setState(({ isFormVisible }) => ({ isFormVisible: !isFormVisible }));
-  }
-
-  toggleSaving = () => {
-    this.setState(({ isFormSaving }) => ({ isFormSaving: !isFormSaving }));
   }
 
   handleChange = ({ target }) => {
@@ -58,8 +54,9 @@ class TimesheetInput extends React.Component {
   }
 
   render() {
+    const { isFormSaving } = this.props;
     const {
-      isFormVisible, isFormSaving, timeEntry
+      isFormVisible, timeEntry
     } = this.state;
     const {
       employer, activity, date, startTime, endTime
@@ -143,13 +140,13 @@ class TimesheetInput extends React.Component {
                 </select>
               </label>
             </div>
-            <div className="timesheet-input__field-item timesheet-input__field-item--full">
+            <div className="timesheet-input__field-item timesheet-input__field-item--date">
               <label
                 className="timesheet-input__label"
                 htmlFor="date"
                 id="date"
               >
-                Date
+                DATE
                 <input
                   className="timesheet-input__select"
                   id="date"
@@ -182,7 +179,7 @@ class TimesheetInput extends React.Component {
                   className="timesheet-input__label"
                   htmlFor="to"
                 >
-                  TO
+                  TODATE
                   <input
                     className="timesheet-input__select"
                     id="to"

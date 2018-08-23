@@ -8,10 +8,12 @@ const REQUEST_TIMESHEET_ENTRIES_SUCCES = 'REQUEST_TIMESHEET_ENTRIES_SUCCES';
 export const initialState = {
   items: [],
   error: '',
-  isLoading: false
+  isLoading: false,
+  isFormSaving: false
 };
 
 export const timesheetEntriesSelector = state => state.timesheetEntries.items;
+export const isFormSavingSelector = state => state.timesheetEntries.isFormSaving;
 
 export function timeEntriesReducer(state = initialState, action) {
   switch (action.type) {
@@ -25,9 +27,9 @@ export function timeEntriesReducer(state = initialState, action) {
         ))
       };
     case POST_TIMESHEET_ENTRY:
-      return { ...state };
+      return { ...state, isFormSaving: true };
     case POST_TIMESHEET_ENTRY_SUCCES:
-      return { ...state, items: [...state.items, action.timesheetEntry] };
+      return { ...state, items: [...state.items, action.timesheetEntry], isFormSaving: false };
     case REQUEST_TIMESHEET_ENTRIES_SUCCES:
       return { ...state, items: action.timesheetEntries, isLoading: false };
     case REQUEST_TIMESHEET_ENTRIES:

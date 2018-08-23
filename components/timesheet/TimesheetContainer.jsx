@@ -9,14 +9,16 @@ import {
   requestTimeEntriesSucces,
   postTimesheetEntry,
   postTimesheetEntrySucces,
-  timesheetEntriesSelector
+  timesheetEntriesSelector,
+  isFormSavingSelector
 }
   from '../../ducks/time-entries';
 
 import Timesheet from './Timesheet';
 
 const mapStateToProps = state => ({
-  timesheetEntries: timesheetEntriesSelector(state)
+  timesheetEntries: timesheetEntriesSelector(state),
+  isFormSaving: isFormSavingSelector(state)
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({

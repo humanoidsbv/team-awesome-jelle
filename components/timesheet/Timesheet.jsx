@@ -18,6 +18,7 @@ class Timesheet extends React.Component {
       endTime: PropTypes.string.isRequired,
       date: PropTypes.string.isRequired
     })).isRequired,
+    isFormSaving: PropTypes.bool.isRequired,
     onDeleteTimesheetEntry: PropTypes.func.isRequired,
     onDeleteTimesheetEntrySucces: PropTypes.func.isRequired,
     onPostTimesheetEntry: PropTypes.func.isRequired,
@@ -52,11 +53,12 @@ class Timesheet extends React.Component {
 
 
   render() {
-    const { timesheetEntries } = this.props;
+    const { timesheetEntries, isFormSaving } = this.props;
     return (
       <div className="timesheet-wrapper">
         <TimesheetInput
           onSave={this.handleAddTimesheetEntry}
+          isFormSaving={isFormSaving}
         />
         {timesheetEntries.map((timesheetEntry, index, array) => (
           <React.Fragment key={timesheetEntry.id}>
