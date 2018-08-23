@@ -8,6 +8,7 @@
   "plugins": ["babel"],
   "root": true,
   "rules": {
+    "react/destructuring-assignment": "off",
     "comma-dangle": [ "error", "never" ],
     "jsx-a11y/label-has-for": [ 2, {
             "components": [ "Label" ],

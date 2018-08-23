@@ -2,105 +2,11 @@
   "timesheets": [
     {
       "employer": "Port of Rotterdam",
-      "id": "1",
-      "startTime": "2018-07-29T07:00:00.000Z",
-      "endTime": "2018-07-29T15:00:00.000Z",
-      "date": "2018-07-29"
-    },
-    {
-      "employer": "Port of Rotterdam",
-      "id": "2",
-      "startTime": "2018-07-28T07:00:00.000Z",
-      "endTime": "2018-07-28T11:00:00.000Z",
-      "date": "2018-07-28"
-    },
-    {
-      "employer": "Port of Rotterdam",
-      "activity": "Meeting",
-      "date": "2018-07-29",
-      "startTime": "2018-07-29T11:00:00.000Z",
-      "endTime": "2018-07-29T12:00:00.000Z",
-      "id": "ksg6eQj"
-    },
-    {
-      "employer": "Port of Rotterdam",
       "activity": "Design",
       "date": "2019-07-30",
       "startTime": "2019-07-30T11:00:00.000Z",
       "endTime": "2019-07-30T12:00:00.000Z",
-      "id": "HZXNJQN"
-    },
-    {
-      "employer": "Port of Rotterdam",
-      "activity": "Design",
-      "date": "2019-07-30",
-      "startTime": "2019-07-30T11:00:00.000Z",
-      "endTime": "2019-07-30T16:00:00.000Z",
-      "id": "Nj2e27w"
-    },
-    {
-      "employer": "Port of Rotterdam",
-      "activity": "Design",
-      "date": "2019-07-30",
-      "startTime": "2019-07-30T17:00:00.000Z",
-      "endTime": "2019-07-30T21:00:00.000Z",
       "id": "CVve75W"
-    },
-    {
-      "employer": "Port of Rotterdam",
-      "activity": "Meeting",
-      "date": "2018-09-19",
-      "startTime": "2018-09-19T11:00:00.000Z",
-      "endTime": "2018-09-19T17:00:00.000Z",
-      "id": "YJqV0Db"
-    },
-    {
-      "employer": "Port of Rotterdam",
-      "activity": "Design",
-      "date": "2018-01-19",
-      "startTime": "2018-01-19T09:00:00.000Z",
-      "endTime": "2018-01-19T15:00:00.000Z",
-      "id": "yTkFIJG"
-    },
-    {
-      "employer": "Port of Rotterdam",
-      "activity": "Design",
-      "date": "2018-02-19",
-      "startTime": "2018-02-19T00:00:00.000Z",
-      "endTime": "2018-02-19T07:00:00.000Z",
-      "id": "A1q9amU"
-    },
-    {
-      "employer": "Port of Rotterdam",
-      "activity": "Design",
-      "date": "2018-07-29",
-      "startTime": "2018-07-29T11:00:00.000Z",
-      "endTime": "2018-07-29T12:00:00.000Z",
-      "id": "nsgt1wD"
-    },
-    {
-      "employer": "Port of Rotterdam",
-      "activity": "Design",
-      "date": "2019-07-30",
-      "startTime": "2019-07-30T11:00:00.000Z",
-      "endTime": "2019-07-30T12:00:00.000Z",
-      "id": "6z_fZZ9"
-    },
-    {
-      "employer": "Port of Rotterdam",
-      "activity": "Design",
-      "date": "2019-07-30",
-      "startTime": "2019-07-30T11:00:00.000Z",
-      "endTime": "2019-07-30T12:00:00.000Z",
-      "id": "eDzIiAn"
-    },
-    {
-      "employer": "Port of Rotterdam",
-      "activity": "Meeting",
-      "date": "2019-07-30",
-      "startTime": "2019-07-30T11:00:00.000Z",
-      "endTime": "2019-07-30T12:00:00.000Z",
-      "id": "UlvIvnE"
     }
   ]
 }
