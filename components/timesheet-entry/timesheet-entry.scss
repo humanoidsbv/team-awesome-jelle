@@ -11,7 +11,22 @@
   @include tablet {
     &:hover {
       .timesheet-entry__delete-button {
+        background-color: $color-delete-button;
+        border: none;
         display: flex;
+        flex-direction: row;
+        height: 30px;
+        justify-content: space-around;
+        opacity: 1;
+        width: 79px;
+    }
+
+      .timesheet-entry__delete-icon {
+        -webkit-mask: url("/static/icons/forbid.svg")   no-repeat;
+        -webkit-mask-size: 16px 16px;
+        // background-color: $color-monochrome-1;
+        height: 16px;
+        width: 16px;
     }
   }
 }
@@ -19,21 +34,25 @@
 
 .timesheet-entry {
   &__delete-button {
-    background-color: $color-delete-button;
+    -moz-transition: opacity .2s ease-in-out;
+    -webkit-transition: opacity .2s ease-in-out;
+    background-color: $color-monochrome-1;
+    border: none;
     border-radius: 4px;
     color: $color-monochrome-1;
-    display: none;
     flex-direction: row;
     height: 30px;
     justify-content: space-around;
     margin-left: 33px;
+    opacity: 0;
+    transition: opacity .2s ease-in-out;
     width: 79px;
   }
 
   &__delete-icon {
-    -webkit-mask: url("/static/icons/forbid.svg")   no-repeat;
-    -webkit-mask-size: 16px 16px;
     background-color: $color-monochrome-1;
+    height: 0;
+    width: 0;
   }
 
   &__employer {

@@ -18,10 +18,7 @@ class TimesheetEntry extends React.Component {
   }
 
   handleDelete = () => {
-    const { onDelete } = this.props;
-    const { id } = this.props;
-
-    onDelete(id);
+    this.props.onDelete(this.props.id);
   }
 
   render() {
@@ -40,14 +37,10 @@ class TimesheetEntry extends React.Component {
           onClick={this.handleDelete}
           type="submit"
         >
-          <img
-            alt="cancel sign"
+          <svg
             className="timesheet-entry__delete-icon"
-            src="../../static/icons/forbid.svg"
           />
-          <p className="timesheet-entry__delete-button-text">
             Delete
-          </p>
         </button>
         <p className="timesheet-entry__time">
           {`${new Date(startTime).toLocaleTimeString('nl-NL', { hour: 'numeric', minute: 'numeric' })}
