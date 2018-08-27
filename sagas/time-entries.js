@@ -17,17 +17,17 @@ import {
 
 function* onDeleteTimesheetEntry(action) {
   yield call(deleteTimesheetEntry, action.timesheetEntryId);
-  yield put(deleteTimesheetEntrySucces, action.timesheetEntryId);
+  yield put(deleteTimesheetEntrySucces(action.timesheetEntryId));
 }
 
 function* onGetTimesheetEntries() {
   const timesheetEntries = yield call(fetchTimesheetEntries);
-  yield put(requestTimeEntriesSucces, timesheetEntries);
+  yield put(requestTimeEntriesSucces(timesheetEntries));
 }
 
 function* onPostTimesheetEntry(action) {
   const timesheetEntry = yield call(postTimesheetEntry, action.timesheetEntry);
-  yield put(postTimesheetEntrySucces, timesheetEntry);
+  yield put(postTimesheetEntrySucces(timesheetEntry));
 }
 
 export default function* watchTimesheetEntries() {
