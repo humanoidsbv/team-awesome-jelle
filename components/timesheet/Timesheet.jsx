@@ -23,20 +23,14 @@ class Timesheet extends React.Component {
   }
 
   componentDidMount() {
-    const { onRequestTimeEntries } = this.props;
-    onRequestTimeEntries();
+    this.props.onRequestTimeEntries();
   }
 
-  handleAddTimesheetEntry = (newEntry) => {
-    const { onPostTimesheetEntry } = this.props;
-    return onPostTimesheetEntry(newEntry);
-  }
+  handleAddTimesheetEntry = newEntry => this.props.onPostTimesheetEntry(newEntry);
 
   handleDeleteTimesheetEntry = (timesheetEntryId) => {
-    const { onDeleteTimesheetEntry } = this.props;
-    onDeleteTimesheetEntry(timesheetEntryId);
+    this.props.onDeleteTimesheetEntry(timesheetEntryId);
   }
-
 
   render() {
     const { timesheetEntries, isFormSaving } = this.props;
