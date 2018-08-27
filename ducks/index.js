@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import { timeEntriesReducer } from './time-entries';
 
-export const rootReducer = combineReducers({
+const rootReducer = combineReducers({
   timesheetEntries: timeEntriesReducer
 });
 
