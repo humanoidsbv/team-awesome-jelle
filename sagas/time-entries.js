@@ -6,7 +6,10 @@ import {
   POST_TIMESHEET_ENTRY_SUCCES,
   POST_TIMESHEET_ENTRY,
   REQUEST_TIMESHEET_ENTRIES_SUCCES,
-  REQUEST_TIMESHEET_ENTRIES
+  REQUEST_TIMESHEET_ENTRIES,
+  deleteTimesheetEntrySucces,
+  postTimesheetEntrySucces,
+  requestTimeEntriesSucces
 } from '../ducks/time-entries';
 
 import {
@@ -17,17 +20,17 @@ import {
 
 function* onDeleteTimesheetEntry(action) {
   yield deleteTimesheetEntry(action.timesheetEntryId);
-  yield put({ type: DELETE_TIMESHEET_ENTRY_SUCCES, timesheetEntryId: action.timesheetEntryId });
+  yield put(deleteTimesheetEntrySucces(action.timesheetEntryId));
 }
 
 function* onGetTimesheetEntries() {
   const timesheetEntries = yield fetchTimesheetEntries();
-  yield put({ type: REQUEST_TIMESHEET_ENTRIES_SUCCES, timesheetEntries });
+  yield put(requestTimeEntriesSucces(timesheetEntries));
 }
 
 function* onPostTimesheetEntry(action) {
   const timesheetEntry = yield postTimesheetEntry(action.timesheetEntry);
-  yield put({ type: POST_TIMESHEET_ENTRY_SUCCES, timesheetEntry });
+  yield put(postTimesheetEntrySucces(timesheetEntry));
 }
 
 export default function* watchTimesheetEntries() {

@@ -44,11 +44,26 @@ export const deleteTimesheetEntry = timesheetEntryId => ({
   timesheetEntryId
 });
 
+export const deleteTimesheetEntrySucces = timesheetEntryId => ({
+  type: DELETE_TIMESHEET_ENTRY_SUCCES,
+  timesheetEntryId
+});
+
 export const postTimesheetEntry = timesheetEntry => ({
   type: POST_TIMESHEET_ENTRY,
   timesheetEntry
 });
 
+export const postTimesheetEntrySucces = timesheetEntry => ({
+  type: POST_TIMESHEET_ENTRY_SUCCES,
+  timesheetEntry
+});
+
 export const requestTimeEntries = () => ({
   type: REQUEST_TIMESHEET_ENTRIES
+});
+
+export const requestTimeEntriesSucces = timesheetEntries => ({
+  type: REQUEST_TIMESHEET_ENTRIES_SUCCES,
+  timesheetEntries
 });
