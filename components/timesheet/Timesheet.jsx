@@ -5,12 +5,6 @@ import TimesheetDate from '../timesheet-date/TimesheetDate';
 import TimesheetEntry from '../timesheet-entry/TimesheetEntry';
 import TimesheetInput from '../timesheet-input/TimesheetInput';
 
-import {
-  fetchTimesheetEntries,
-  postTimesheetEntry,
-  deleteTimesheetEntry
-} from '../../services/fetch-timesheet-entries/fetch-timesheet-entries';
-
 import './timesheet.scss';
 
 class Timesheet extends React.Component {
@@ -24,37 +18,19 @@ class Timesheet extends React.Component {
     })).isRequired,
     isFormSaving: PropTypes.bool.isRequired,
     onDeleteTimesheetEntry: PropTypes.func.isRequired,
-    onDeleteTimesheetEntrySucces: PropTypes.func.isRequired,
     onPostTimesheetEntry: PropTypes.func.isRequired,
-    onPostTimesheetEntrySucces: PropTypes.func.isRequired,
-    onRequestTimeEntries: PropTypes.func.isRequired,
-    onRequestTimeEntriesSucces: PropTypes.func.isRequired
+    onRequestTimeEntries: PropTypes.func.isRequired
   }
 
   componentDidMount() {
-    const { onRequestTimeEntries, onRequestTimeEntriesSucces } = this.props;
-    onRequestTimeEntries();
-    fetchTimesheetEntries().then((timesheetEntries) => {
-      onRequestTimeEntriesSucces(timesheetEntries);
-    });
+    this.props.onRequestTimeEntries();
   }
 
-  handleAddTimesheetEntry = (newEntry) => {
-    const { onPostTimesheetEntry, onPostTimesheetEntrySucces } = this.props;
-    onPostTimesheetEntry();
-    postTimesheetEntry(newEntry).then((postedEntry) => {
-      onPostTimesheetEntrySucces(postedEntry);
-    });
-  };
+  handleAddTimesheetEntry = newEntry => this.props.onPostTimesheetEntry(newEntry);
 
   handleDeleteTimesheetEntry = (timesheetEntryId) => {
-    const { onDeleteTimesheetEntry, onDeleteTimesheetEntrySucces } = this.props;
-    onDeleteTimesheetEntry();
-    deleteTimesheetEntry(timesheetEntryId).then(() => {
-      onDeleteTimesheetEntrySucces(timesheetEntryId);
-    });
+    this.props.onDeleteTimesheetEntry(timesheetEntryId);
   }
-
 
   render() {
     const { timesheetEntries, isFormSaving } = this.props;

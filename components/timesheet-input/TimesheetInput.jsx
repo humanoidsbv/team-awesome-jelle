@@ -104,6 +104,7 @@ class TimesheetInput extends React.Component {
                   onChange={this.handleChange}
                   name="employer"
                   type="text"
+                  required
                   value={employer}
                 >
                   <option>
@@ -126,6 +127,7 @@ class TimesheetInput extends React.Component {
                   className="timesheet-input__select"
                   id="activity"
                   readOnly
+                  required
                   type="text"
                   name="activity"
                   onChange={this.handleChange}
@@ -152,6 +154,7 @@ class TimesheetInput extends React.Component {
                   id="date"
                   onChange={this.handleChange}
                   name="date"
+                  required
                   type="text"
                   value={date}
                 />
@@ -169,6 +172,7 @@ class TimesheetInput extends React.Component {
                     id="from"
                     onChange={this.handleChange}
                     name="startTime"
+                    required
                     type="text"
                     value={startTime}
                   />
@@ -185,6 +189,7 @@ class TimesheetInput extends React.Component {
                     id="to"
                     onChange={this.handleChange}
                     name="endTime"
+                    required
                     type="text"
                     value={endTime}
                   />
