@@ -1,11 +1,8 @@
 import { put, takeEvery } from 'redux-saga/effects';
 
 import {
-  DELETE_TIMESHEET_ENTRY_SUCCES,
   DELETE_TIMESHEET_ENTRY,
-  POST_TIMESHEET_ENTRY_SUCCES,
   POST_TIMESHEET_ENTRY,
-  REQUEST_TIMESHEET_ENTRIES_SUCCES,
   REQUEST_TIMESHEET_ENTRIES,
   deleteTimesheetEntrySucces,
   postTimesheetEntrySucces,
