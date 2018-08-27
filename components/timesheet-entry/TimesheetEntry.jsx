@@ -8,7 +8,7 @@ class TimesheetEntry extends React.Component {
   static propTypes = {
     employer: PropTypes.string.isRequired,
     endTime: PropTypes.string.isRequired,
-    id: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired,
     onDelete: PropTypes.func.isRequired,
     startTime: PropTypes.string.isRequired
   }
