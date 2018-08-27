@@ -57,10 +57,6 @@
     margin: 16px auto 8px;
     width: 90%;
 
-    &:invalid {
-      border: 2px red;
-    }
-
     @include tablet {
       display: flex;
       flex-direction: column;

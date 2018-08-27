@@ -1,4 +1,4 @@
-import { put, takeEvery } from 'redux-saga/effects';
+import { call, put, takeEvery } from 'redux-saga/effects';
 
 import {
   DELETE_TIMESHEET_ENTRY,
@@ -16,17 +16,17 @@ import {
 } from '../services/fetch-timesheet-entries/fetch-timesheet-entries';
 
 function* onDeleteTimesheetEntry(action) {
-  yield deleteTimesheetEntry(action.timesheetEntryId);
+  yield call(deleteTimesheetEntry(action.timesheetEntryId));
   yield put(deleteTimesheetEntrySucces(action.timesheetEntryId));
 }
 
 function* onGetTimesheetEntries() {
-  const timesheetEntries = yield fetchTimesheetEntries();
+  const timesheetEntries = yield call(fetchTimesheetEntries());
   yield put(requestTimeEntriesSucces(timesheetEntries));
 }
 
 function* onPostTimesheetEntry(action) {
-  const timesheetEntry = yield postTimesheetEntry(action.timesheetEntry);
+  const timesheetEntry = yield call(postTimesheetEntry(action.timesheetEntry));
   yield put(postTimesheetEntrySucces(timesheetEntry));
 }
 
