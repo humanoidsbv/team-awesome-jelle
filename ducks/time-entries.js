@@ -39,8 +39,9 @@ export function timeEntriesReducer(state = initialState, action) {
   }
 }
 
-export const deleteTimesheetEntry = () => ({
-  type: DELETE_TIMESHEET_ENTRY
+export const deleteTimesheetEntry = timesheetEntryId => ({
+  type: DELETE_TIMESHEET_ENTRY,
+  timesheetEntryId
 });
 
 export const deleteTimesheetEntrySucces = timesheetEntryId => ({
@@ -48,8 +49,9 @@ export const deleteTimesheetEntrySucces = timesheetEntryId => ({
   timesheetEntryId
 });
 
-export const postTimesheetEntry = () => ({
-  type: POST_TIMESHEET_ENTRY
+export const postTimesheetEntry = timesheetEntry => ({
+  type: POST_TIMESHEET_ENTRY,
+  timesheetEntry
 });
 
 export const postTimesheetEntrySucces = timesheetEntry => ({

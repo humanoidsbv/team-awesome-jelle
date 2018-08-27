@@ -5,54 +5,36 @@ import TimesheetDate from '../timesheet-date/TimesheetDate';
 import TimesheetEntry from '../timesheet-entry/TimesheetEntry';
 import TimesheetInput from '../timesheet-input/TimesheetInput';
 
-import {
-  fetchTimesheetEntries,
-  postTimesheetEntry,
-  deleteTimesheetEntry
-} from '../../services/fetch-timesheet-entries/fetch-timesheet-entries';
-
 import './timesheet.scss';
 
 class Timesheet extends React.Component {
   static propTypes = {
     timesheetEntries: PropTypes.arrayOf(PropTypes.shape({
       employer: PropTypes.string.isRequired,
-      id: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
       startTime: PropTypes.string.isRequired,
       endTime: PropTypes.string.isRequired,
       date: PropTypes.string.isRequired
     })).isRequired,
     isFormSaving: PropTypes.bool.isRequired,
     onDeleteTimesheetEntry: PropTypes.func.isRequired,
-    onDeleteTimesheetEntrySucces: PropTypes.func.isRequired,
     onPostTimesheetEntry: PropTypes.func.isRequired,
-    onPostTimesheetEntrySucces: PropTypes.func.isRequired,
-    onRequestTimeEntries: PropTypes.func.isRequired,
-    onRequestTimeEntriesSucces: PropTypes.func.isRequired
+    onRequestTimeEntries: PropTypes.func.isRequired
   }
 
   componentDidMount() {
-    const { onRequestTimeEntries, onRequestTimeEntriesSucces } = this.props;
+    const { onRequestTimeEntries } = this.props;
     onRequestTimeEntries();
-    fetchTimesheetEntries().then((timesheetEntries) => {
-      onRequestTimeEntriesSucces(timesheetEntries);
-    });
   }
 
   handleAddTimesheetEntry = (newEntry) => {
-    const { onPostTimesheetEntry, onPostTimesheetEntrySucces } = this.props;
-    onPostTimesheetEntry();
-    postTimesheetEntry(newEntry).then((postedEntry) => {
-      onPostTimesheetEntrySucces(postedEntry);
-    });
-  };
+    const { onPostTimesheetEntry } = this.props;
+    return onPostTimesheetEntry(newEntry);
+  }
 
   handleDeleteTimesheetEntry = (timesheetEntryId) => {
-    const { onDeleteTimesheetEntry, onDeleteTimesheetEntrySucces } = this.props;
-    onDeleteTimesheetEntry();
-    deleteTimesheetEntry(timesheetEntryId).then(() => {
-      onDeleteTimesheetEntrySucces(timesheetEntryId);
-    });
+    const { onDeleteTimesheetEntry } = this.props;
+    onDeleteTimesheetEntry(timesheetEntryId);
   }
 
 
