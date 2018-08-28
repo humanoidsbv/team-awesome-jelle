@@ -135,7 +135,7 @@
     width: 100%;
 
     &:invalid {
-      border: solid 1px red;
+      border: solid 1px $color-accent-3;
     }
 
     &:valid {
