@@ -88,6 +88,10 @@
       width: 90px;
     }
 
+    &[disabled] {
+      background: $color-primary;
+    }
+
     &--saving {
       background: $color-primary;
     }
@@ -130,6 +134,13 @@
     height: 36px;
     width: 100%;
 
+    &:invalid {
+      border: solid 1px red;
+    }
+
+    &:valid {
+      border: solid 1px $color-accent-3;
+    }
     @include tablet {
       width: 80%;
     }

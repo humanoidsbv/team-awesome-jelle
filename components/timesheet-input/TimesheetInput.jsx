@@ -19,6 +19,16 @@ class TimesheetInput extends React.Component {
     isFormSaving: PropTypes.bool.isRequired
   };
 
+  constructor(props) {
+    super(props);
+    this.inputForm = React.createRef();
+    this.selectEmployer = React.createRef();
+    this.selectActivity = React.createRef();
+    this.inputDate = React.createRef();
+    this.inputStartTime = React.createRef();
+    this.inputEndTime = React.createRef();
+  }
+
   state = {
     timeEntry: TimesheetInput.defaultFormValues,
     isFormVisible: false
@@ -35,6 +45,8 @@ class TimesheetInput extends React.Component {
         [target.name]: target.value
       }
     }));
+
+    this.validateForm();
   };
 
   handleSubmit = (event) => {
@@ -48,11 +60,14 @@ class TimesheetInput extends React.Component {
       startTime: convertTimeToIso(timeEntry.startTime, timeEntry.date),
       endTime: convertTimeToIso(timeEntry.endTime, timeEntry.date)
     };
-    if (onSave(newEntry)) {
-      this.setState({ timeEntry: TimesheetInput.defaultFormValues });
-      this.toggleForm();
-    }
+    onSave(newEntry);
+    this.setState({ timeEntry: TimesheetInput.defaultFormValues });
+    this.toggleForm();
   }
+
+  validateForm = () => this.inputForm.current && Array
+    .from(this.inputForm.current.elements)
+    .every(formItem => formItem.validity.valid)
 
   render() {
     const { isFormSaving } = this.props;
@@ -64,7 +79,7 @@ class TimesheetInput extends React.Component {
     } = timeEntry;
 
     return (
-      <form>
+      <form ref={this.inputForm} onSubmit={this.handleSubmit}>
         <div className="timesheet-input__wrapper">
           <button
             className={`
@@ -90,7 +105,7 @@ class TimesheetInput extends React.Component {
             <button
               className="timesheet-input__close-button"
               onClick={this.toggleForm}
-              type="submit"
+              type="button"
             />
             <div className="timesheet-input__field-item timesheet-input__field-item--employer">
               <label
@@ -104,6 +119,8 @@ class TimesheetInput extends React.Component {
                   id="employer"
                   onChange={this.handleChange}
                   name="employer"
+                  required
+                  ref={this.selectEmployer}
                   type="text"
                   value={employer}
                 >
@@ -129,6 +146,8 @@ class TimesheetInput extends React.Component {
                   readOnly
                   type="text"
                   name="activity"
+                  ref={this.selectActivity}
+                  required
                   onChange={this.handleChange}
                   value={activity}
                 >
@@ -153,6 +172,9 @@ class TimesheetInput extends React.Component {
                   id="date"
                   onChange={this.handleChange}
                   name="date"
+                  pattern="(0[1-9]|[12][0-9]|3[01])[-](0[1-9]|1[012])[-]\d{4}"
+                  ref={this.inputDate}
+                  required
                   type="text"
                   value={date}
                 />
@@ -170,6 +192,9 @@ class TimesheetInput extends React.Component {
                     id="from"
                     onChange={this.handleChange}
                     name="startTime"
+                    pattern="([01]?[0-9]|2[0-3]).[0-5][0-9]"
+                    ref={this.inputStartTime}
+                    required
                     type="text"
                     value={startTime}
                   />
@@ -186,6 +211,9 @@ class TimesheetInput extends React.Component {
                     id="to"
                     onChange={this.handleChange}
                     name="endTime"
+                    pattern="([01]?[0-9]|2[0-3]).[0-5][0-9]"
+                    ref={this.inputEndTime}
+                    required
                     type="text"
                     value={endTime}
                   />
@@ -199,8 +227,7 @@ class TimesheetInput extends React.Component {
               `}
               type="submit"
               readOnly
-              onClick={this.handleSubmit}
-              disabled={isFormSaving}
+              disabled={isFormSaving || !this.validateForm()}
             >
               {isFormSaving ? 'Saving' : 'Add'}
             </button>
