@@ -183,7 +183,7 @@ class TimesheetInput extends React.Component {
                 <input
                   className={`
                     timesheet-input__select
-                    timesheet-input__select--${validity.date ? 'valid' : 'invalid'}
+                    timesheet-input__select${validity.date ? '--valid' : '--invalid'}
                   `}
                   id="date"
                   onChange={this.handleChange}
@@ -206,7 +206,7 @@ class TimesheetInput extends React.Component {
                   <input
                     className={`
                       timesheet-input__select
-                      timesheet-input__select--${validity.startTime ? 'valid' : 'invalid'}
+                      timesheet-input__select${validity.startTime ? '--valid' : '--invalid'}
                     `}
                     id="from"
                     onChange={this.handleChange}
@@ -228,7 +228,7 @@ class TimesheetInput extends React.Component {
                   <input
                     className={`
                       timesheet-input__select
-                      timesheet-input__select--${validity.endTime ? 'valid' : 'invalid'}
+                      timesheet-input__select${validity.endTime ? '--valid' : '--invalid'}
                     `}
                     id="to"
                     onChange={this.handleChange}
