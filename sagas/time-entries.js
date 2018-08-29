@@ -1,12 +1,12 @@
-import { put, takeEvery } from 'redux-saga/effects';
+import { call, put, takeEvery } from 'redux-saga/effects';
 
 import {
-  DELETE_TIMESHEET_ENTRY_SUCCES,
   DELETE_TIMESHEET_ENTRY,
-  POST_TIMESHEET_ENTRY_SUCCES,
   POST_TIMESHEET_ENTRY,
-  REQUEST_TIMESHEET_ENTRIES_SUCCES,
-  REQUEST_TIMESHEET_ENTRIES
+  REQUEST_TIMESHEET_ENTRIES,
+  deleteTimesheetEntrySucces,
+  postTimesheetEntrySucces,
+  requestTimeEntriesSucces
 } from '../ducks/time-entries';
 
 import {
@@ -16,18 +16,18 @@ import {
 } from '../services/fetch-timesheet-entries/fetch-timesheet-entries';
 
 function* onDeleteTimesheetEntry(action) {
-  yield deleteTimesheetEntry(action.timesheetEntryId);
-  yield put({ type: DELETE_TIMESHEET_ENTRY_SUCCES, timesheetEntryId: action.timesheetEntryId });
+  yield call(deleteTimesheetEntry, action.timesheetEntryId);
+  yield put(deleteTimesheetEntrySucces(action.timesheetEntryId));
 }
 
 function* onGetTimesheetEntries() {
-  const timesheetEntries = yield fetchTimesheetEntries();
-  yield put({ type: REQUEST_TIMESHEET_ENTRIES_SUCCES, timesheetEntries });
+  const timesheetEntries = yield call(fetchTimesheetEntries);
+  yield put(requestTimeEntriesSucces(timesheetEntries));
 }
 
 function* onPostTimesheetEntry(action) {
-  const timesheetEntry = yield postTimesheetEntry(action.timesheetEntry);
-  yield put({ type: POST_TIMESHEET_ENTRY_SUCCES, timesheetEntry });
+  const timesheetEntry = yield call(postTimesheetEntry, action.timesheetEntry);
+  yield put(postTimesheetEntrySucces(timesheetEntry));
 }
 
 export default function* watchTimesheetEntries() {

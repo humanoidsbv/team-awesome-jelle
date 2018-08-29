@@ -136,6 +136,7 @@ class TimesheetInput extends React.Component {
                   name="employer"
                   required
                   type="text"
+                  required
                   value={employer}
                 >
                   <option>
@@ -158,6 +159,7 @@ class TimesheetInput extends React.Component {
                   className="timesheet-input__select"
                   id="activity"
                   readOnly
+                  required
                   type="text"
                   name="activity"
                   required
