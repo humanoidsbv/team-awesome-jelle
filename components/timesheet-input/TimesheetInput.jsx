@@ -136,7 +136,6 @@ class TimesheetInput extends React.Component {
                   name="employer"
                   required
                   type="text"
-                  required
                   value={employer}
                 >
                   <option>
@@ -162,7 +161,6 @@ class TimesheetInput extends React.Component {
                   required
                   type="text"
                   name="activity"
-                  required
                   onChange={this.handleChange}
                   value={activity}
                 >
