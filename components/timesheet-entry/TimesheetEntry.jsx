@@ -8,7 +8,7 @@ class TimesheetEntry extends React.Component {
   static propTypes = {
     employer: PropTypes.string.isRequired,
     endTime: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
     onDelete: PropTypes.func.isRequired,
     startTime: PropTypes.string.isRequired
   }
@@ -18,7 +18,9 @@ class TimesheetEntry extends React.Component {
   }
 
   handleDelete = () => {
-    this.props.onDelete(this.props.id);
+    if (window.confirm('Are you sure you want to delete this item?')) {
+      this.props.onDelete(this.props.id);
+    }
   }
 
   render() {
