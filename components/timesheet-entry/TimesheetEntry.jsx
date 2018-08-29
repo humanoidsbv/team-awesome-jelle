@@ -18,7 +18,9 @@ class TimesheetEntry extends React.Component {
   }
 
   handleDelete = () => {
-    this.props.onDelete(this.props.id);
+    if (window.confirm('Are you sure you want to delete this item?')) {
+      this.props.onDelete(this.props.id);
+    }
   }
 
   render() {

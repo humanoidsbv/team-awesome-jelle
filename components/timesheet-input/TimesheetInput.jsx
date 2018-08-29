@@ -6,12 +6,21 @@ import { convertDateToIso, convertTimeToIso } from '../../services/convert-time/
 import './timesheet-input.scss';
 
 class TimesheetInput extends React.Component {
-  static defaultFormValues = {
-    employer: 'Port of Rotterdam',
-    activity: 'Design',
-    date: '',
-    startTime: '',
-    endTime: ''
+  static defaultState = {
+    defaultFormValues: {
+      employer: 'Port of Rotterdam',
+      activity: 'Design',
+      date: '',
+      startTime: '',
+      endTime: ''
+    },
+    defaultValidity: {
+      employer: true,
+      activity: true,
+      date: true,
+      startTime: true,
+      endTime: true
+    }
   }
 
   static propTypes = {
@@ -22,15 +31,11 @@ class TimesheetInput extends React.Component {
   constructor(props) {
     super(props);
     this.inputForm = React.createRef();
-    this.selectEmployer = React.createRef();
-    this.selectActivity = React.createRef();
-    this.inputDate = React.createRef();
-    this.inputStartTime = React.createRef();
-    this.inputEndTime = React.createRef();
   }
 
   state = {
-    timeEntry: TimesheetInput.defaultFormValues,
+    timeEntry: TimesheetInput.defaultState.defaultFormValues,
+    validity: TimesheetInput.defaultState.defaultValidity,
     isFormVisible: false
   }
 
@@ -45,8 +50,6 @@ class TimesheetInput extends React.Component {
         [target.name]: target.value
       }
     }));
-
-    this.validateForm();
   };
 
   handleSubmit = (event) => {
@@ -61,8 +64,17 @@ class TimesheetInput extends React.Component {
       endTime: convertTimeToIso(timeEntry.endTime, timeEntry.date)
     };
     onSave(newEntry);
-    this.setState({ timeEntry: TimesheetInput.defaultFormValues });
+    this.setState({ timeEntry: TimesheetInput.defaultState.defaultFormValues });
     this.toggleForm();
+  }
+
+  handleBlur = ({ target }) => {
+    this.setState(prevState => ({
+      validity: {
+        ...prevState.validity,
+        [target.name]: target.validity.valid
+      }
+    }));
   }
 
   validateForm = () => this.inputForm.current && Array
@@ -72,41 +84,44 @@ class TimesheetInput extends React.Component {
   render() {
     const { isFormSaving } = this.props;
     const {
-      isFormVisible, timeEntry
+      isFormVisible, timeEntry, validity
     } = this.state;
     const {
       employer, activity, date, startTime, endTime
     } = timeEntry;
 
     return (
-      <form ref={this.inputForm} onSubmit={this.handleSubmit}>
-        <div className="timesheet-input__wrapper">
-          <button
-            className={`
-              timesheet-input__new-button
-              timesheet-input__new-button${isFormVisible ? '--invisible' : '--visible'}
-            `}
-            onClick={this.toggleForm}
-            type="button"
-          >
-            <img
-              alt="plus sign"
-              className="timesheet-field__plus-svg"
-              src="/static/icons/plus.svg"
-            />
-            {' '}
-            New time entry
-          </button>
+      <div className="timesheet-input__wrapper">
+        <button
+          className={`
+            timesheet-input__new-button
+            timesheet-input__new-button${isFormVisible ? '--invisible' : '--visible'}
+          `}
+          onClick={this.toggleForm}
+          type="button"
+        >
+          <img
+            alt="plus sign"
+            className="timesheet-field__plus-svg"
+            src="/static/icons/plus.svg"
+          />
+          {' '}
+          New time entry
+        </button>
+        <button
+          className={`
+            timesheet-input__close-button
+            timesheet-input__close-button${isFormVisible ? '--visible' : '--invisible'}
+          `}
+          onClick={this.toggleForm}
+          type="button"
+        />
+        <form ref={this.inputForm} onSubmit={this.handleSubmit}>
           <div className={`
             timesheet-input__form
             timesheet-input__form${isFormVisible ? '--open' : '--closed'}
             `}
           >
-            <button
-              className="timesheet-input__close-button"
-              onClick={this.toggleForm}
-              type="button"
-            />
             <div className="timesheet-input__field-item timesheet-input__field-item--employer">
               <label
                 className="timesheet-input__label"
@@ -120,7 +135,6 @@ class TimesheetInput extends React.Component {
                   onChange={this.handleChange}
                   name="employer"
                   required
-                  ref={this.selectEmployer}
                   type="text"
                   value={employer}
                 >
@@ -146,7 +160,6 @@ class TimesheetInput extends React.Component {
                   readOnly
                   type="text"
                   name="activity"
-                  ref={this.selectActivity}
                   required
                   onChange={this.handleChange}
                   value={activity}
@@ -168,12 +181,15 @@ class TimesheetInput extends React.Component {
               >
                 DATE
                 <input
-                  className="timesheet-input__select"
+                  className={`
+                    timesheet-input__select
+                    timesheet-input__select--${validity.date ? 'valid' : 'invalid'}
+                  `}
                   id="date"
                   onChange={this.handleChange}
+                  onBlur={this.handleBlur}
                   name="date"
                   pattern="(0[1-9]|[12][0-9]|3[01])[-](0[1-9]|1[012])[-]\d{4}"
-                  ref={this.inputDate}
                   required
                   type="text"
                   value={date}
@@ -188,12 +204,15 @@ class TimesheetInput extends React.Component {
                 >
                 FROM
                   <input
-                    className="timesheet-input__select"
+                    className={`
+                      timesheet-input__select
+                      timesheet-input__select--${validity.startTime ? 'valid' : 'invalid'}
+                    `}
                     id="from"
                     onChange={this.handleChange}
+                    onBlur={this.handleBlur}
                     name="startTime"
                     pattern="([01]?[0-9]|2[0-3]).[0-5][0-9]"
-                    ref={this.inputStartTime}
                     required
                     type="text"
                     value={startTime}
@@ -205,14 +224,17 @@ class TimesheetInput extends React.Component {
                   className="timesheet-input__label"
                   htmlFor="to"
                 >
-                  TODATE
+                  TO
                   <input
-                    className="timesheet-input__select"
+                    className={`
+                      timesheet-input__select
+                      timesheet-input__select--${validity.endTime ? 'valid' : 'invalid'}
+                    `}
                     id="to"
                     onChange={this.handleChange}
+                    onBlur={this.handleBlur}
                     name="endTime"
                     pattern="([01]?[0-9]|2[0-3]).[0-5][0-9]"
-                    ref={this.inputEndTime}
                     required
                     type="text"
                     value={endTime}
@@ -232,8 +254,8 @@ class TimesheetInput extends React.Component {
               {isFormSaving ? 'Saving' : 'Add'}
             </button>
           </div>
-        </div>
-      </form>
+        </form>
+      </div>
     );
   }
 }
