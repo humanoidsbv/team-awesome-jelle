@@ -9,7 +9,6 @@ const TimesheetDate = ({ date }) => (
     {`
       ${new Date(date).toLocaleDateString('en-NL', { weekday: 'long' })}
       ${new Date(date).toLocaleDateString('nl-NL', { day: 'numeric', month: 'numeric' })}
-
     `}
   </p>
 );
