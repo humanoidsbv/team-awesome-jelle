@@ -1,15 +1,21 @@
 {
-  "extends": "airbnb",
+  "extends": ["airbnb", "jest-enzyme"],
   "env": {
     "browser": true,
-    "node": true
+    "node": true,
+    "jest/globals": true
   },
   "parser": "babel-eslint",
-  "plugins": ["babel"],
+  "plugins": ["babel", "jest"],
   "root": true,
   "rules": {
     "react/destructuring-assignment": "off",
     "comma-dangle": [ "error", "never" ],
+    "jest/no-disabled-tests": "warn",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+    "jest/prefer-to-have-length": "warn",
+    "jest/valid-expect": "error",
     "jsx-a11y/label-has-for": [ 2, {
             "components": [ "Label" ],
             "required": {
@@ -18,5 +24,4 @@
             "allowChildren": false
     }]
   }
-
 }

@@ -20,7 +20,8 @@ class TimesheetInput extends React.Component {
       date: true,
       startTime: true,
       endTime: true
-    }
+    },
+    isFormVisible: false
   }
 
   static propTypes = {
