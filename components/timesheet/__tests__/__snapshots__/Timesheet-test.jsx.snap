@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders Date Component correctly 1`] = `
+<div
+  className="timesheet-wrapper"
+>
+  <TimesheetInput
+    isFormSaving={false}
+    onSave={[Function]}
+  />
+  <TimesheetDate
+    date="2018-12-13"
+  />
+  <TimesheetEntry
+    employer="Port of Rotterdam"
+    endTime="2018-12-13T18:30:00.000Z"
+    id={1}
+    onDelete={[Function]}
+    startTime="2018-12-13T18:00:00.000Z"
+  />
+  <TimesheetDate
+    date="2012-12-13"
+  />
+  <TimesheetEntry
+    employer="Port of Rotterdam"
+    endTime="2012-12-13T13:00:00.000Z"
+    id={2}
+    onDelete={[Function]}
+    startTime="2012-12-13T12:00:00.000Z"
+  />
+</div>
+`;
