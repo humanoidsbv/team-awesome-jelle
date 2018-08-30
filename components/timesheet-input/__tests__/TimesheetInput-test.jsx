@@ -24,3 +24,15 @@ test('ComponentName', () => {
     }
   });
 });
+const handleAddTimesheetEntry = newEntry => this.props.onPostTimesheetEntry(newEntry);
+const isFormSavingSelector = false;
+
+it('TimesheetInput should render without crashing', () => {
+  const wrapper = shallow(
+    <TimesheetInput
+      isFormSaving={isFormSavingSelector}
+      onSave={handleAddTimesheetEntry}
+    />
+  );
+  expect(wrapper).toMatchSnapshot();
+});
