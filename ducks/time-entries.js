@@ -29,7 +29,11 @@ export function timeEntriesReducer(state = initialState, action) {
     case POST_TIMESHEET_ENTRY:
       return { ...state, isFormSaving: true };
     case POST_TIMESHEET_ENTRY_SUCCES:
-      return { ...state, items: [...state.items, action.timesheetEntry], isFormSaving: false };
+      return {
+        ...state,
+        items: [...state.items, action.timesheetEntry],
+        isFormSaving: false
+      };
     case REQUEST_TIMESHEET_ENTRIES_SUCCES:
       return { ...state, items: action.timesheetEntries, isLoading: false };
     case REQUEST_TIMESHEET_ENTRIES:
