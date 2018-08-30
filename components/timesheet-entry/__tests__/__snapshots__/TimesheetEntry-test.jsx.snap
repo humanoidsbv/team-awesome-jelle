@@ -1,12 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders a snapshot 1`] = `
+exports[`Renders Entry Component correctly 1`] = `
 <div
   className="timesheet-entry-wrapper"
 >
   <p
     className="timesheet-entry__employer"
-  />
+  >
+    Port of Rotterdam
+  </p>
   <button
     className="timesheet-entry__delete-button"
     onClick={[Function]}
@@ -20,9 +22,9 @@ exports[`renders a snapshot 1`] = `
   <p
     className="timesheet-entry__time"
   >
-    Invalid Date
+    7:00 PM
            -
-           Invalid Date
+           7:30 PM
   </p>
 </div>
 `;
