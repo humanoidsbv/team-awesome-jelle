@@ -5,8 +5,7 @@ import { bindActionCreators } from 'redux';
 import {
   toggleMenu,
   isMenuVisibleSelector
-}
-  from '../../ducks/header';
+} from '../../ducks/header';
 
 import Header from './Header';
 
