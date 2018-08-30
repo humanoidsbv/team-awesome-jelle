@@ -2,12 +2,12 @@ import React from 'react';
 
 import './index.scss';
 
-import Header from '../components/header/Header';
+import HeaderContainer from '../components/header';
 import TimesheetContainer from '../components/timesheet';
 
 const Index = () => (
   <React.Fragment>
-    <Header />
+    <HeaderContainer />
     <main className="timesheet-page-wrapper">
       <TimesheetContainer />
     </main>
