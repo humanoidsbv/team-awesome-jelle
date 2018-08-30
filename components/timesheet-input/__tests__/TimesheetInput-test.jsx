@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 import TimesheetInput from '../TimesheetInput';
 
 test('ComponentName', () => {
-  const timesheetInput = shallow(<TimesheetInput prop="value" />);
+  const timesheetInput = shallow(<TimesheetInput />);
 
   expect(timesheetInput.state()).toEqual({
     isFormVisible: false,
