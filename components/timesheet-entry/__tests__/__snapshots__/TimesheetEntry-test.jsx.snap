@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a snapshot 1`] = `
+<div
+  className="timesheet-entry-wrapper"
+>
+  <p
+    className="timesheet-entry__employer"
+  />
+  <button
+    className="timesheet-entry__delete-button"
+    onClick={[Function]}
+    type="submit"
+  >
+    <svg
+      className="timesheet-entry__delete-icon"
+    />
+    Delete
+  </button>
+  <p
+    className="timesheet-entry__time"
+  >
+    Invalid Date
+           -
+           Invalid Date
+  </p>
+</div>
+`;
