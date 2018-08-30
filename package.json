@@ -50,10 +50,11 @@
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.10.0",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^23.5.0"
+    "jest": "^23.5.0",
+    "react-test-renderer": "^16.4.2"
   },
   "transform": {
-  "^.+\\.js$": "babel-jest",
-  "^.+\\.css$": "custom-transformer"
+    "^.+\\.js$": "babel-jest",
+    "^.+\\.css$": "custom-transformer"
   }
 }
