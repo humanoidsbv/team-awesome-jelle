@@ -117,13 +117,16 @@ class TimesheetInput extends React.Component {
           onClick={this.toggleForm}
           type="button"
         />
-        <form ref={this.inputForm} onSubmit={this.handleSubmit}>
-          <div className={`
+        <form
+          ref={this.inputForm}
+          onSubmit={this.handleSubmit}
+          className={`
             timesheet-input__form
             timesheet-input__form${isFormVisible ? '--open' : '--closed'}
             `}
-          >
-            <div className="timesheet-input__field-item timesheet-input__field-item--employer">
+        >
+            <div className="timesheet-entry-employer">
+              {/* "timesheet-input__field-item timesheet-input__field-item--employer"> */}
               <label
                 className="timesheet-input__label"
                 htmlFor="employer"
@@ -148,7 +151,7 @@ class TimesheetInput extends React.Component {
                 </select>
               </label>
             </div>
-            <div className="timesheet-input__field-item timesheet-input__field-item--full">
+            <div className="timesheet-input-activity">
               <label
                 className="timesheet-input__label"
                 htmlFor="activity"
@@ -174,7 +177,7 @@ class TimesheetInput extends React.Component {
                 </select>
               </label>
             </div>
-            <div className="timesheet-input__field-item timesheet-input__field-item--date">
+            <div className="timesheet-input-date">
               <label
                 className="timesheet-input__label"
                 htmlFor="date"
@@ -197,8 +200,8 @@ class TimesheetInput extends React.Component {
                 />
               </label>
             </div>
-            <div className="timesheet-input__time-wrapper">
-              <div className="timesheet-input__field-item timesheet-input__field-item--from">
+            <div className="timesheet-input-time">
+              <div className="timesheet-input-start-time">
                 <label
                   className="timesheet-input__label"
                   htmlFor="from"
@@ -220,7 +223,7 @@ class TimesheetInput extends React.Component {
                   />
                 </label>
               </div>
-              <div className="timesheet-input__field-item timesheet-input__field-item--to">
+              <div className="timesheet-input-end-time">
                 <label
                   className="timesheet-input__label"
                   htmlFor="to"
@@ -243,6 +246,7 @@ class TimesheetInput extends React.Component {
                 </label>
               </div>
             </div>
+            <div className="timesheet-input-add-button">
             <button
               className={`
                 timesheet-input__add-button

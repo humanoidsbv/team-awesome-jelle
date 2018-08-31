@@ -2,10 +2,67 @@
 
 .timesheet-input {
 
+
+  &-employer {
+    padding: 16px 0 0;
+    width: 100%;
+    @include tablet {
+      width: 245px;
+    }
+  }
+
+  &-activity {
+    padding: 16px 0 0;
+    width: 100%;
+    @include tablet {
+
+    }
+  }
+
+  &-date {
+    padding: 16px 0 0;
+    width: 100%;
+    @include tablet {
+
+    }
+  }
+
+  &-time {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    padding: 16px 0 0;
+
+    @include tablet {
+
+    }
+  }
+
+  &-start-time {
+    flex-basis: 49%;
+    width: 72px;
+    @include tablet {
+
+    }
+  }
+
+  &-end-time {
+    flex-basis: 49%;
+    width: 72px;
+    @include tablet {
+
+    }
+  }
+
+  &-add-button {
+    padding: 42px 0 32px;
+  }
+
   &__wrapper {
     background-color: $color-accent-2;
     display: flex;
     flex-direction: column;
+    position: relative;
 
     @include tablet {
       align-items: center;
@@ -18,11 +75,20 @@
     background-color: $color-accent-2;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
+    padding: 16px 16px 0;
     position: relative;
+    width: 100%;
 
     @include tablet {
       flex-direction: row;
+      padding: 0 32px;
+      flex-wrap: nowrap;
+      display: flex;
+      flex-basis: 100%;
+      justify-content: space-between;
     }
+
 
     &--open {
       display: flex;
@@ -54,32 +120,33 @@
     }
   }
 
-  &__field-item {
-    margin: 16px auto 8px;
-    width: 90%;
-
-    @include tablet {
-      display: flex;
-      flex-direction: column;
-      margin: auto;
-      width: 30%;
-    }
-
-    &--from {
-      width: 40%;
-    }
-
-    &--to {
-      width: 40%;
-    }
-  }
+  // &__field-item {
+  //   margin: 16px auto 8px;
+  //   width: 90%;
+  //
+  //   @include tablet {
+  //     display: flex;
+  //     flex-direction: column;
+  //     margin: auto;
+  //     width: 30%;
+  //   }
+  //
+  //   &--from {
+  //     width: 40%;
+  //   }
+  //
+  //   &--to {
+  //     width: 40%;
+  //   }
+  // }
 
   &__add-button {
     background: linear-gradient($color-accent-alt-7, $color-accent-alt-8 98%);
     border: none;
     border-radius: 4px;
     color: $color-monochrome-1;
-    padding: 9px 0 8px;
+    height: 36px;
+    // padding: 9px 0 8px;
     width: 100%;
 
     @include tablet {
@@ -104,10 +171,11 @@
     background-color: $color-monochrome-6;
     border-style: none;
     border-width: 0;
-    display: inline;
     height: 7px;
-    margin-left: 95%;
-    margin-top: 16px;
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    z-index: 20;
 
     &--invisible {
       display: none;
@@ -126,17 +194,19 @@
     font-weight: 600;
     letter-spacing: normal;
     line-height: normal;
-    margin-bottom: 12px;
     opacity: .5;
   }
 
   &__select {
-    background: linear-gradient($color-accent-alt-5, $color-monochrome-1);
+    background: linear-gradient(to top, $color-accent-alt-5, $color-monochrome-1);
     border: solid 1px $color-accent-3;
     border-radius: 4px;
     font-size: 14px;
     font-style: normal;
+    font-weight: 600;
     height: 36px;
+    margin: 12px 0 0;
+    padding: 0 0 0 15px;
     width: 100%;
 
     &--invalid {
@@ -147,7 +217,7 @@
       border: solid 1px $color-accent-3;
     }
     @include tablet {
-      width: 80%;
+      width: 100%;
     }
   }
 
