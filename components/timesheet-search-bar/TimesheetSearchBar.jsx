@@ -1,5 +1,10 @@
 import React from 'react';
 
+<<<<<<< HEAD
+=======
+import PropTypes from 'prop-types';
+
+>>>>>>> 6a66c19034a6331a1edcf822bf22325df107f928
 import './timesheet-search-bar.scss';
 
 const TimesheetSearchBar = () => (
