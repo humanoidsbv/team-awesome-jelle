@@ -75,21 +75,32 @@ const Header = ({ isMenuVisible, onToggleMenu }) => (
     </nav>
     <button
       className="main-navigation__profile-button"
-      type="submit"
+      type="button"
     >
       <img
         src="/../../static/icons/1_humanoids_logo.png"
         alt=""
-        className="main-navigation__profile-button--company-logo"
+        className="main-navigation__company-logo"
       />
       <img
         src="/../../static/icons/jelle.jpg"
         width="32px"
         height="32px"
         alt=""
-        className="main-navigation__profile-button--user-icon"
+        className="main-navigation__user-icon"
       />
     </button>
+    <button
+      className="main-navigation__arrow-button"
+      button="button"
+    >
+      <img
+        src="/../../static/icons/arrow-down.svg"
+        height="5px"
+        width="5px"
+      />
+    </button>
+
   </header>
 );
 
