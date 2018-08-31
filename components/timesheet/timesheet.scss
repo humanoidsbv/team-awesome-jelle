@@ -1,5 +1,9 @@
 @import "../../shared/styles/main";
 
+.page-wrapper {
+  width: 100%;
+}
+
 .timesheet-wrapper {
   @include container;
   background-color: $color-monochrome-1;

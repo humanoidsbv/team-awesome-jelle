@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import TimesheetSearchBar from '../timesheet-search-bar/TimesheetSearchBar';
 import TimesheetDate from '../timesheet-date/TimesheetDate';
 import TimesheetEntry from '../timesheet-entry/TimesheetEntry';
 import TimesheetInput from '../timesheet-input/TimesheetInput';
@@ -35,27 +36,30 @@ class Timesheet extends React.Component {
   render() {
     const { timesheetEntries, isFormSaving } = this.props;
     return (
-      <div className="timesheet-wrapper">
-        <TimesheetInput
-          onSave={this.handleAddTimesheetEntry}
-          isFormSaving={isFormSaving}
-        />
-        {timesheetEntries.map((timesheetEntry, index, array) => (
-          <React.Fragment key={timesheetEntry.id}>
-            {(!index || (timesheetEntry.date !== array[index - 1].date)) && (
-            <TimesheetDate
-              date={timesheetEntry.date}
-            />
-            )}
-            <TimesheetEntry
-              employer={timesheetEntry.employer}
-              endTime={timesheetEntry.endTime}
-              id={timesheetEntry.id}
-              onDelete={this.handleDeleteTimesheetEntry}
-              startTime={timesheetEntry.startTime}
-            />
-          </React.Fragment>
-        ))}
+      <div className="page-wrapper">
+        <TimesheetSearchBar />
+        <div className="timesheet-wrapper">
+          <TimesheetInput
+            onSave={this.handleAddTimesheetEntry}
+            isFormSaving={isFormSaving}
+          />
+          {timesheetEntries.map((timesheetEntry, index, array) => (
+            <React.Fragment key={timesheetEntry.id}>
+              {(!index || (timesheetEntry.date !== array[index - 1].date)) && (
+              <TimesheetDate
+                date={timesheetEntry.date}
+              />
+              )}
+              <TimesheetEntry
+                employer={timesheetEntry.employer}
+                endTime={timesheetEntry.endTime}
+                id={timesheetEntry.id}
+                onDelete={this.handleDeleteTimesheetEntry}
+                startTime={timesheetEntry.startTime}
+              />
+            </React.Fragment>
+          ))}
+        </div>
       </div>
     );
   }
