@@ -32,9 +32,6 @@
     flex-flow: row;
     justify-content: space-between;
     padding: 16px 0 0;
-
-    @include tablet {
-    }
   }
 
   &-start-time {
