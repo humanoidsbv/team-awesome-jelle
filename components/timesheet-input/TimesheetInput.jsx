@@ -125,7 +125,7 @@ class TimesheetInput extends React.Component {
             timesheet-input__form${isFormVisible ? '--open' : '--closed'}
             `}
         >
-            <div className="timesheet-entry-employer">
+          <div className="timesheet-input-employer">
               {/* "timesheet-input__field-item timesheet-input__field-item--employer"> */}
               <label
                 className="timesheet-input__label"

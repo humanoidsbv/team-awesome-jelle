@@ -7,7 +7,7 @@
     padding: 16px 0 0;
     width: 100%;
     @include tablet {
-      width: 245px;
+      flex-basis: 245px;
     }
   }
 
@@ -15,7 +15,7 @@
     padding: 16px 0 0;
     width: 100%;
     @include tablet {
-
+      flex-basis: 245px;
     }
   }
 
@@ -23,7 +23,7 @@
     padding: 16px 0 0;
     width: 100%;
     @include tablet {
-
+      flex-basis: 130px;
     }
   }
 
@@ -34,7 +34,6 @@
     padding: 16px 0 0;
 
     @include tablet {
-
     }
   }
 
@@ -42,7 +41,7 @@
     flex-basis: 49%;
     width: 72px;
     @include tablet {
-
+      flex-basis: 64px;
     }
   }
 
@@ -50,7 +49,7 @@
     flex-basis: 49%;
     width: 72px;
     @include tablet {
-
+      flex-basis: 64px;
     }
   }
 
@@ -76,17 +75,15 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    padding: 16px 16px 0;
+    padding: 0 16px;
     position: relative;
     width: 100%;
 
     @include tablet {
-      flex-direction: row;
-      padding: 0 32px;
-      flex-wrap: nowrap;
       display: flex;
-      flex-basis: 100%;
+      flex-direction: row;
       justify-content: space-between;
+      padding: 0 32px;
     }
 
 
@@ -151,7 +148,7 @@
 
     @include tablet {
       height: 36px;
-      margin: auto;
+      margin-left: auto;
       padding: 0;
       width: 90px;
     }
@@ -195,6 +192,7 @@
     letter-spacing: normal;
     line-height: normal;
     opacity: .5;
+    width: 100%;
   }
 
   &__select {
