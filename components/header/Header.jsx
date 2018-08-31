@@ -92,9 +92,10 @@ const Header = ({ isMenuVisible, onToggleMenu }) => (
     </button>
     <button
       className="main-navigation__arrow-button"
-      button="button"
+      type="button"
     >
       <img
+        alt="search-icon"
         src="/../../static/icons/arrow-down.svg"
         height="5px"
         width="5px"

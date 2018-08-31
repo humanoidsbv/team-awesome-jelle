@@ -8,6 +8,7 @@
     width: 100%;
     @include tablet {
       flex-basis: 245px;
+      padding: 12px 0 4px;
     }
   }
 
@@ -16,6 +17,7 @@
     width: 100%;
     @include tablet {
       flex-basis: 245px;
+      padding: 12px 0 4px;
     }
   }
 
@@ -24,6 +26,7 @@
     width: 100%;
     @include tablet {
       flex-basis: 130px;
+      padding: 12px 0 4px;
     }
   }
 
@@ -32,6 +35,10 @@
     flex-flow: row;
     justify-content: space-between;
     padding: 16px 0 0;
+
+    @include tablet {
+      padding: 12px 0 4px;
+    }
   }
 
   &-start-time {
