@@ -200,7 +200,7 @@ class TimesheetInput extends React.Component {
             </label>
           </div>
           <div className="timesheet-input__time">
-            <div className="timesheet-input__starttime">
+            <div className="timesheet-input__start-time">
               <label
                 className="timesheet-input__label"
                 htmlFor="from"
@@ -245,7 +245,7 @@ class TimesheetInput extends React.Component {
               </label>
             </div>
           </div>
-          <div className="timesheet-input__add-button">
+          <div className="timesheet-input__add-button-wrapper">
             <button
               className={`
                 timesheet-input__add-button
