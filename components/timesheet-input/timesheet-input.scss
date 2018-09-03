@@ -122,26 +122,6 @@
     }
   }
 
-  // &__field-item {
-  //   margin: 16px auto 8px;
-  //   width: 90%;
-  //
-  //   @include tablet {
-  //     display: flex;
-  //     flex-direction: column;
-  //     margin: auto;
-  //     width: 30%;
-  //   }
-  //
-  //   &--from {
-  //     width: 40%;
-  //   }
-  //
-  //   &--to {
-  //     width: 40%;
-  //   }
-  // }
-
   &__add-button {
     background: linear-gradient($color-accent-alt-7, $color-accent-alt-8 98%);
     border: none;
