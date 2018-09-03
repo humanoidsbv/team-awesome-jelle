@@ -94,31 +94,7 @@ class TeamMember extends React.Component {
             </p>
           </div>
         </div>
-      </div>/* <div className={`
-          team-member-expand
-          team-member-expand${isTeamMemberExpanded ? '--expanded' : '--not-expanded'}
-        `}
-        >
-          <div className="team-member-expand__detail-title">
-            Detailed information about Jelle
-          </div>
-          <div className="team-member-expand__current-employer">
-            <p className="team-member-expand__title">
-              Hike One
-            </p>
-            <p className="team-member-expand__subtitle">
-              Current employer
-            </p>
-          </div>
-          <div className="team-member-expand__starting-date">
-            <p className="team-member-expand__title">
-              February 2018
-            </p>
-            <p className="team-member-expand__subtitle">
-              Starting date
-            </p>
-          </div>
-        </div> */
+      </div>
     );
   }
 }
