@@ -49,6 +49,8 @@ class TeamMemberOverview extends React.Component {
         </div>
         <div className="team-member__content-wrapper">
           <TeamMember />
+          <TeamMember />
+          <TeamMember />
         </div>
       </React.Fragment>
     );
