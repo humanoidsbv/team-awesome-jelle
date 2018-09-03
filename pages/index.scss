@@ -6,6 +6,10 @@
 
   @include tablet {
     padding: 70px 0;
-
   }
+}
+
+.team-member__page-wrapper {
+  @include container;
+  padding-top: 70px;
 }
