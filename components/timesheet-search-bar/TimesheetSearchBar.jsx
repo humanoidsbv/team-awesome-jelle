@@ -3,7 +3,7 @@ import React from 'react';
 import './timesheet-search-bar.scss';
 
 const TimesheetSearchBar = () => (
-  <div className="timesheet-search-bar-wrapper">
+  <div className="timesheet-search-bar__wrapper">
     <p className="timesheet-search-bar__title">
       Timesheets
     </p>

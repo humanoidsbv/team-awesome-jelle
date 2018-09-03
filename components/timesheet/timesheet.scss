@@ -1,20 +1,22 @@
 @import "../../shared/styles/main";
 
-.page-wrapper {
-  width: 100%;
-}
+.timesheet {
+  &__page-wrapper {
+    width: 100%;
+  }
 
-.timesheet-wrapper {
-  @include container;
-  background-color: $color-monochrome-1;
-  flex-direction: column;
-  margin: 20px auto;
-  padding: 0 16px;
-  width: 100%;
-
-  @include desktop {
+  &__wrapper {
+    @include container;
+    background-color: $color-monochrome-1;
+    flex-direction: column;
     margin: 20px auto;
-    width: 75%;
+    padding: 0 16px;
+    width: 100%;
 
+    @include desktop {
+      margin: 20px auto;
+      width: 75%;
+
+    }
   }
 }

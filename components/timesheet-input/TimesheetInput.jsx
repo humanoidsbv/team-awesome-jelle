@@ -125,7 +125,7 @@ class TimesheetInput extends React.Component {
             timesheet-input__form${isFormVisible ? '--open' : '--closed'}
             `}
         >
-          <div className="timesheet-input-employer">
+          <div className="timesheet-input__employer">
             <label
               className="timesheet-input__label"
               htmlFor="employer"
@@ -150,7 +150,7 @@ class TimesheetInput extends React.Component {
               </select>
             </label>
           </div>
-          <div className="timesheet-input-activity">
+          <div className="timesheet-input__activity">
             <label
               className="timesheet-input__label"
               htmlFor="activity"
@@ -176,7 +176,7 @@ class TimesheetInput extends React.Component {
               </select>
             </label>
           </div>
-          <div className="timesheet-input-date">
+          <div className="timesheet-input__date">
             <label
               className="timesheet-input__label"
               htmlFor="date"
@@ -199,8 +199,8 @@ class TimesheetInput extends React.Component {
               />
             </label>
           </div>
-          <div className="timesheet-input-time">
-            <div className="timesheet-input-start-time">
+          <div className="timesheet-input__time">
+            <div className="timesheet-input__starttime">
               <label
                 className="timesheet-input__label"
                 htmlFor="from"
@@ -222,7 +222,7 @@ class TimesheetInput extends React.Component {
                 />
               </label>
             </div>
-            <div className="timesheet-input-end-time">
+            <div className="timesheet-input__end-time">
               <label
                 className="timesheet-input__label"
                 htmlFor="to"
@@ -245,7 +245,7 @@ class TimesheetInput extends React.Component {
               </label>
             </div>
           </div>
-          <div className="timesheet-input-add-button">
+          <div className="timesheet-input__add-button">
             <button
               className={`
                 timesheet-input__add-button

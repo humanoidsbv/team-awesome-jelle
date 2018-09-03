@@ -3,7 +3,7 @@
 .timesheet-input {
 
 
-  &-employer {
+  &__employer {
     padding: 16px 0 0;
     width: 100%;
     @include tablet {
@@ -12,7 +12,7 @@
     }
   }
 
-  &-activity {
+  &__activity {
     padding: 16px 0 0;
     width: 100%;
     @include tablet {
@@ -21,7 +21,7 @@
     }
   }
 
-  &-date {
+  &__date {
     padding: 16px 0 0;
     width: 100%;
     @include tablet {
@@ -30,7 +30,7 @@
     }
   }
 
-  &-time {
+  &__time {
     display: flex;
     flex-flow: row;
     justify-content: space-between;
@@ -41,7 +41,7 @@
     }
   }
 
-  &-start-time {
+  &__start-time {
     flex-basis: 49%;
     width: 72px;
     @include tablet {
@@ -49,16 +49,12 @@
     }
   }
 
-  &-end-time {
+  &__end-time {
     flex-basis: 49%;
     width: 72px;
     @include tablet {
       flex-basis: 64px;
     }
-  }
-
-  &-add-button {
-    padding: 42px 0 32px;
   }
 
   &__wrapper {
@@ -128,6 +124,7 @@
     border-radius: 4px;
     color: $color-monochrome-1;
     height: 36px;
+    padding: 42px 0 32px;
     width: 100%;
 
     @include tablet {
