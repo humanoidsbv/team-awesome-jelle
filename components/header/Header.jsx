@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Link from 'next/link';
 
 import './header.scss';
 
@@ -42,12 +43,22 @@ const Header = ({ isMenuVisible, onToggleMenu }) => (
       main-navigation--${isMenuVisible ? 'open' : 'close'}
     `}
     >
-      <a
-        href="#link"
-        className="main-navigation__item main-navigation__item--active"
-      >
-      Timesheets
-      </a>
+      <Link href="/timesheets">
+        <a
+          href="/timesheets"
+          className="main-navigation__item main-navigation__item--active"
+        >
+        Timesheets
+        </a>
+      </Link>
+      <Link href="/team-members">
+        <a
+          href="#link"
+          className="main-navigation__item"
+        >
+         Team members
+        </a>
+      </Link>
       <a
         href="#link"
         className="main-navigation__item"

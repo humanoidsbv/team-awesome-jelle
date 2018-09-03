@@ -4,10 +4,11 @@ import './index.scss';
 
 import HeaderContainer from '../components/header';
 
-const Index = () => (
+
+const TeamMembers = () => (
   <React.Fragment>
     <HeaderContainer />
   </React.Fragment>
 );
 
-export default Index;
+export default TeamMembers;
