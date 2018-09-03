@@ -17,7 +17,7 @@ class TeamMember extends React.Component {
       <div className="team-member-wrapper">
         <div className={`
           team-member
-          team-member${isTeamMemberExpanded ? '--expanded' : '--not-expanded'}
+          team-member${isTeamMemberExpanded ? '--expanded' : '--collapsed'}
           `}
         >
           <img
@@ -71,7 +71,7 @@ class TeamMember extends React.Component {
         </div>
         <div className={`
           team-member-expand
-          team-member-expand${isTeamMemberExpanded ? '--expanded' : '--not-expanded'}
+          team-member-expand${isTeamMemberExpanded ? '--expanded' : '--collapsed'}
         `}
         >
           <div className="team-member-expand__detail-title">
