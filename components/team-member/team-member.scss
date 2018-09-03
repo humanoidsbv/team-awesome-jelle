@@ -1,0 +1,133 @@
+@import "../../shared/styles/main";
+
+.team-member {
+  border: solid 1px $color-accent-3;
+  border-left: solid 4px $color-primary;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-around;
+  margin: 20px auto 0;
+  padding: 16px 0;
+  width: 90%;
+
+  @include tablet {
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    padding: 16px;
+    width: 100%;
+  }
+
+  &__avatar {
+    border-radius: 50%;
+    height: 50px;
+    margin-left: 25px;
+    width: 50px;
+  }
+
+  &__name {
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+    padding-left: 25px;
+
+    @include tablet {
+      margin-right: auto;
+      padding-left: 25px;
+    }
+  }
+
+  &__employee-id {
+    display: none;
+    @include tablet {
+      display: block;
+      padding-right: 54px;
+    }
+  }
+
+  &__current-employer {
+    display: none;
+    @include tablet {
+      display: block;
+      padding-right: 54px;
+    }
+  }
+
+  &__starting-date {
+    display: none;
+    @include tablet {
+      display: block;
+      padding-right: 54px;
+    }
+  }
+
+  &__expand-button {
+    background-color: $color-monochrome-1;
+    border: none;
+    margin-right: 22px;
+    outline: none;
+  }
+
+  &__title {
+    color: $color-accent-5;
+    font-size: 16px;
+    font-weight: 400;
+    height: 19px;
+  }
+
+  &__subtitle {
+    color: $color-accent-6;
+    font-size: 14px;
+    font-weight: 400;
+    height: 17px;
+  }
+}
+
+.team-member-expanded {
+  border: solid 1px $color-accent-3;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-left: solid 4px $color-primary;
+  border-top: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 0 auto;
+  padding-bottom: 24px;
+  width: 90%;
+
+  @include tablet {
+    display: none;
+  }
+
+  &__detail-title {
+    background-color: $color-accent-2;
+    border: solid 1px $color-accent-3;
+    color: $color-accent-6;
+    font-size: 14px;
+    padding: 10px 25px 9px;
+  }
+
+  &__current-employer {
+    margin-left: 25px;
+  }
+
+  &__starting-date {
+    margin-left: 25px;
+  }
+
+  &__title {
+    color: $color-accent-5;
+    font-size: 16px;
+    font-weight: 400;
+    height: 19px;
+  }
+
+  &__subtitle {
+    color: $color-accent-6;
+    font-size: 14px;
+    font-weight: 400;
+    height: 17px;
+  }
+}

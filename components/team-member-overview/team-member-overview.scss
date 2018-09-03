@@ -1,1 +1,86 @@
 @import "../../shared/styles/main";
+
+.team-member {
+  &__top-wrapper {
+
+    margin: 0 auto;
+    padding-top: 24px;
+    width: 90%;
+
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      margin: 0 auto;
+      padding-top: 33px;
+      width: 75%;
+    }
+  }
+
+  &__top-title {
+    display: none;
+
+    @include tablet {
+      display: block;
+      font-size: 24px;
+      height: 29px;
+      margin-right: auto;
+    }
+  }
+
+  &__add-button {
+    background: linear-gradient($color-accent-alt-7, $color-accent-alt-8 98%);
+    color: $color-monochrome-1;
+    font-size: 14px;
+    font-weight: 400;
+    height: 36px;
+    width: 100%;
+
+    @include tablet {
+      align-items: center;
+      border: solid 1px $color-accent-7;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: row;
+      height: 36px;
+      justify-content: space-evenly;
+      width: 156px;
+    }
+
+    &-icon {
+      color: $color-monochrome-1;
+      margin-right: 15px;
+      @include tablet {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__sort-button {
+    display: none;
+
+    @include tablet {
+      align-items: center;
+      background-color: $color-monochrome-1;
+      border: solid 1px $color-accent-8;
+      border-radius: 4px;
+      color: $color-accent-6;
+      display: flex;
+      flex-direction: row;
+      font-size: 14px;
+      font-weight: 400;
+      justify-content: space-between;
+      margin-left: 12px;
+      width: 120px;
+    }
+  }
+
+  &__content-wrapper {
+    margin: 0 auto;
+    width: 100%;
+
+    @include tablet {
+      width: 75%;
+    }
+  }
+}
