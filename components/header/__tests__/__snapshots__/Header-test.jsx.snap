@@ -76,19 +76,30 @@ exports[`Renders Entry Component correctly 1`] = `
   </nav>
   <button
     className="main-navigation__profile-button"
-    type="submit"
+    type="button"
   >
     <img
       alt=""
-      className="main-navigation__profile-button--company-logo"
+      className="main-navigation__company-logo"
       src="/../../static/icons/1_humanoids_logo.png"
     />
     <img
       alt=""
-      className="main-navigation__profile-button--user-icon"
+      className="main-navigation__user-icon"
       height="32px"
       src="/../../static/icons/jelle.jpg"
       width="32px"
+    />
+  </button>
+  <button
+    className="main-navigation__arrow-button"
+    type="button"
+  >
+    <img
+      alt="search-icon"
+      height="5px"
+      src="/../../static/icons/arrow-down.svg"
+      width="5px"
     />
   </button>
 </header>

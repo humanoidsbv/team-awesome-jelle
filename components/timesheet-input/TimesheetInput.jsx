@@ -117,132 +117,135 @@ class TimesheetInput extends React.Component {
           onClick={this.toggleForm}
           type="button"
         />
-        <form ref={this.inputForm} onSubmit={this.handleSubmit}>
-          <div className={`
+        <form
+          ref={this.inputForm}
+          onSubmit={this.handleSubmit}
+          className={`
             timesheet-input__form
             timesheet-input__form${isFormVisible ? '--open' : '--closed'}
             `}
-          >
-            <div className="timesheet-input__field-item timesheet-input__field-item--employer">
-              <label
-                className="timesheet-input__label"
-                htmlFor="employer"
+        >
+          <div className="timesheet-input__employer">
+            <label
+              className="timesheet-input__label"
+              htmlFor="employer"
+              id="employer"
+            >
+            EMPLOYER
+              <select
+                className="timesheet-input__select"
                 id="employer"
+                onChange={this.handleChange}
+                name="employer"
+                required
+                type="text"
+                value={employer}
               >
-              EMPLOYER
-                <select
-                  className="timesheet-input__select"
-                  id="employer"
-                  onChange={this.handleChange}
-                  name="employer"
-                  required
-                  type="text"
-                  value={employer}
-                >
-                  <option>
-                    Port of Rotterdam
-                  </option>
-                  <option>
-                    Hike One
-                  </option>
-                </select>
-              </label>
-            </div>
-            <div className="timesheet-input__field-item timesheet-input__field-item--full">
-              <label
-                className="timesheet-input__label"
-                htmlFor="activity"
+                <option>
+                  Port of Rotterdam
+                </option>
+                <option>
+                  Hike One
+                </option>
+              </select>
+            </label>
+          </div>
+          <div className="timesheet-input__activity">
+            <label
+              className="timesheet-input__label"
+              htmlFor="activity"
+              id="activity"
+            >
+              ACTIVITY
+              <select
+                className="timesheet-input__select"
                 id="activity"
+                readOnly
+                required
+                type="text"
+                name="activity"
+                onChange={this.handleChange}
+                value={activity}
               >
-                ACTIVITY
-                <select
-                  className="timesheet-input__select"
-                  id="activity"
-                  readOnly
-                  required
-                  type="text"
-                  name="activity"
-                  onChange={this.handleChange}
-                  value={activity}
-                >
-                  <option>
-                    Design
-                  </option>
-                  <option>
-                    Meeting
-                  </option>
-                </select>
-              </label>
-            </div>
-            <div className="timesheet-input__field-item timesheet-input__field-item--date">
+                <option>
+                  Design
+                </option>
+                <option>
+                  Meeting
+                </option>
+              </select>
+            </label>
+          </div>
+          <div className="timesheet-input__date">
+            <label
+              className="timesheet-input__label"
+              htmlFor="date"
+              id="date"
+            >
+              DATE
+              <input
+                className={`
+                  timesheet-input__select
+                  timesheet-input__select${validity.date ? '--valid' : '--invalid'}
+                `}
+                id="date"
+                onChange={this.handleChange}
+                onBlur={this.handleBlur}
+                name="date"
+                pattern="(0[1-9]|[12][0-9]|3[01])[-](0[1-9]|1[012])[-]\d{4}"
+                required
+                type="text"
+                value={date}
+              />
+            </label>
+          </div>
+          <div className="timesheet-input__time">
+            <div className="timesheet-input__starttime">
               <label
                 className="timesheet-input__label"
-                htmlFor="date"
-                id="date"
+                htmlFor="from"
               >
-                DATE
+              FROM
                 <input
                   className={`
                     timesheet-input__select
-                    timesheet-input__select${validity.date ? '--valid' : '--invalid'}
+                    timesheet-input__select${validity.startTime ? '--valid' : '--invalid'}
                   `}
-                  id="date"
+                  id="from"
                   onChange={this.handleChange}
                   onBlur={this.handleBlur}
-                  name="date"
-                  pattern="(0[1-9]|[12][0-9]|3[01])[-](0[1-9]|1[012])[-]\d{4}"
+                  name="startTime"
+                  pattern="([01]?[0-9]|2[0-3]).[0-5][0-9]"
                   required
                   type="text"
-                  value={date}
+                  value={startTime}
                 />
               </label>
             </div>
-            <div className="timesheet-input__time-wrapper">
-              <div className="timesheet-input__field-item timesheet-input__field-item--from">
-                <label
-                  className="timesheet-input__label"
-                  htmlFor="from"
-                >
-                FROM
-                  <input
-                    className={`
-                      timesheet-input__select
-                      timesheet-input__select${validity.startTime ? '--valid' : '--invalid'}
-                    `}
-                    id="from"
-                    onChange={this.handleChange}
-                    onBlur={this.handleBlur}
-                    name="startTime"
-                    pattern="([01]?[0-9]|2[0-3]).[0-5][0-9]"
-                    required
-                    type="text"
-                    value={startTime}
-                  />
-                </label>
-              </div>
-              <div className="timesheet-input__field-item timesheet-input__field-item--to">
-                <label
-                  className="timesheet-input__label"
-                  htmlFor="to"
-                >
-                  TO
-                  <input
-                    className={`
-                      timesheet-input__select
-                      timesheet-input__select${validity.endTime ? '--valid' : '--invalid'}
-                    `}
-                    id="to"
-                    onChange={this.handleChange}
-                    onBlur={this.handleBlur}
-                    name="endTime"
-                    pattern="([01]?[0-9]|2[0-3]).[0-5][0-9]"
-                    required
-                    type="text"
-                    value={endTime}
-                  />
-                </label>
-              </div>
+            <div className="timesheet-input__end-time">
+              <label
+                className="timesheet-input__label"
+                htmlFor="to"
+              >
+                TO
+                <input
+                  className={`
+                    timesheet-input__select
+                    timesheet-input__select${validity.endTime ? '--valid' : '--invalid'}
+                  `}
+                  id="to"
+                  onChange={this.handleChange}
+                  onBlur={this.handleBlur}
+                  name="endTime"
+                  pattern="([01]?[0-9]|2[0-3]).[0-5][0-9]"
+                  required
+                  type="text"
+                  value={endTime}
+                />
+              </label>
             </div>
+          </div>
+          <div className="timesheet-input__add-button">
             <button
               className={`
                 timesheet-input__add-button
