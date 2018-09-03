@@ -3,12 +3,9 @@ import { shallow } from 'enzyme';
 
 import Timesheet from '../Timesheet';
 
-import {
-  deleteTimesheetEntry,
-  requestTimeEntries,
-  postTimesheetEntry
-}
-  from '../../../ducks/time-entries';
+const deleteTimesheetEntry = () => {};
+const requestTimeEntries = () => {};
+const postTimesheetEntry = () => {};
 
 const timesheetEntriesSelector = [
   {
