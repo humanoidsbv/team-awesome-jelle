@@ -24,7 +24,7 @@ test('ComponentName', () => {
     }
   });
 });
-const handleAddTimesheetEntry = newEntry => this.props.onPostTimesheetEntry(newEntry);
+const handleAddTimesheetEntry = () => {};
 const isFormSavingSelector = false;
 
 it('TimesheetInput should render without crashing', () => {

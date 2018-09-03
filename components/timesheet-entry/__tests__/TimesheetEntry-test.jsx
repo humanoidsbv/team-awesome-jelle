@@ -10,9 +10,7 @@ const timesheetEntry = {
   startTime: '2018-12-13T18:00:00.000Z'
 };
 
-const handleDeleteTimesheetEntry = (timesheetEntryId) => {
-  this.props.onDeleteTimesheetEntry(timesheetEntryId);
-};
+const handleDeleteTimesheetEntry = () => {};
 
 it('Renders Entry Component correctly', () => {
   const wrapper = shallow(
