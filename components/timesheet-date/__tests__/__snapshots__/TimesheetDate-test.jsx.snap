@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders Date Component correctly 1`] = `
+<p
+  className="timesheet-wrapper__date"
+>
+  
+      Thursday
+      12/13
+    
+</p>
+`;

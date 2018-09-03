@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders Entry Component correctly 1`] = `
+<header
+  className="header"
+>
+  <div
+    className="header__mobile"
+  >
+    <a
+      className="company-name"
+      href="#link"
+    >
+      team awesome
+    </a>
+    <button
+      className="
+          menu-button
+          menu-button--
+          "
+      onClick={[Function]}
+      type="submit"
+    >
+      <img
+        alt="menu-button"
+        className="menu-button__icon--open"
+        height="20px"
+        src="/static/icons/hamburger.svg"
+        width="20px"
+      />
+      <img
+        alt="menu-button-close"
+        className="menu-button__icon--close"
+        height="20px"
+        src="/static/icons/close.svg"
+        width="20px"
+      />
+    </button>
+  </div>
+  <nav
+    className="
+      main-navigation
+      main-navigation--close
+    "
+  >
+    <a
+      className="main-navigation__item main-navigation__item--active"
+      href="#link"
+    >
+      Timesheets
+    </a>
+    <a
+      className="main-navigation__item"
+      href="#link"
+    >
+      Team members
+    </a>
+    <a
+      className="main-navigation__item"
+      href="#link"
+    >
+      Projects
+    </a>
+    <a
+      className="main-navigation__item"
+      href="#link"
+    >
+      Clients
+    </a>
+    <a
+      className="main-navigation__item"
+      href="#link"
+    >
+      Documents
+    </a>
+  </nav>
+  <button
+    className="main-navigation__profile-button"
+    type="submit"
+  >
+    <img
+      alt=""
+      className="main-navigation__profile-button--company-logo"
+      src="/../../static/icons/1_humanoids_logo.png"
+    />
+    <img
+      alt=""
+      className="main-navigation__profile-button--user-icon"
+      height="32px"
+      src="/../../static/icons/jelle.jpg"
+      width="32px"
+    />
+  </button>
+</header>
+`;
