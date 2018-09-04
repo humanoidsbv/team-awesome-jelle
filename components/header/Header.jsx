@@ -53,14 +53,14 @@ const Header = ({ isMenuVisible, onToggleMenu }) => (
       </Link>
       <Link href="/team-members">
         <a
-          href="#link"
+          href=""
           className="main-navigation__item"
         >
          Team members
         </a>
       </Link>
       <a
-        href="#link"
+        href=""
         className="main-navigation__item"
       >
          Team members
