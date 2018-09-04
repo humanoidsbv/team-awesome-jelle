@@ -36,7 +36,7 @@ class Timesheet extends React.Component {
   render() {
     const { timesheetEntries, isFormSaving } = this.props;
     return (
-      <div className="timesheet__page-wrapper">
+      <div className="timesheet">
         <TimesheetSearchBar />
         <div className="timesheet__wrapper">
           <TimesheetInput
