@@ -90,7 +90,7 @@ class TeamMemberOverview extends React.Component {
               team-member__save-button
               team-member__save-button${isAdding ? '--visible' : '--invisible'}
             `}
-            type="button"
+            type="submit"
           >
             Save
           </button>

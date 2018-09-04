@@ -74,6 +74,7 @@ const AddTeamMember = () => (
               className="add-team-member__textarea"
               id="bio"
               rows="4"
+              cols="30"
               type="textarea"
             />
           </label>
@@ -134,7 +135,7 @@ const AddTeamMember = () => (
               </div>
               <input
                 className="add-team-member__input-social"
-                id="social-profiles"
+                id="social-profile-twitter"
               />
             </span>
             <span className="add-team-member__social-profiles-input-wrapper">
@@ -147,7 +148,7 @@ const AddTeamMember = () => (
               </div>
               <input
                 className="add-team-member__input-social"
-                id="social-profiles"
+                id="social-profile-facebook"
               />
             </span>
           </label>
