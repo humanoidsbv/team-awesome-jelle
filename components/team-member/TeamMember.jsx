@@ -1,8 +1,19 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './team-member.scss';
 
 class TeamMember extends React.Component {
+  static propTypes = {
+    avatar: PropTypes.string.isRequired,
+    currentEmployer: PropTypes.string.isRequired,
+    employeeNumber: PropTypes.string.isRequired,
+    firstName: PropTypes.string.isRequired,
+    jobTitle: PropTypes.string.isRequired,
+    lastName: PropTypes.string.isRequired,
+    startingDate: PropTypes.string.isRequired
+  }
+
   state = {
     isTeamMemberExpanded: false
   }
@@ -13,8 +24,13 @@ class TeamMember extends React.Component {
 
   render() {
     const { isTeamMemberExpanded } = this.state;
+    const {
+      avatar, currentEmployer, employeeNumber,
+      firstName, jobTitle, lastName,
+      startingDate
+    } = this.props;
     return (
-      <div className="team-member-wrapper">
+      <div className="team-member__wrapper">
         <div className={`
           team-member
           team-member${isTeamMemberExpanded ? '--expanded' : '--collapsed'}
@@ -23,19 +39,19 @@ class TeamMember extends React.Component {
           <img
             alt="team member avatar"
             className="team-member__avatar"
-            src="/static/icons/jelle.jpg"
+            src={avatar}
           />
           <div className="team-member__name">
             <p className="team-member__title">
-              Jelle Bouwman
+              {`${firstName} ${lastName}`}
             </p>
             <p className="team-member__subtitle">
-              Front-End Developer
+              {jobTitle}
             </p>
           </div>
           <div className="team-member__employee-id">
             <p className="team-member__title">
-              HUM_001
+              {employeeNumber}
             </p>
             <p className="team-member__subtitle">
               Employee number
@@ -43,7 +59,7 @@ class TeamMember extends React.Component {
           </div>
           <div className="team-member__current-employer">
             <p className="team-member__title">
-              Hike One
+              {currentEmployer}
             </p>
             <p className="team-member__subtitle">
               Current employer
@@ -51,7 +67,12 @@ class TeamMember extends React.Component {
           </div>
           <div className="team-member__starting-date">
             <p className="team-member__title">
-              February 2018
+              {new Date(startingDate)
+                .toLocaleDateString(
+                  'en-NL',
+                  { year: 'numeric', month: 'long' }
+                )
+              }
             </p>
             <p className="team-member__subtitle">
               Starting date
@@ -75,11 +96,11 @@ class TeamMember extends React.Component {
         `}
         >
           <div className="team-member__expand-detail-title">
-            Detailed information about Jelle
+            {`Detailed information about ${firstName}`}
           </div>
           <div className="team-member__expand-current-employer">
             <p className="team-member__expand-title">
-              Hike One
+              {currentEmployer}
             </p>
             <p className="team-member__expand-subtitle">
               Current employer
@@ -87,7 +108,12 @@ class TeamMember extends React.Component {
           </div>
           <div className="team-member__expand-starting-date">
             <p className="team-member__expand-title">
-              February 2018
+              {new Date(startingDate)
+                .toLocaleDateString(
+                  'en-NL',
+                  { year: 'numeric', month: 'long' }
+                )
+              }
             </p>
             <p className="team-member__expand-subtitle">
               Starting date
