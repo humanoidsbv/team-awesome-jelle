@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import './team-member-overview.scss';
 
-import AddTeamMember from '../add-team-member/AddTeamMember';
+// import AddTeamMember from '../add-team-member/AddTeamMember';
 import TeamMember from '../team-member/TeamMember';
 
 class TeamMemberOverview extends React.Component {
@@ -70,9 +70,9 @@ class TeamMemberOverview extends React.Component {
             />
           </button>
         </div>
-        <div className="team-member__form-wrapper">
+        {/* <div className="team-member__form-wrapper">
           <AddTeamMember />
-        </div>
+        </div> */}
         <div className="team-member__content-wrapper">
           {teamMembers.map(teamMember => (
             <React.Fragment key={teamMember.id}>
