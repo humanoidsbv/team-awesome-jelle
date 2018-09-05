@@ -4,34 +4,34 @@ import {
   DELETE_TIMESHEET_ENTRY,
   POST_TIMESHEET_ENTRY,
   REQUEST_TIMESHEET_ENTRIES,
-  deleteTimesheetEntrySucces,
-  postTimesheetEntrySucces,
-  requestTimeEntriesSucces
+  deleteTimesheetEntrySuccess,
+  postTimesheetEntrySuccess,
+  requestTimeEntriesSuccess
 } from '../ducks/time-entries';
 
 import {
-  deleteTimesheetEntry,
-  fetchTimesheetEntries,
-  postTimesheetEntry
+  fetchDeleteTimesheetEntry,
+  fetchGetTimesheetEntries,
+  fetchPostTimesheetEntry
 } from '../services/fetch-timesheet-entries/fetch-timesheet-entries';
 
-function* onDeleteTimesheetEntry(action) {
-  yield call(deleteTimesheetEntry, action.timesheetEntryId);
-  yield put(deleteTimesheetEntrySucces(action.timesheetEntryId));
+function* deleteTimesheetEntry(action) {
+  yield call(fetchDeleteTimesheetEntry, action.timesheetEntryId);
+  yield put(deleteTimesheetEntrySuccess(action.timesheetEntryId));
 }
 
-function* onGetTimesheetEntries() {
-  const timesheetEntries = yield call(fetchTimesheetEntries);
-  yield put(requestTimeEntriesSucces(timesheetEntries));
+function* getTimesheetEntries() {
+  const timesheetEntries = yield call(fetchGetTimesheetEntries);
+  yield put(requestTimeEntriesSuccess(timesheetEntries));
 }
 
-function* onPostTimesheetEntry(action) {
-  const timesheetEntry = yield call(postTimesheetEntry, action.timesheetEntry);
-  yield put(postTimesheetEntrySucces(timesheetEntry));
+function* postTimesheetEntry(action) {
+  const timesheetEntry = yield call(fetchPostTimesheetEntry, action.timesheetEntry);
+  yield put(postTimesheetEntrySuccess(timesheetEntry));
 }
 
 export default function* watchTimesheetEntries() {
-  yield takeEvery(REQUEST_TIMESHEET_ENTRIES, onGetTimesheetEntries);
-  yield takeEvery(POST_TIMESHEET_ENTRY, onPostTimesheetEntry);
-  yield takeEvery(DELETE_TIMESHEET_ENTRY, onDeleteTimesheetEntry);
+  yield takeEvery(REQUEST_TIMESHEET_ENTRIES, getTimesheetEntries);
+  yield takeEvery(POST_TIMESHEET_ENTRY, postTimesheetEntry);
+  yield takeEvery(DELETE_TIMESHEET_ENTRY, deleteTimesheetEntry);
 }

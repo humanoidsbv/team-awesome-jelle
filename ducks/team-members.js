@@ -29,7 +29,7 @@ export const requestTeamMembers = () => ({
   type: REQUEST_TEAM_MEMBERS
 });
 
-export const requestTeamMembersSucces = teamMembers => ({
+export const requestTeamMembersSuccess = teamMembers => ({
   type: REQUEST_TEAM_MEMBERS_SUCCESS,
   teamMembers
 });

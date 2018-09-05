@@ -2,18 +2,18 @@ import { call, put, takeEvery } from 'redux-saga/effects';
 
 import {
   REQUEST_TEAM_MEMBERS,
-  requestTeamMembersSucces
+  requestTeamMembersSuccess
 } from '../ducks/team-members';
 
 import {
-  getTeamMembers
+  fetchTeamMembers
 } from '../services/fetch-team-members/fetch-team-members';
 
-function* onGetTeamMembers() {
-  const teamMembers = yield call(getTeamMembers);
-  yield put(requestTeamMembersSucces(teamMembers));
+function* getTeamMembers() {
+  const teamMembers = yield call(fetchTeamMembers);
+  yield put(requestTeamMembersSuccess(teamMembers));
 }
 
 export default function* watchTeamMembers() {
-  yield takeEvery(REQUEST_TEAM_MEMBERS, onGetTeamMembers);
+  yield takeEvery(REQUEST_TEAM_MEMBERS, getTeamMembers);
 }
