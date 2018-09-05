@@ -4,7 +4,25 @@ import './add-team-member.scss';
 
 const AddTeamMember = () => (
   <div className="add-team-member">
-    <div className="add-team-member__header">
+    <div className="add-team-member__top-wrapper">
+      <p className="add-team-member__top-title">
+        Add new team member
+      </p>
+      <button
+        className="add-team-member__cancel-button"
+        type="button"
+      >
+        Cancel
+      </button>
+      <button
+        className="add-team-member__save-button"
+        type="submit"
+      >
+        Save
+      </button>
+    </div>
+
+    <div className="add-team-member__form-header">
       <div className="add-team-member__header-item">
         Personal details
       </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Link from 'next/link';
 
 import './team-member-overview.scss';
 
@@ -25,9 +26,7 @@ class TeamMemberOverview extends React.Component {
       twitterHandle: PropTypes.string.isRequired,
       zipCode: PropTypes.string.isRequired
     })).isRequired,
-    isAdding: PropTypes.bool.isRequired,
-    onRequestTeamMembers: PropTypes.func.isRequired,
-    onToggleForm: PropTypes.func.isRequired
+    onRequestTeamMembers: PropTypes.func.isRequired
   }
 
   componentDidMount() {
@@ -35,35 +34,30 @@ class TeamMemberOverview extends React.Component {
   }
 
   render() {
-    const { isAdding, onToggleForm, teamMembers } = this.props;
+    const { teamMembers } = this.props;
     return (
       <React.Fragment>
         <div className="team-member__top-wrapper">
           <p className="team-member__top-title">
-            {isAdding ? 'Add new team member' : 'All Humanoids'}
+            All Humanoids
           </p>
+          <Link href="/add-team-member">
+            <button
+              className="team-member__add-button"
+              type="button"
+            >
+              <img
+                alt="plus sign"
+                className="team-member__add-button-icon"
+                height="10px"
+                src="/static/icons/plus.svg"
+                width="10px"
+              />
+              New Humanoid
+            </button>
+          </Link>
           <button
-            className={`
-              team-member__add-button
-              team-member__add-button${isAdding ? '--invisible' : '--visible'}
-            `}
-            onClick={onToggleForm}
-            type="button"
-          >
-            <img
-              alt="plus sign"
-              className="team-member__add-button-icon"
-              height="10px"
-              src="/static/icons/plus.svg"
-              width="10px"
-            />
-            New Humanoid
-          </button>
-          <button
-            className={`
-              team-member__sort-button
-              team-member__sort-button${isAdding ? '--invisible' : '--visible'}
-            `}
+            className="team-member__sort-button"
             type="button"
           >
             Sort by:
@@ -75,38 +69,11 @@ class TeamMemberOverview extends React.Component {
               width="5px"
             />
           </button>
-          <button
-            className={`
-              team-member__cancel-button
-              team-member__cancel-button${isAdding ? '--visible' : '--invisible'}
-            `}
-            onClick={onToggleForm}
-            type="button"
-          >
-            Cancel
-          </button>
-          <button
-            className={`
-              team-member__save-button
-              team-member__save-button${isAdding ? '--visible' : '--invisible'}
-            `}
-            type="submit"
-          >
-            Save
-          </button>
         </div>
-        <div className={`
-          team-member__form-wrapper
-          team-member__form-wrapper${isAdding ? '--visible' : '--invisible'}
-        `}
-        >
+        <div className="team-member__form-wrapper">
           <AddTeamMember />
         </div>
-        <div className={`
-          team-member__content-wrapper
-          team-member__content-wrapper${isAdding ? '--invisible' : '--visible'}
-          `}
-        >
+        <div className="team-member__content-wrapper">
           {teamMembers.map(teamMember => (
             <React.Fragment key={teamMember.id}>
               <TeamMember
