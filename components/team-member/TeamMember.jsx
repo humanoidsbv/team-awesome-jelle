@@ -30,10 +30,10 @@ class TeamMember extends React.Component {
       startingDate
     } = this.props;
     return (
-      <div className="team-member__wrapper">
+      <div className="team-member">
         <div className={`
-          team-member
-          team-member${isTeamMemberExpanded ? '--expanded' : '--collapsed'}
+          team-member__wrapper
+          team-member__wrapper${isTeamMemberExpanded ? '--expanded' : '--collapsed'}
           `}
         >
           <img

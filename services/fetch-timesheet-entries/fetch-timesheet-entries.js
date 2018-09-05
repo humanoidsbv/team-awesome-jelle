@@ -1,11 +1,11 @@
 const api = 'http://localhost:3001/api/';
 
-export const fetchTimesheetEntries = () => (
+export const fetchGetTimesheetEntries = () => (
   fetch(`${api}timesheets/?_sort=startTime&_order=desc`)
     .then(response => response.json())
 );
 
-export const postTimesheetEntry = timesheetEntry => (
+export const fetchPostTimesheetEntry = timesheetEntry => (
   fetch(`${api}timesheets/`, {
     method: 'post',
     headers: {
@@ -15,7 +15,7 @@ export const postTimesheetEntry = timesheetEntry => (
   }).then(response => response.json())
 );
 
-export const deleteTimesheetEntry = timesheetEntryId => (
+export const fetchDeleteTimesheetEntry = timesheetEntryId => (
   fetch(`${api}timesheets/${timesheetEntryId}`, {
     method: 'delete',
     headers: {
