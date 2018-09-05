@@ -9,7 +9,7 @@ import AddTeamMemberContainer from '../components/add-team-member';
 const TeamMembers = () => (
   <React.Fragment>
     <HeaderContainer />
-    <main className="add-team-member-page-wrapper">
+    <main className="page-wrapper">
       <AddTeamMemberContainer />
     </main>
   </React.Fragment>

@@ -62,12 +62,12 @@ const AddTeamMember = () => (
               <div className="add-team-member__last-name">
                 <label
                   className="add-team-member__label"
-                  htmlFor=""
+                  htmlFor="last-name"
                 >
                   Last Name
                   <input
                     className="add-team-member__input"
-                    id=""
+                    id="last-name"
                     type="text"
                   />
                 </label>
