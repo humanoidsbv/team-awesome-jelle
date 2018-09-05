@@ -56,10 +56,6 @@
         margin-right: 0;
       }
     }
-
-    &--invisible {
-      display: none;
-    }
   }
 
   &__sort-button {
@@ -78,10 +74,6 @@
       justify-content: space-between;
       margin-left: 12px;
       width: 120px;
-    }
-
-    &--invisible {
-      display: none;
     }
   }
 
@@ -123,10 +115,6 @@
       margin-bottom: 0;
       width: 100px;
     }
-
-    &--invisible {
-      display: none;
-    }
   }
 
   &__content-wrapper {
@@ -136,10 +124,6 @@
     @include tablet {
       width: 75%;
     }
-
-    &--invisible {
-      display: none;
-    }
   }
 
   &__form-wrapper {
@@ -148,10 +132,6 @@
 
     @include tablet {
       width: 75%;
-    }
-
-    &--invisible {
-      display: none;
     }
   }
 }
