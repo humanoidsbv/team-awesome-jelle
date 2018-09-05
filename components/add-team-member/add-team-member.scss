@@ -67,6 +67,10 @@
       margin-bottom: 0;
       width: 100px;
     }
+
+    &[disabled] {
+      background: $color-accent-3;
+    }
   }
 
   &__form-wrapper {
