@@ -4,9 +4,18 @@ import { bindActionCreators } from 'redux';
 
 import TeamMemberOverview from './TeamMemberOverview';
 
-const mapStateToProps = () => ({});
+import {
+  requestTeamMembers,
+  teamMembersSelector
+} from '../../ducks/team-members';
 
-const mapDispatchToProps = dispatch => bindActionCreators({}, dispatch);
+const mapStateToProps = state => ({
+  teamMembers: teamMembersSelector(state)
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+  onRequestTeamMembers: requestTeamMembers
+}, dispatch);
 
 const TeamMemberOverviewContainer = props => (
   <TeamMemberOverview {...props} />

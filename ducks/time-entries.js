@@ -1,9 +1,9 @@
 export const DELETE_TIMESHEET_ENTRY = 'DELETE_TIMESHEET_ENTRY';
-export const DELETE_TIMESHEET_ENTRY_SUCCES = 'DELETE_TIMESHEET_ENTRY_SUCCES';
+export const DELETE_TIMESHEET_ENTRY_SUCCESS = 'DELETE_TIMESHEET_ENTRY_SUCCESS';
 export const POST_TIMESHEET_ENTRY = 'POST_TIMESHEET_ENTRY';
-export const POST_TIMESHEET_ENTRY_SUCCES = 'POST_TIMESHEET_ENTRY_SUCCES';
+export const POST_TIMESHEET_ENTRY_SUCCESS = 'POST_TIMESHEET_ENTRY_SUCCESS';
 export const REQUEST_TIMESHEET_ENTRIES = 'REQUEST_TIMESHEET_ENTRIES';
-export const REQUEST_TIMESHEET_ENTRIES_SUCCES = 'REQUEST_TIMESHEET_ENTRIES_SUCCES';
+export const REQUEST_TIMESHEET_ENTRIES_SUCCESS = 'REQUEST_TIMESHEET_ENTRIES_SUCCESS';
 
 export const initialState = {
   items: [],
@@ -19,7 +19,7 @@ export function timeEntriesReducer(state = initialState, action) {
   switch (action.type) {
     case DELETE_TIMESHEET_ENTRY:
       return { ...state };
-    case DELETE_TIMESHEET_ENTRY_SUCCES:
+    case DELETE_TIMESHEET_ENTRY_SUCCESS:
       return {
         ...state,
         items: state.items.filter(timesheetEntry => (
@@ -28,13 +28,13 @@ export function timeEntriesReducer(state = initialState, action) {
       };
     case POST_TIMESHEET_ENTRY:
       return { ...state, isFormSaving: true };
-    case POST_TIMESHEET_ENTRY_SUCCES:
+    case POST_TIMESHEET_ENTRY_SUCCESS:
       return {
         ...state,
         items: [...state.items, action.timesheetEntry],
         isFormSaving: false
       };
-    case REQUEST_TIMESHEET_ENTRIES_SUCCES:
+    case REQUEST_TIMESHEET_ENTRIES_SUCCESS:
       return { ...state, items: action.timesheetEntries, isLoading: false };
     case REQUEST_TIMESHEET_ENTRIES:
       return { ...state, isLoading: true };
@@ -48,8 +48,8 @@ export const deleteTimesheetEntry = timesheetEntryId => ({
   timesheetEntryId
 });
 
-export const deleteTimesheetEntrySucces = timesheetEntryId => ({
-  type: DELETE_TIMESHEET_ENTRY_SUCCES,
+export const deleteTimesheetEntrySuccess = timesheetEntryId => ({
+  type: DELETE_TIMESHEET_ENTRY_SUCCESS,
   timesheetEntryId
 });
 
@@ -58,8 +58,8 @@ export const postTimesheetEntry = timesheetEntry => ({
   timesheetEntry
 });
 
-export const postTimesheetEntrySucces = timesheetEntry => ({
-  type: POST_TIMESHEET_ENTRY_SUCCES,
+export const postTimesheetEntrySuccess = timesheetEntry => ({
+  type: POST_TIMESHEET_ENTRY_SUCCESS,
   timesheetEntry
 });
 
@@ -67,7 +67,7 @@ export const requestTimeEntries = () => ({
   type: REQUEST_TIMESHEET_ENTRIES
 });
 
-export const requestTimeEntriesSucces = timesheetEntries => ({
-  type: REQUEST_TIMESHEET_ENTRIES_SUCCES,
+export const requestTimeEntriesSuccess = timesheetEntries => ({
+  type: REQUEST_TIMESHEET_ENTRIES_SUCCESS,
   timesheetEntries
 });

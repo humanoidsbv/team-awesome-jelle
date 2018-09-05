@@ -1,6 +1,6 @@
 @import "../../shared/styles/main";
 
-.team-member-wrapper {
+.team-member {
   border: solid 1px $color-accent-3;
   border-left: solid 4px $color-primary;
   border-radius: 4px;
@@ -11,24 +11,25 @@
   width: 90%;
 
   @include tablet {
+    margin-top: 32px;
     width: 100%;
   }
-}
 
-.team-member {
-  display: flex;
-  justify-content: space-around;
-  margin: 0 auto;
-  min-height: 82px;
-  padding: 16px 0;
-  width: 100%;
-
-  @include tablet {
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-evenly;
-    padding: 16px;
+  &__wrapper {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    min-height: 82px;
+    padding: 16px 0;
     width: 100%;
+
+    @include tablet {
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-evenly;
+      padding: 16px;
+      width: 100%;
+    }
   }
 
   &__avatar {

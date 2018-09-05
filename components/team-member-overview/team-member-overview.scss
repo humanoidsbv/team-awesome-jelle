@@ -30,20 +30,22 @@
 
   &__add-button {
     background: linear-gradient($color-accent-alt-7, $color-accent-alt-8 98%);
+    border-radius: 4px;
     color: $color-monochrome-1;
     font-size: 14px;
     font-weight: 400;
     height: 36px;
+    margin-bottom: 12px;
     width: 100%;
 
     @include tablet {
       align-items: center;
       border: solid 1px $color-accent-7;
-      border-radius: 4px;
       display: flex;
       flex-direction: row;
       height: 36px;
       justify-content: space-evenly;
+      margin-bottom: 0;
       width: 156px;
     }
 
