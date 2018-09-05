@@ -130,11 +130,7 @@
   }
 
   &__first-name {
-    flex-basis: 49%;
-  }
-
-  &__last-name {
-    flex-basis: 49%;
+    margin-right: 10px;
   }
 
   &__email-address {
@@ -146,11 +142,7 @@
   }
 
   &__zip-code {
-    flex-basis: 49%;
-  }
-
-  &__city {
-    flex-basis: 49%;
+    margin-right: 10px;
   }
 
   &__social-profiles {
