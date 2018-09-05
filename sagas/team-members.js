@@ -6,11 +6,11 @@ import {
 } from '../ducks/team-members';
 
 import {
-  fetchTeamMembers
+  fetchGetTeamMembers
 } from '../services/fetch-team-members/fetch-team-members';
 
 function* getTeamMembers() {
-  const teamMembers = yield call(fetchTeamMembers);
+  const teamMembers = yield call(fetchGetTeamMembers);
   yield put(requestTeamMembersSuccess(teamMembers));
 }
 
