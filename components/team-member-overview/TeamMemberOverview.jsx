@@ -38,9 +38,9 @@ class TeamMemberOverview extends React.Component {
     return (
       <React.Fragment>
         <div className="team-member__top-wrapper">
-          <p className="team-member__top-title">
+          <h1 className="team-member__top-title">
             All Humanoids
-          </p>
+          </h1>
           <Link href="/add-team-member">
             <button
               className="team-member__add-button"
