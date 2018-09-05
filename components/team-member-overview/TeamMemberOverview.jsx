@@ -45,13 +45,6 @@ class TeamMemberOverview extends React.Component {
               className="team-member__add-button"
               type="button"
             >
-              <img
-                alt="plus sign"
-                className="team-member__add-button-icon"
-                height="10px"
-                src="/static/icons/plus.svg"
-                width="10px"
-              />
               New Humanoid
             </button>
           </Link>
