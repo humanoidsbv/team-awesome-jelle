@@ -1,12 +1,12 @@
-import environment from '../../apiRoot';
+import apiRoot from '../../apiRoot';
 
 export const fetchGetTeamMembers = () => (
-  fetch(`${environment}team-members/`)
+  fetch(`${apiRoot}team-members/`)
     .then(response => response.json())
 );
 
 export const fetchPostTeamMember = teamMember => (
-  fetch(`${api}team-members/`, {
+  fetch(`${apiRoot}team-members/`, {
     method: 'post',
     headers: {
       'Content-Type': 'application/json'

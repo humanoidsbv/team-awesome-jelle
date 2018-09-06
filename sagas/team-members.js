@@ -20,12 +20,12 @@ function* getTeamMembers() {
   yield put(requestTeamMembersSuccess(teamMembers));
 }
 
-function* postTimesheetEntry(action) {
+function* postTeamMember(action) {
   const teamMember = yield call(fetchPostTeamMember, action.teamMember);
   yield put(postTeamMemberSuccess(teamMember));
 }
 
 export default function* watchTeamMembers() {
   yield takeEvery(REQUEST_TEAM_MEMBERS, getTeamMembers);
-  yield takeEvery(POST_TEAM_MEMBER, postTimesheetEntry);
+  yield takeEvery(POST_TEAM_MEMBER, postTeamMember);
 }
