@@ -6,7 +6,7 @@ import AddTeamMember from './AddTeamMember';
 
 import {
   postTeamMember
-} from '../../ducks/add-team-member';
+} from '../../ducks/team-members';
 
 const mapStateToProps = () => ({});
 

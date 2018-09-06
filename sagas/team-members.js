@@ -2,13 +2,10 @@ import { call, put, takeEvery } from 'redux-saga/effects';
 
 import {
   REQUEST_TEAM_MEMBERS,
-  requestTeamMembersSuccess
-} from '../ducks/team-members';
-
-import {
+  requestTeamMembersSuccess,
   POST_TEAM_MEMBER,
   postTeamMemberSuccess
-} from '../ducks/add-team-member';
+} from '../ducks/team-members';
 
 import {
   fetchGetTeamMembers,
