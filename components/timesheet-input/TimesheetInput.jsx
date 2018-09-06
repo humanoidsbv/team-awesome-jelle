@@ -101,12 +101,6 @@ class TimesheetInput extends React.Component {
           onClick={this.toggleForm}
           type="button"
         >
-          <img
-            alt="plus sign"
-            className="timesheet-field__plus-svg"
-            src="/static/icons/plus.svg"
-          />
-          {' '}
           New time entry
         </button>
         <button

@@ -1,7 +1,7 @@
-const api = 'http://localhost:3001/api/';
+import environment from '../../apiRoot';
 
 export const fetchGetTeamMembers = () => (
-  fetch(`${api}team-members/`)
+  fetch(`${environment}team-members/`)
     .then(response => response.json())
 );
 

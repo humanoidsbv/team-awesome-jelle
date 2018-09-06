@@ -102,6 +102,7 @@ class AddTeamMember extends React.Component {
             <div className="add-team-member__form-header">
               <div className="add-team-member__header-item">
                 Personal details
+
               </div>
             </div>
             <div className="add-team-member__form-fields">

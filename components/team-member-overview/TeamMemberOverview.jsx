@@ -4,7 +4,6 @@ import Link from 'next/link';
 
 import './team-member-overview.scss';
 
-// import AddTeamMember from '../add-team-member/AddTeamMember';
 import TeamMember from '../team-member/TeamMember';
 
 class TeamMemberOverview extends React.Component {
@@ -38,21 +37,14 @@ class TeamMemberOverview extends React.Component {
     return (
       <React.Fragment>
         <div className="team-member__top-wrapper">
-          <p className="team-member__top-title">
+          <h1 className="team-member__top-title">
             All Humanoids
-          </p>
+          </h1>
           <Link href="/add-team-member">
             <button
               className="team-member__add-button"
               type="button"
             >
-              <img
-                alt="plus sign"
-                className="team-member__add-button-icon"
-                height="10px"
-                src="/static/icons/plus.svg"
-                width="10px"
-              />
               New Humanoid
             </button>
           </Link>
@@ -70,9 +62,6 @@ class TeamMemberOverview extends React.Component {
             />
           </button>
         </div>
-        {/* <div className="team-member__form-wrapper">
-          <AddTeamMember />
-        </div> */}
         <div className="team-member__content-wrapper">
           {teamMembers.map(teamMember => (
             <React.Fragment key={teamMember.id}>

@@ -1,17 +1,9 @@
 @import "../shared/styles/main";
 
-.timesheet-page-wrapper {
+.page-wrapper {
   padding-top: 70px;
 
   @include tablet {
     padding: 70px 0;
   }
-}
-
-.team-member-page-wrapper {
-  padding-top: 70px;
-}
-
-.add-team-member-page-wrapper {
-  padding-top: 70px;
 }

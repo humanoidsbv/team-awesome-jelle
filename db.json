@@ -1,0 +1,131 @@
+{
+  "timesheets": [
+    {
+      "employer": "Port of Rotterdam",
+      "activity": "Design",
+      "date": "2012-12-13",
+      "startTime": "2012-12-13T12:00:00.000Z",
+      "endTime": "2012-12-13T13:00:00.000Z",
+      "id": 2
+    },
+    {
+      "employer": "Port of Rotterdam",
+      "activity": "Design",
+      "date": "2018-07-29",
+      "startTime": "2018-07-29T11:00:00.000Z",
+      "endTime": "2018-07-29T12:00:00.000Z",
+      "id": 3
+    },
+    {
+      "employer": "Port of Rotterdam",
+      "activity": "Design",
+      "date": "2018-12-21",
+      "startTime": "2018-12-21T09:00:00.000Z",
+      "endTime": "2018-12-21T09:00:00.000Z",
+      "id": 4
+    },
+    {
+      "employer": "Port of Rotterdam",
+      "activity": "Design",
+      "date": "2018-12-21",
+      "startTime": "2018-12-21T12:00:00.000Z",
+      "endTime": "2018-12-21T13:00:00.000Z",
+      "id": 5
+    },
+    {
+      "employer": "Port of Rotterdam",
+      "activity": "Design",
+      "date": "2018-12-21",
+      "startTime": "2018-12-21T12:00:00.000Z",
+      "endTime": "2018-12-21T13:00:00.000Z",
+      "id": 6
+    }
+  ],
+  "team-members": [
+    {
+      "address": "Groenoordstraat",
+      "avatar": "static/icons/jelle.jpg",
+      "bio": "This is a super long bio",
+      "city": "Leiden",
+      "currentEmployer": "Humanoids",
+      "email": "bouwman.jelle@gmail.com",
+      "employeeNumber": "HUM_001",
+      "facebookHandle": "@jellebouwman",
+      "firstName": "Jelle",
+      "id": 1,
+      "jobTitle": "Junior Developer",
+      "lastName": "Bouwman",
+      "startingDate": "2018-07-29T11:00:00.000Z",
+      "twitterHandle": "@jellebouwman",
+      "zipCode": "2316AZ"
+    },
+    {
+      "address": "Groenoordstraat",
+      "avatar": "static/icons/jelle.jpg",
+      "bio": "This is a super long bio",
+      "city": "Leiden",
+      "currentEmployer": "Humanoids",
+      "email": "bouwman.jelle@gmail.com",
+      "employeeNumber": "HUM_002",
+      "facebookHandle": "@jellebouwman",
+      "firstName": "Jelle",
+      "id": 2,
+      "jobTitle": "Front-end Developer",
+      "lastName": "Bouwman",
+      "startingDate": "2018-07-29T11:00:00.000Z",
+      "twitterHandle": "@jellebouwman",
+      "zipCode": "2316AZ"
+    },
+    {
+      "address": "Lelylaan 3",
+      "avatar": "static/icons/jelle.jpg",
+      "bio": "dafjaldjfladjf",
+      "city": "Mexico",
+      "currentEmployer": "Humanoids",
+      "email": "bouwman.jelle@gmail.com",
+      "employeeNumber": "HUM_",
+      "facebookHandle": "@bouwman",
+      "firstName": "@bouwman",
+      "id": 3,
+      "jobTitle": "Junior IT",
+      "lastName": "Bouwman",
+      "startingDate": "2018-07-29T11:00:00.000Z",
+      "twitterHandle": "@jelle",
+      "zipCode": "4223WH"
+    },
+    {
+      "firstName": "@bouwman",
+      "email": "bouwman.jelle@gmail.com",
+      "address": "Lelylaan 3",
+      "zipCode": "4223WH",
+      "city": "Mexico",
+      "facebookHandle": "@bouwman",
+      "lastName": "Bouwman",
+      "bio": "dafjaldjfladjf",
+      "twitterHandle": "@jelle",
+      "avatar": "static/icons/jelle.jpg",
+      "currentEmployer": "Humanoids",
+      "employeeNumber": "HUM_",
+      "jobTitle": "Junior IT",
+      "startingDate": "2018-07-29T11:00:00.000Z",
+      "id": 4
+    },
+    {
+      "firstName": "@bouwman",
+      "email": "bouwman.jelle@gmail.com",
+      "address": "Lelylaan 3",
+      "zipCode": "4223WH",
+      "city": "Mexico",
+      "facebookHandle": "@bouwman",
+      "lastName": "Bouwman",
+      "bio": "dafjaldjfladjf",
+      "twitterHandle": "@jelle",
+      "avatar": "static/icons/jelle.jpg",
+      "currentEmployer": "Humanoids",
+      "employeeNumber": "HUM_",
+      "jobTitle": "Junior IT",
+      "startingDate": "2018-07-29T11:00:00.000Z",
+      "id": 5
+    }
+  ]
+}
