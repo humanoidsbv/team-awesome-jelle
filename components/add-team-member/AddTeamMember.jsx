@@ -181,7 +181,7 @@ class AddTeamMember extends React.Component {
                     htmlFor="bio"
                   >
                     Bio
-                    <input
+                    <textarea
                       className="add-team-member__textarea"
                       id="bio"
                       rows="4"
