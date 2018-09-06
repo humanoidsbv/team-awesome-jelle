@@ -6,19 +6,15 @@ import TeamMemberOverview from './TeamMemberOverview';
 
 import {
   requestTeamMembers,
-  isAddingSelector,
-  teamMembersSelector,
-  toggleForm
+  teamMembersSelector
 } from '../../ducks/team-members';
 
 const mapStateToProps = state => ({
-  teamMembers: teamMembersSelector(state),
-  isAdding: isAddingSelector(state)
+  teamMembers: teamMembersSelector(state)
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  onRequestTeamMembers: requestTeamMembers,
-  onToggleForm: toggleForm
+  onRequestTeamMembers: requestTeamMembers
 }, dispatch);
 
 const TeamMemberOverviewContainer = props => (

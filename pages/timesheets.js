@@ -8,7 +8,7 @@ import TimesheetContainer from '../components/timesheet';
 const Timesheets = () => (
   <React.Fragment>
     <HeaderContainer />
-    <main className="timesheet-page-wrapper">
+    <main className="page-wrapper">
       <TimesheetContainer />
     </main>
   </React.Fragment>

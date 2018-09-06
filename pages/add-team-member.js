@@ -3,14 +3,14 @@ import React from 'react';
 import './index.scss';
 
 import HeaderContainer from '../components/header';
-import TeamMemberOverviewContainer from '../components/team-member-overview';
+import AddTeamMemberContainer from '../components/add-team-member';
 
 
 const TeamMembers = () => (
   <React.Fragment>
     <HeaderContainer />
     <main className="page-wrapper">
-      <TeamMemberOverviewContainer />
+      <AddTeamMemberContainer />
     </main>
   </React.Fragment>
 );
