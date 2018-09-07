@@ -31,7 +31,7 @@ class TimesheetEntry extends React.Component {
     } = this.props;
 
     return (
-      <div className="timesheet-entry-wrapper">
+      <div className="timesheet-entry">
         <p className="timesheet-entry__employer">
           {employer}
         </p>
@@ -48,9 +48,7 @@ class TimesheetEntry extends React.Component {
         </button>
         <div className="timesheet-entry__time">
           <p className="timesheet-entry__time-range">
-            {`${new Date(startTime).toLocaleTimeString('nl-NL', { hour: 'numeric', minute: 'numeric' })}
-             -
-             ${new Date(endTime).toLocaleTimeString('nl-NL', { hour: 'numeric', minute: 'numeric' })}`}
+            {`${new Date(startTime).toLocaleTimeString('nl-NL', { hour: 'numeric', minute: 'numeric' })} - ${new Date(endTime).toLocaleTimeString('nl-NL', { hour: 'numeric', minute: 'numeric' })}`}
           </p>
           <p className="timesheet-entry__cumulative-time">
             {calculateDuration(startTime, endTime)}

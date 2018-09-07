@@ -1,6 +1,6 @@
 @import "../../shared/styles/main";
 
-.timesheet-entry-wrapper {
+.timesheet-entry {
   align-items: center;
   border: solid 1px $color-accent-2;
   border-left: solid 4px $color-primary;
@@ -19,20 +19,17 @@
         justify-content: space-around;
         opacity: 1;
         width: 79px;
-    }
+      }
 
       .timesheet-entry__delete-icon {
         -webkit-mask: url("/static/icons/forbid.svg")   no-repeat;
         -webkit-mask-size: 16px 16px;
-        // background-color: $color-monochrome-1;
         height: 16px;
         width: 16px;
+      }
     }
   }
-}
-}
 
-.timesheet-entry {
   &__delete-button {
     -moz-transition: opacity .2s ease-in-out;
     -webkit-transition: opacity .2s ease-in-out;
