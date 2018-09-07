@@ -2,6 +2,17 @@
 
 .timesheet-input {
 
+  background-color: $color-accent-2;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  @include tablet {
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 33px;
+  }
 
   &__employer {
     padding: 16px 0 0;
@@ -57,18 +68,18 @@
     }
   }
 
-  &__wrapper {
-    background-color: $color-accent-2;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-
-    @include tablet {
-      align-items: center;
-      flex-direction: row;
-      justify-content: space-around;
-    }
-  }
+  // &__wrapper {
+  //   background-color: $color-accent-2;
+  //   display: flex;
+  //   flex-direction: column;
+  //   position: relative;
+  //
+  //   @include tablet {
+  //     align-items: center;
+  //     flex-direction: row;
+  //     justify-content: space-around;
+  //   }
+  // }
 
   &__form {
     background-color: $color-accent-2;

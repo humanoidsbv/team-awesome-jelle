@@ -184,8 +184,6 @@ class AddTeamMember extends React.Component {
                     <textarea
                       className="add-team-member__textarea"
                       id="bio"
-                      rows="4"
-                      cols="30"
                       type="textarea"
                       name="bio"
                       onBlur={this.handleBlur}

@@ -48,6 +48,8 @@ class Timesheet extends React.Component {
               {(!index || (timesheetEntry.date !== array[index - 1].date)) && (
               <TimesheetDate
                 date={timesheetEntry.date}
+                startTime={timesheetEntry.startTime}
+                timesheetEntries={timesheetEntries}
               />
               )}
               <TimesheetEntry
