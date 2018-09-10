@@ -1,18 +1,40 @@
+import { createSelector } from 'reselect';
+
 export const DELETE_TIMESHEET_ENTRY = 'DELETE_TIMESHEET_ENTRY';
 export const DELETE_TIMESHEET_ENTRY_SUCCESS = 'DELETE_TIMESHEET_ENTRY_SUCCESS';
 export const POST_TIMESHEET_ENTRY = 'POST_TIMESHEET_ENTRY';
 export const POST_TIMESHEET_ENTRY_SUCCESS = 'POST_TIMESHEET_ENTRY_SUCCESS';
 export const REQUEST_TIMESHEET_ENTRIES = 'REQUEST_TIMESHEET_ENTRIES';
 export const REQUEST_TIMESHEET_ENTRIES_SUCCESS = 'REQUEST_TIMESHEET_ENTRIES_SUCCESS';
+export const CHANGE_ACTIVE_FILTER = 'CHANGE_ACTIVE_FILTER';
 
 export const initialState = {
   items: [],
   error: '',
   isLoading: false,
-  isFormSaving: false
+  isFormSaving: false,
+  activeFilter: ''
 };
 
-export const timesheetEntriesSelector = state => state.timesheetEntries.items;
+const timesheetEntriesRoot = state => state.timesheetEntries;
+
+const timesheetEntriesItemsSelector = createSelector(
+  timesheetEntriesRoot,
+  timeEntries => timeEntries.items
+);
+
+const timesheetActiveFilterSelector = createSelector(
+  timesheetEntriesRoot,
+  timeEntries => timeEntries.activeFilter
+);
+
+export const timesheetEntriesSelector = createSelector(
+  [timesheetEntriesItemsSelector, timesheetActiveFilterSelector],
+  (items, activeFilter) => (
+    items.filter(item => !activeFilter || item.employer === activeFilter)
+  )
+);
+
 export const isFormSavingSelector = state => state.timesheetEntries.isFormSaving;
 
 export function timeEntriesReducer(state = initialState, action) {
@@ -38,6 +60,8 @@ export function timeEntriesReducer(state = initialState, action) {
       return { ...state, items: action.timesheetEntries, isLoading: false };
     case REQUEST_TIMESHEET_ENTRIES:
       return { ...state, isLoading: true };
+    case CHANGE_ACTIVE_FILTER:
+      return { ...state, activeFilter: action.newActiveFilter };
     default:
       return state;
   }
@@ -70,4 +94,9 @@ export const requestTimeEntries = () => ({
 export const requestTimeEntriesSuccess = timesheetEntries => ({
   type: REQUEST_TIMESHEET_ENTRIES_SUCCESS,
   timesheetEntries
+});
+
+export const changeActiveFilter = newActiveFilter => ({
+  type: CHANGE_ACTIVE_FILTER,
+  newActiveFilter
 });

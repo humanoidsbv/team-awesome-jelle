@@ -1,8 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './timesheet-search-bar.scss';
 
-const TimesheetSearchBar = () => (
+import ClientSelector from './client-selector/ClientSelector';
+
+const TimesheetSearchBar = ({ onChangeActiveFilter }) => (
   <div className="timesheet-search-bar">
     <p className="timesheet-search-bar__title">
       Timesheets
@@ -10,6 +13,9 @@ const TimesheetSearchBar = () => (
     <p className="timesheet-search-bar__entry-counter">
       12 entries
     </p>
+    <ClientSelector
+      onChangeActiveFilter={onChangeActiveFilter}
+    />
     <div className="timesheet-search-bar__search-box-wrapper">
       <input
         className="timesheet-search-bar__search-box"
@@ -26,5 +32,10 @@ const TimesheetSearchBar = () => (
     </div>
   </div>
 );
+
+TimesheetSearchBar.propTypes = {
+  onChangeActiveFilter: PropTypes.func.isRequired
+};
+
 
 export default TimesheetSearchBar;

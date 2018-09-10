@@ -7,7 +7,8 @@ import {
   requestTimeEntries,
   postTimesheetEntry,
   timesheetEntriesSelector,
-  isFormSavingSelector
+  isFormSavingSelector,
+  changeActiveFilter
 }
   from '../../ducks/time-entries';
 
@@ -21,7 +22,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => bindActionCreators({
   onDeleteTimesheetEntry: deleteTimesheetEntry,
   onRequestTimeEntries: requestTimeEntries,
-  onPostTimesheetEntry: postTimesheetEntry
+  onPostTimesheetEntry: postTimesheetEntry,
+  onChangeActiveFilter: changeActiveFilter
 }, dispatch);
 
 const TimesheetContainer = props => (

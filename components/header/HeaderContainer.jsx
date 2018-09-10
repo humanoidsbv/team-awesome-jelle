@@ -7,6 +7,10 @@ import {
   isMenuVisibleSelector
 } from '../../ducks/header';
 
+import {
+  changeActiveFilter
+} from '../../ducks/time-entries';
+
 import Header from './Header';
 
 const mapStateToProps = state => ({
@@ -14,7 +18,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  onToggleMenu: toggleMenu
+  onToggleMenu: toggleMenu,
+  onSelectFilter: changeActiveFilter
 }, dispatch);
 
 const HeaderContainer = props => (
