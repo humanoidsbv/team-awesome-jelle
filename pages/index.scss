@@ -1,9 +1,5 @@
 @import "../shared/styles/main";
 
 .page-wrapper {
-  padding-top: 70px;
-
-  @include tablet {
-    padding: 70px 0;
-  }
+  @include container
 }

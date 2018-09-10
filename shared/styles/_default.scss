@@ -12,10 +12,12 @@ body {
   font-size: $default-font-size--mobile;
   font-weight: $font-weight-book;
   letter-spacing: .5px;
+  padding-top: $padding-top-mobile;
   width: 100%;
 
   @include tablet {
     font-size: $default-font-size;
+    padding-top: $padding-top-desktop;
   }
 }
 

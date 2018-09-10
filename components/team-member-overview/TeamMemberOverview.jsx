@@ -62,9 +62,9 @@ class TeamMemberOverview extends React.Component {
             />
           </button>
         </section>
-        <section className="team-member-overview__content-wrapper">
+        <ul className="team-member-overview__content-wrapper">
           {teamMembers.map(teamMember => (
-            <React.Fragment key={teamMember.id}>
+            <li key={teamMember.id}>
               <TeamMember
                 avatar={teamMember.avatar}
                 currentEmployer={teamMember.currentEmployer}
@@ -74,9 +74,9 @@ class TeamMemberOverview extends React.Component {
                 lastName={teamMember.lastName}
                 startingDate={teamMember.startingDate}
               />
-            </React.Fragment>
+            </li>
           ))}
-        </section>
+        </ul>
       </div>
     );
   }

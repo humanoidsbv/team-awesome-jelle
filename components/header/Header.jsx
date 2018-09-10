@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'next/link';
+
+import MainNavigation from './main-navigation/MainNavigation';
 
 import './header.scss';
 
 const Header = ({ isMenuVisible, onToggleMenu }) => (
   <header className="header">
-    <div className="header__mobile">
+    <div className="header__mobile-controls">
       <a
-        className="company-name"
+        className="header__company-logo"
         href="#link"
       >
       team awesome
@@ -16,8 +17,8 @@ const Header = ({ isMenuVisible, onToggleMenu }) => (
 
       <button
         className={`
-          menu-button
-          menu-button--${isMenuVisible ? 'clicked' : ''}
+          header__menu-button
+          header__menu-button--${isMenuVisible ? 'clicked' : ''}
           `}
         type="submit"
         onClick={onToggleMenu}
@@ -38,73 +39,7 @@ const Header = ({ isMenuVisible, onToggleMenu }) => (
         />
       </button>
     </div>
-    <nav className={`
-      main-navigation
-      main-navigation--${isMenuVisible ? 'open' : 'close'}
-    `}
-    >
-      <Link href="/timesheets">
-        <a
-          className="main-navigation__item main-navigation__item--active"
-        >
-        Timesheets
-        </a>
-      </Link>
-      <Link href="/team-members">
-        <a
-          className="main-navigation__item"
-        >
-         Team members
-        </a>
-      </Link>
-      <a
-        href="#link"
-        className="main-navigation__item"
-      >
-         Projects
-      </a>
-      <a
-        href="#link"
-        className="main-navigation__item"
-      >
-         Clients
-      </a>
-      <a
-        href="#link"
-        className="main-navigation__item"
-      >
-         Documents
-      </a>
-    </nav>
-    <button
-      className="main-navigation__profile-button"
-      type="button"
-    >
-      <img
-        src="/../../static/icons/1_humanoids_logo.png"
-        alt=""
-        className="main-navigation__company-logo"
-      />
-      <img
-        src="/../../static/icons/jelle.jpg"
-        width="32px"
-        height="32px"
-        alt=""
-        className="main-navigation__user-icon"
-      />
-    </button>
-    <button
-      className="main-navigation__arrow-button"
-      type="button"
-    >
-      <img
-        alt="search-icon"
-        src="/../../static/icons/arrow-down.svg"
-        height="5px"
-        width="5px"
-      />
-    </button>
-
+    <MainNavigation isMenuVisible={isMenuVisible} />
   </header>
 );
 

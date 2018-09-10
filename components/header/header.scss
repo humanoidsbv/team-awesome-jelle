@@ -8,9 +8,16 @@
   min-height: 50px;
   position: fixed;
   right: 0;
+  top: 0;
   z-index: 100;
 
-  &__mobile {
+  @include tablet {
+    align-items: center;
+    min-height: 70px;
+    padding: 12px;
+  }
+
+  &__mobile-controls {
     background-color: inherit;
     display: flex;
     justify-content: center;
@@ -22,145 +29,57 @@
     }
   }
 
-  @include tablet {
-    align-items: center;
-    min-height: 70px;
-    padding: 12px;
-  }
-}
-
-.company-name {
-  -webkit-font-smoothing: antialiased;
-  color: $color-monochrome-1;
-  font-family: $font-secondary;
-  font-size: 26px;
-  height: 27px;
-  letter-spacing: normal;
-  line-height: normal;
-  margin-top: 12px;
-  text-align: center;
-  text-decoration: none;
-  @include tablet {
-    display: none;
-  }
-}
-
-.main-navigation {
-  background-color: $color-primary;
-  color: $color-monochrome-1;
-  display: flex;
-  flex-direction: column;
-  flex-flow: flex-start;
-  font-size: 24px;
-  font-weight: 400;
-  height: calc(100vh - 50px);
-  overflow: hidden;
-  position: fixed;
-  top: 50px;
-  transform: translate(0, -100%);
-  transition: transform .3s ease-in-out, background-color .3s ease-in-out;
-  width: 100%;
-  z-index: 10;
-
-  @include tablet {
-    align-items: center;
-    flex-direction: row;
-    font-size: 14px;
-    font-style: normal;
-    height: auto;
-    position: relative;
-    top: auto;
-    transform: translate(0, 0);
-    transition: none;
-  }
-
-  &--open {
-    transform: translate(0, 0);
-
-    @include tablet {
-      transform: none;
-    }
-  }
-
-  &__item {
-    color: $color-monochrome-1;
-    font-family: $font-primary;
-    margin: 22px auto;
-    text-decoration: none;
-
-    &:first-child {
-      margin-top: 44px;
-      @include tablet {
-        margin-top: 0;
-      }
-    }
-
-    @include tablet {
-      font-size: 14px;
-      font-stretch: normal;
-      font-style: normal;
-      margin: 0 20px 0 0;
-    }
-
-    &--active {
-      background-color: $color-accent;
-      border-radius: 4px;
-      padding: 5px 11px 2px;
-      text-decoration: none;
-      @include tablet {
-        font-size: 14px;
-
-        padding: 6px 16px;
-      }
-    }
-  }
-
-  &__profile-button {
-    background-color: $color-monochrome-1;
-    border: none;
-    cursor: pointer;
-    display: none;
-    outline: none;
-    padding: 12px 46px 12px 12px;
-    position: relative;
-    transition: background-color .3s ease-in-out;
-
-    &:hover {
-      background-color: $color-accent-3;
-    }
-
-    @include tablet {
-      align-items: center;
-      border-radius: 36px;
-      display: flex;
-      margin-left: auto;
-      vertical-align: middle;
-    }
-  }
-
   &__company-logo {
-    display: flex;
-    height: 10px;
-    margin-right: 7px;
-    width: 75px;
+    -webkit-font-smoothing: antialiased;
+    color: $color-monochrome-1;
+    font-family: $font-secondary;
+    font-size: 26px;
+    height: 27px;
+    letter-spacing: normal;
+    line-height: normal;
+    margin-top: 12px;
+    text-align: center;
+    text-decoration: none;
+    @include tablet {
+      display: none;
     }
+  }
 
-  &__user-icon {
-    border-radius: 50%;
-    display: flex;
-    height: 32px;
-    margin-left: 7px;
-    position: absolute;
-    right: 2px;
-    width: 32px;
-    }
-
-  &__arrow-button {
-    background-color: $color-primary;
+  &__menu-button {
+    background: none;
     border: none;
+    border-radius: none;
     outline: none;
+    padding: 0;
+    position: absolute;
+    right: 10px;
+    top: 30%;
+    @include tablet {
+      display: none;
+    }
+
+    &__icon--close {
+      display: none;
+    }
+
+    &--clicked {
+
+      .menu-button__icon--open {
+        display: none;
+        }
+
+      .menu-button__icon--close {
+        border: none;
+        display: block;
+        outline: none;
+      }
+    }
   }
 }
+
+
+
+
 
 .menu-button {
   background: none;
