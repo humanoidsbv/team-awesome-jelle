@@ -66,13 +66,14 @@
   &__time-range {
     color: $color-accent-5;
     font-size: 16px;
-    margin-left: auto;
+    min-width: 100px;
+    text-align: right;
   }
 
   &__cumulative-time {
     color: $color-accent-6;
     font-size: 14px;
     font-weight: 400;
-    margin-left: auto;
+    text-align: right;
   }
 }
