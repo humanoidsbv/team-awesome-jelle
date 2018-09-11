@@ -35,36 +35,36 @@ class TeamMemberOverview extends React.Component {
   render() {
     const { teamMembers } = this.props;
     return (
-      <React.Fragment>
-        <div className="team-member__top-wrapper">
-          <h1 className="team-member__top-title">
+      <div className="team-member-overview">
+        <section className="team-member-overview__top-wrapper">
+          <h1 className="team-member-overview__top-title">
             All Humanoids
           </h1>
           <Link href="/add-team-member">
             <button
-              className="team-member__add-button"
+              className="team-member-overview__add-button"
               type="button"
             >
               New Humanoid
             </button>
           </Link>
           <button
-            className="team-member__sort-button"
+            className="team-member-overview__sort-button"
             type="button"
           >
             Sort by:
             <img
               alt="arrow down sign"
-              className="team-member__sort-button-icon"
+              className="team-member-overview__sort-button-icon"
               height="5px"
               src="/static/icons/arrow-down.svg"
               width="5px"
             />
           </button>
-        </div>
-        <div className="team-member__content-wrapper">
+        </section>
+        <ul className="team-member-overview__content-wrapper">
           {teamMembers.map(teamMember => (
-            <React.Fragment key={teamMember.id}>
+            <li key={teamMember.id}>
               <TeamMember
                 avatar={teamMember.avatar}
                 currentEmployer={teamMember.currentEmployer}
@@ -74,10 +74,10 @@ class TeamMemberOverview extends React.Component {
                 lastName={teamMember.lastName}
                 startingDate={teamMember.startingDate}
               />
-            </React.Fragment>
+            </li>
           ))}
-        </div>
-      </React.Fragment>
+        </ul>
+      </div>
     );
   }
 }

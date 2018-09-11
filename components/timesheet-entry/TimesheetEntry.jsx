@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 
 import './timesheet-entry.scss';
 
+import { calculateDuration } from '../../services/convert-time/convert-time';
+
 class TimesheetEntry extends React.Component {
   static propTypes = {
     employer: PropTypes.string.isRequired,
@@ -29,7 +31,7 @@ class TimesheetEntry extends React.Component {
     } = this.props;
 
     return (
-      <div className="timesheet-entry-wrapper">
+      <div className="timesheet-entry">
         <p className="timesheet-entry__employer">
           {employer}
         </p>
@@ -44,15 +46,17 @@ class TimesheetEntry extends React.Component {
           />
             Delete
         </button>
-        <p className="timesheet-entry__time">
-          {`${new Date(startTime).toLocaleTimeString('nl-NL', { hour: 'numeric', minute: 'numeric' })}
-           -
-           ${new Date(endTime).toLocaleTimeString('nl-NL', { hour: 'numeric', minute: 'numeric' })}`}
-        </p>
+        <div className="timesheet-entry__time">
+          <p className="timesheet-entry__time-range">
+            {`${new Date(startTime).toLocaleTimeString('nl-NL', { hour: 'numeric', minute: 'numeric' })} - ${new Date(endTime).toLocaleTimeString('nl-NL', { hour: 'numeric', minute: 'numeric' })}`}
+          </p>
+          <p className="timesheet-entry__cumulative-time">
+            {calculateDuration(startTime, endTime)}
+          </p>
+        </div>
       </div>
     );
   }
 }
-
 
 export default TimesheetEntry;

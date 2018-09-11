@@ -92,7 +92,7 @@ class TimesheetInput extends React.Component {
     } = timeEntry;
 
     return (
-      <div className="timesheet-input__wrapper">
+      <div className="timesheet-input">
         <button
           className={`
             timesheet-input__new-button

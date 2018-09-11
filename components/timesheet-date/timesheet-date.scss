@@ -1,6 +1,27 @@
 @import "../../shared/styles/main";
 
-.timesheet-wrapper__date {
-  color: $color-accent-6;
-  margin: 33px 0 25px;
+.timesheet-date {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 25px;
+  margin-top: 32px;
+
+  &__date {
+    color: $color-accent-6;
+    font-size: 16px;
+
+    @include tablet {
+      font-size: 24px;
+    }
+  }
+
+  &__total-time {
+    color: $color-accent-6;
+    font-size: 16px;
+    margin-left: auto;
+
+    @include tablet {
+      font-size: 24px;
+    }
+  }
 }

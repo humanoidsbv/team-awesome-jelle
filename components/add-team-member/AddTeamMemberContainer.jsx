@@ -4,9 +4,15 @@ import { bindActionCreators } from 'redux';
 
 import AddTeamMember from './AddTeamMember';
 
+import {
+  postTeamMember
+} from '../../ducks/team-members';
+
 const mapStateToProps = () => ({});
 
-const mapDispatchToProps = dispatch => bindActionCreators({}, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({
+  onPostTeamMember: postTeamMember
+}, dispatch);
 
 const AddTeamMemberContainer = props => (
   <AddTeamMember {...props} />
