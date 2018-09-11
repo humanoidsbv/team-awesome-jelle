@@ -87,19 +87,6 @@ class TeamMemberOverview extends React.Component {
               Decending
             </option>
           </select>
-          {/* <button
-            className="team-member-overview__sort-button"
-            type="button"
-          >
-            Sort by:
-            <img
-              alt="arrow down sign"
-              className="team-member-overview__sort-button-icon"
-              height="5px"
-              src="/static/icons/arrow-down.svg"
-              width="5px"
-            />
-          </button> */}
         </section>
         <ul className="team-member-overview__content-wrapper">
           {teamMembers.map(teamMember => (
