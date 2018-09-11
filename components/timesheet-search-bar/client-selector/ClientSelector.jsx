@@ -5,12 +5,10 @@ import './client-selector.scss';
 
 const ClientSelector = ({ onChangeActiveFilter }) => (
   <select
-    className="employer-selector"
+    className="client-selector"
     onChange={({ target: { value } }) => onChangeActiveFilter(value)}
   >
-    <option
-      value=""
-    >
+    <option value="">
       All clients
     </option>
     <option>
