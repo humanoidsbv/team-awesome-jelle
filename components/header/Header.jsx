@@ -39,7 +39,9 @@ const Header = ({ isMenuVisible, onToggleMenu }) => (
         />
       </button>
     </div>
-    <MainNavigation isMenuVisible={isMenuVisible} />
+    <MainNavigation
+      isMenuVisible={isMenuVisible}
+    />
   </header>
 );
 

@@ -7,6 +7,13 @@ import './team-member-overview.scss';
 import TeamMember from '../team-member/TeamMember';
 
 class TeamMemberOverview extends React.Component {
+  static defaultState = {
+    sorting: {
+      sortBy: 'firstName',
+      sortDirection: 'ascending'
+    }
+  }
+
   static propTypes = {
     teamMembers: PropTypes.arrayOf(PropTypes.shape({
       address: PropTypes.string.isRequired,
@@ -25,15 +32,23 @@ class TeamMemberOverview extends React.Component {
       twitterHandle: PropTypes.string.isRequired,
       zipCode: PropTypes.string.isRequired
     })).isRequired,
-    onRequestTeamMembers: PropTypes.func.isRequired
+    onChangeSortingDirection: PropTypes.func.isRequired,
+    onChangeSortByProperty: PropTypes.func.isRequired,
+    onRequestTeamMembers: PropTypes.func.isRequired,
+    sortBy: PropTypes.string.isRequired,
+    sortDirection: PropTypes.string.isRequired
   }
+
 
   componentDidMount() {
     this.props.onRequestTeamMembers();
   }
 
   render() {
-    const { teamMembers } = this.props;
+    const {
+      sortBy, sortDirection, teamMembers,
+      onChangeSortByProperty, onChangeSortingDirection
+    } = this.props;
     return (
       <div className="team-member-overview">
         <section className="team-member-overview__top-wrapper">
@@ -48,19 +63,41 @@ class TeamMemberOverview extends React.Component {
               New Humanoid
             </button>
           </Link>
-          <button
-            className="team-member-overview__sort-button"
-            type="button"
+
+          <select
+            className="team-member-overview__select"
+            onChange={({ target: { value } }) => onChangeSortByProperty(value)}
+            name="sortBy"
+            value={sortBy}
           >
-            Sort by:
-            <img
-              alt="arrow down sign"
-              className="team-member-overview__sort-button-icon"
-              height="5px"
-              src="/static/icons/arrow-down.svg"
-              width="5px"
-            />
-          </button>
+            <option
+              value="firstName"
+            >
+              First Name
+            </option>
+            <option
+              value="lastName"
+            >
+              Last Name
+            </option>
+          </select>
+          <select
+            className="team-member-overview__select"
+            onChange={({ target: { value } }) => onChangeSortingDirection(value)}
+            name="sortDirection"
+            value={sortDirection}
+          >
+            <option
+              value="ascending"
+            >
+              Ascending
+            </option>
+            <option
+              value="descending"
+            >
+              Descending
+            </option>
+          </select>
         </section>
         <ul className="team-member-overview__content-wrapper">
           {teamMembers.map(teamMember => (

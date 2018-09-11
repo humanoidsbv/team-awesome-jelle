@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import TimesheetSearchBar from '../timesheet-search-bar/TimesheetSearchBar';
 import TimesheetDate from '../timesheet-date/TimesheetDate';
 import TimesheetEntry from '../timesheet-entry/TimesheetEntry';
 import TimesheetInput from '../timesheet-input/TimesheetInput';
@@ -22,7 +23,9 @@ class Timesheet extends React.Component {
     isFormSaving: PropTypes.bool.isRequired,
     onDeleteTimesheetEntry: PropTypes.func.isRequired,
     onPostTimesheetEntry: PropTypes.func.isRequired,
-    onRequestTimeEntries: PropTypes.func.isRequired
+    onRequestTimeEntries: PropTypes.func.isRequired,
+    onChangeActiveFilter: PropTypes.func.isRequired,
+    activeFilter: PropTypes.string.isRequired
   }
 
   componentDidMount() {
@@ -36,9 +39,16 @@ class Timesheet extends React.Component {
   }
 
   render() {
-    const { timesheetEntries, isFormSaving } = this.props;
+    const {
+      timesheetEntries, isFormSaving,
+      onChangeActiveFilter, activeFilter
+    } = this.props;
     return (
       <div className="timesheet">
+        <TimesheetSearchBar
+          onChangeActiveFilter={onChangeActiveFilter}
+          activeFilter={activeFilter}
+        />
         <div className="timesheet__wrapper">
           <TimesheetInput
             onSave={this.handleAddTimesheetEntry}
