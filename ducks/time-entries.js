@@ -40,8 +40,12 @@ export const timesheetEntriesSelector = createSelector(
     items
       .filter(item => !activeFilter || item.employer === activeFilter)
       .sort((a, b) => {
-        if (a.startTime < b.startTime) return sortDirection === 'descending' ? 1 : -1;
-        if (a.startTime > b.startTime) return sortDirection === 'descending' ? -1 : 1;
+        if (a.startTime < b.startTime) {
+          return sortDirection === 'descending' ? 1 : -1;
+        }
+        if (a.startTime > b.startTime) {
+          return sortDirection === 'descending' ? -1 : 1;
+        }
         return 0;
       })
   )
