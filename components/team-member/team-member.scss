@@ -18,14 +18,13 @@
     justify-content: space-around;
     margin: 0 auto;
     min-height: 82px;
-    padding: 16px 0;
+    padding: 16px 20px;
     width: 100%;
 
     @include tablet {
       align-items: center;
       flex-direction: row;
       justify-content: space-evenly;
-      padding: 16px;
       width: 100%;
     }
   }
@@ -33,8 +32,12 @@
   &__avatar {
     border-radius: 50%;
     height: 50px;
-    margin-left: 25px;
+    margin-left: 20px;
     width: 50px;
+
+    @include tablet {
+      margin-left: 0;
+    }
   }
 
   &__name {
@@ -105,6 +108,7 @@
     margin: 0 auto;
     padding-bottom: 24px;
     width: 100%;
+
 
     &--collapsed {
       display: none;
