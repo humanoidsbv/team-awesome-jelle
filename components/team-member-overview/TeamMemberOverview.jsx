@@ -7,6 +7,13 @@ import './team-member-overview.scss';
 import TeamMember from '../team-member/TeamMember';
 
 class TeamMemberOverview extends React.Component {
+  static defaultState = {
+    sorting: {
+      sortBy: 'firstName',
+      sortDirection: 'ascending'
+    }
+  }
+
   static propTypes = {
     teamMembers: PropTypes.arrayOf(PropTypes.shape({
       address: PropTypes.string.isRequired,
@@ -25,15 +32,18 @@ class TeamMemberOverview extends React.Component {
       twitterHandle: PropTypes.string.isRequired,
       zipCode: PropTypes.string.isRequired
     })).isRequired,
+    onChangeSortingDirection: PropTypes.func.isRequired,
+    onChangeSortByProperty: PropTypes.func.isRequired,
     onRequestTeamMembers: PropTypes.func.isRequired
   }
+
 
   componentDidMount() {
     this.props.onRequestTeamMembers();
   }
 
   render() {
-    const { teamMembers } = this.props;
+    const { teamMembers, onChangeSortByProperty, onChangeSortingDirection } = this.props;
     return (
       <div className="team-member-overview">
         <section className="team-member-overview__top-wrapper">
@@ -48,7 +58,36 @@ class TeamMemberOverview extends React.Component {
               New Humanoid
             </button>
           </Link>
-          <button
+
+          <select
+            className="team-member-overview__select"
+            onChange={({ target: { value } }) => onChangeSortByProperty(value)}
+            name="sortBy"
+          >
+            <option
+              value="firstName"
+            >
+              First Name
+            </option>
+            <option
+              value="lastName"
+            >
+              Last Name
+            </option>
+          </select>
+          <select
+            className="team-member-overview__select"
+            onChange={({ target: { value } }) => onChangeSortingDirection(value)}
+            name="sortDirection"
+          >
+            <option>
+              Ascending
+            </option>
+            <option>
+              Decending
+            </option>
+          </select>
+          {/* <button
             className="team-member-overview__sort-button"
             type="button"
           >
@@ -60,7 +99,7 @@ class TeamMemberOverview extends React.Component {
               src="/static/icons/arrow-down.svg"
               width="5px"
             />
-          </button>
+          </button> */}
         </section>
         <ul className="team-member-overview__content-wrapper">
           {teamMembers.map(teamMember => (

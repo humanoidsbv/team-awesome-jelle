@@ -2,7 +2,7 @@ export const POST_TEAM_MEMBER = 'POST_TEAM_MEMBER';
 export const POST_TEAM_MEMBER_SUCCESS = 'POST_TEAM_MEMBER_SUCCESS';
 export const REQUEST_TEAM_MEMBERS = 'REQUEST_TEAM_MEMBERS';
 export const REQUEST_TEAM_MEMBERS_SUCCESS = 'REQUEST_TEAM_MEMBERS_SUCCESS';
-export const CHANGE_SORT_DIRECTION = 'CHANGE_SORT_DIRECTION';
+export const CHANGE_SORTING_DIRECTION = 'CHANGE_SORTING_DIRECTION';
 export const CHANGE_SORT_BY_PROPERTY = 'CHANGE_SORT_BY_PROPERTY';
 
 export const initialState = {
@@ -32,6 +32,16 @@ export function teamMemberReducer(state = initialState, action) {
       return { ...state, isLoading: true };
     case REQUEST_TEAM_MEMBERS_SUCCESS:
       return { ...state, items: action.teamMembers, isLoading: false };
+    case CHANGE_SORTING_DIRECTION:
+      return {
+        ...state,
+        sortDirection: action.newSortingDirection
+      };
+    case CHANGE_SORT_BY_PROPERTY:
+      return {
+        ...state,
+        sortBy: action.newSortByProperty
+      };
     default:
       return state;
   }
@@ -56,9 +66,9 @@ export const requestTeamMembersSuccess = teamMembers => ({
   teamMembers
 });
 
-export const changeSortDirection = newSortDirection => ({
-  type: CHANGE_SORT_DIRECTION,
-  newSortDirection
+export const changeSortingDirection = newSortingDirection => ({
+  type: CHANGE_SORTING_DIRECTION,
+  newSortingDirection
 });
 
 export const changeSortByProperty = newSortByProperty => ({

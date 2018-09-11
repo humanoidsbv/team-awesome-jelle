@@ -5,6 +5,8 @@ import { bindActionCreators } from 'redux';
 import TeamMemberOverview from './TeamMemberOverview';
 
 import {
+  changeSortingDirection,
+  changeSortByProperty,
   requestTeamMembers,
   teamMembersSelector
 } from '../../ducks/team-members';
@@ -14,6 +16,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
+  onChangeSortByProperty: changeSortByProperty,
+  onChangeSortingDirection: changeSortingDirection,
   onRequestTeamMembers: requestTeamMembers
 }, dispatch);
 
