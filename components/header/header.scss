@@ -56,21 +56,21 @@
       display: none;
     }
 
-    &__icon--close {
-      display: none;
-    }
-
     &--clicked {
 
-      .menu-button__icon--open {
+      .header__menu-button-icon--burger {
         display: none;
         }
 
-      .menu-button__icon--close {
+      .header__menu-button-icon--close {
         border: none;
         display: block;
         outline: none;
       }
+    }
+
+    &-icon--close {
+      display: none;
     }
   }
 }
