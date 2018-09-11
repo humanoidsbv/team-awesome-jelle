@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import TimesheetSearchBar from '../timesheet-search-bar/TimesheetSearchBar';
 import TimesheetDate from '../timesheet-date/TimesheetDate';
 import TimesheetEntry from '../timesheet-entry/TimesheetEntry';
 import TimesheetInput from '../timesheet-input/TimesheetInput';
+
+import { calculateCumulativeDuration } from '../../services/convert-time/convert-time';
+
 
 import './timesheet.scss';
 
@@ -56,8 +58,7 @@ class Timesheet extends React.Component {
               {(!index || (timesheetEntry.date !== array[index - 1].date)) && (
               <TimesheetDate
                 date={timesheetEntry.date}
-                startTime={timesheetEntry.startTime}
-                timesheetEntries={timesheetEntries}
+                totalTime={calculateCumulativeDuration(timesheetEntry.startTime, timesheetEntries)}
               />
               )}
               <TimesheetEntry
