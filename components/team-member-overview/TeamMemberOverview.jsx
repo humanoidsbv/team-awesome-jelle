@@ -45,7 +45,10 @@ class TeamMemberOverview extends React.Component {
   }
 
   render() {
-    const { sortBy, sortDirection, teamMembers, onChangeSortByProperty, onChangeSortingDirection } = this.props;
+    const {
+      sortBy, sortDirection, teamMembers,
+      onChangeSortByProperty, onChangeSortingDirection
+    } = this.props;
     return (
       <div className="team-member-overview">
         <section className="team-member-overview__top-wrapper">
