@@ -13,7 +13,8 @@ export const initialState = {
   error: '',
   isLoading: false,
   isFormSaving: false,
-  activeFilter: ''
+  activeFilter: '',
+  sortDirection: 'descending'
 };
 
 const timesheetEntriesRoot = state => state.timesheetEntries;
@@ -28,10 +29,21 @@ const timesheetActiveFilterSelector = createSelector(
   timeEntries => timeEntries.activeFilter
 );
 
+const timesheetSortDirectionSelector = createSelector(
+  timesheetEntriesRoot,
+  timeEntries => timeEntries.sortDirection
+);
+
 export const timesheetEntriesSelector = createSelector(
-  [timesheetEntriesItemsSelector, timesheetActiveFilterSelector],
-  (items, activeFilter) => (
-    items.filter(item => !activeFilter || item.employer === activeFilter)
+  [timesheetEntriesItemsSelector, timesheetActiveFilterSelector, timesheetSortDirectionSelector],
+  (items, activeFilter, sortDirection) => (
+    items
+      .filter(item => !activeFilter || item.employer === activeFilter)
+      .sort((a, b) => {
+        if (a.startTime < b.startTime) return sortDirection === 'descending' ? 1 : -1;
+        if (a.startTime > b.startTime) return sortDirection === 'descending' ? -1 : 1;
+        return 0;
+      })
   )
 );
 
