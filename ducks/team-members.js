@@ -67,12 +67,12 @@ export function teamMemberReducer(state = initialState, action) {
     case CHANGE_SORTING_DIRECTION:
       return {
         ...state,
-        sortDirection: action.newSortingDirection
+        sortDirection: action.sortingDirection
       };
     case CHANGE_SORT_BY_PROPERTY:
       return {
         ...state,
-        sortBy: action.newSortByProperty
+        sortBy: action.sortByProperty
       };
     default:
       return state;
@@ -98,12 +98,12 @@ export const requestTeamMembersSuccess = teamMembers => ({
   teamMembers
 });
 
-export const changeSortingDirection = newSortingDirection => ({
+export const changeSortingDirection = sortingDirection => ({
   type: CHANGE_SORTING_DIRECTION,
-  newSortingDirection
+  sortingDirection
 });
 
-export const changeSortByProperty = newSortByProperty => ({
+export const changeSortByProperty = sortByProperty => ({
   type: CHANGE_SORT_BY_PROPERTY,
-  newSortByProperty
+  sortByProperty
 });
