@@ -38,8 +38,12 @@ export const teamMembersSelector = createSelector(
     [...items].sort((a, b) => {
       const aUpperCase = a[sortBy].toUpperCase();
       const bUpperCase = b[sortBy].toUpperCase();
-      if (aUpperCase < bUpperCase) return sortDirection === 'ascending' ? 1 : -1;
-      if (aUpperCase > bUpperCase) return sortDirection === 'ascending' ? -1 : 1;
+      if (aUpperCase < bUpperCase) {
+        return sortDirection === 'ascending' ? 1 : -1;
+      }
+      if (aUpperCase > bUpperCase) {
+        return sortDirection === 'ascending' ? -1 : 1;
+      }
       return 0;
     })
   )
