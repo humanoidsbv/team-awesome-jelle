@@ -5,7 +5,7 @@ import './timesheet-search-bar.scss';
 
 import ClientSelector from './client-selector/ClientSelector';
 
-const TimesheetSearchBar = ({ onChangeActiveFilter }) => (
+const TimesheetSearchBar = ({ activeFilter, onChangeActiveFilter }) => (
   <div className="timesheet-search-bar">
     <p className="timesheet-search-bar__title">
       Timesheets
@@ -14,6 +14,7 @@ const TimesheetSearchBar = ({ onChangeActiveFilter }) => (
       12 entries
     </p>
     <ClientSelector
+      activeFilter={activeFilter}
       onChangeActiveFilter={onChangeActiveFilter}
     />
     <div className="timesheet-search-bar__search-box-wrapper">
@@ -34,6 +35,7 @@ const TimesheetSearchBar = ({ onChangeActiveFilter }) => (
 );
 
 TimesheetSearchBar.propTypes = {
+  activeFilter: PropTypes.string.isRequired,
   onChangeActiveFilter: PropTypes.func.isRequired
 };
 

@@ -24,7 +24,7 @@ const timesheetEntriesItemsSelector = createSelector(
   timeEntries => timeEntries.items
 );
 
-const timesheetActiveFilterSelector = createSelector(
+export const timesheetActiveFilterSelector = createSelector(
   timesheetEntriesRoot,
   timeEntries => timeEntries.activeFilter
 );

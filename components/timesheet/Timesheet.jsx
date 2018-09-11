@@ -21,7 +21,8 @@ class Timesheet extends React.Component {
     onDeleteTimesheetEntry: PropTypes.func.isRequired,
     onPostTimesheetEntry: PropTypes.func.isRequired,
     onRequestTimeEntries: PropTypes.func.isRequired,
-    onChangeActiveFilter: PropTypes.func.isRequired
+    onChangeActiveFilter: PropTypes.func.isRequired,
+    activeFilter: PropTypes.string.isRequired
   }
 
   componentDidMount() {
@@ -35,11 +36,15 @@ class Timesheet extends React.Component {
   }
 
   render() {
-    const { timesheetEntries, isFormSaving, onChangeActiveFilter } = this.props;
+    const {
+      timesheetEntries, isFormSaving,
+      onChangeActiveFilter, activeFilter
+    } = this.props;
     return (
       <div className="timesheet">
         <TimesheetSearchBar
           onChangeActiveFilter={onChangeActiveFilter}
+          activeFilter={activeFilter}
         />
         <div className="timesheet__wrapper">
           <TimesheetInput
