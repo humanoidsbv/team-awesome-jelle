@@ -1,3 +1,5 @@
+import { createSelector } from 'reselect';
+
 export const POST_TEAM_MEMBER = 'POST_TEAM_MEMBER';
 export const POST_TEAM_MEMBER_SUCCESS = 'POST_TEAM_MEMBER_SUCCESS';
 export const REQUEST_TEAM_MEMBERS = 'REQUEST_TEAM_MEMBERS';
@@ -9,11 +11,41 @@ export const initialState = {
   items: [],
   isLoading: false,
   isFormSaving: false,
-  sortBy: '',
+  sortBy: 'firstName',
   sortDirection: 'ascending'
 };
 
-export const teamMembersSelector = state => state.teamMembers.items;
+const teamMembersRoot = state => state.teamMembers;
+
+const teamMembersItemsSelector = createSelector(
+  teamMembersRoot,
+  teamMembers => teamMembers.items
+);
+
+const teamMembersSortBySelector = createSelector(
+  teamMembersRoot,
+  teamMembers => teamMembers.sortBy
+);
+
+const teamMembersSortDirectionSelector = createSelector(
+  teamMembersRoot,
+  teamMembers => teamMembers.sortDirection
+);
+
+export const teamMembersSelector = createSelector(
+  [teamMembersItemsSelector, teamMembersSortBySelector, teamMembersSortDirectionSelector],
+  (items, sortBy, sortDirection) => (
+    [...items].sort((a, b) => {
+      const aUpperCase = a[sortBy].toUpperCase();
+      const bUpperCase = b[sortBy].toUpperCase();
+      if (aUpperCase < bUpperCase) return sortDirection === 'ascending' ? 1 : -1;
+      if (aUpperCase > bUpperCase) return sortDirection === 'ascending' ? -1 : 1;
+      return 0;
+    })
+  )
+);
+
+
 export const isLoadingSelector = state => state.teamMembers.isLoading;
 export const isFormSavingSelector = state => state.teamMembers.isFormSaving;
 

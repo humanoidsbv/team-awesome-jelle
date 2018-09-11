@@ -80,11 +80,15 @@ class TeamMemberOverview extends React.Component {
             onChange={({ target: { value } }) => onChangeSortingDirection(value)}
             name="sortDirection"
           >
-            <option>
+            <option
+              value="ascending"
+            >
               Ascending
             </option>
-            <option>
-              Decending
+            <option
+              value="descending"
+            >
+              Descending
             </option>
           </select>
         </section>
