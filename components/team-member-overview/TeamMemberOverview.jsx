@@ -34,7 +34,9 @@ class TeamMemberOverview extends React.Component {
     })).isRequired,
     onChangeSortingDirection: PropTypes.func.isRequired,
     onChangeSortByProperty: PropTypes.func.isRequired,
-    onRequestTeamMembers: PropTypes.func.isRequired
+    onRequestTeamMembers: PropTypes.func.isRequired,
+    sortBy: PropTypes.string.isRequired,
+    sortDirection: PropTypes.string.isRequired
   }
 
 
@@ -43,7 +45,7 @@ class TeamMemberOverview extends React.Component {
   }
 
   render() {
-    const { teamMembers, onChangeSortByProperty, onChangeSortingDirection } = this.props;
+    const { sortBy, sortDirection, teamMembers, onChangeSortByProperty, onChangeSortingDirection } = this.props;
     return (
       <div className="team-member-overview">
         <section className="team-member-overview__top-wrapper">
@@ -63,6 +65,7 @@ class TeamMemberOverview extends React.Component {
             className="team-member-overview__select"
             onChange={({ target: { value } }) => onChangeSortByProperty(value)}
             name="sortBy"
+            value={sortBy}
           >
             <option
               value="firstName"
@@ -79,6 +82,7 @@ class TeamMemberOverview extends React.Component {
             className="team-member-overview__select"
             onChange={({ target: { value } }) => onChangeSortingDirection(value)}
             name="sortDirection"
+            value={sortDirection}
           >
             <option
               value="ascending"

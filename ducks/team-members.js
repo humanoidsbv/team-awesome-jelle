@@ -22,12 +22,12 @@ const teamMembersItemsSelector = createSelector(
   teamMembers => teamMembers.items
 );
 
-const teamMembersSortBySelector = createSelector(
+export const teamMembersSortBySelector = createSelector(
   teamMembersRoot,
   teamMembers => teamMembers.sortBy
 );
 
-const teamMembersSortDirectionSelector = createSelector(
+export const teamMembersSortDirectionSelector = createSelector(
   teamMembersRoot,
   teamMembers => teamMembers.sortDirection
 );

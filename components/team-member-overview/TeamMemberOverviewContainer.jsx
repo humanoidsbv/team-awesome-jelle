@@ -8,11 +8,15 @@ import {
   changeSortingDirection,
   changeSortByProperty,
   requestTeamMembers,
-  teamMembersSelector
+  teamMembersSelector,
+  teamMembersSortBySelector,
+  teamMembersSortDirectionSelector
 } from '../../ducks/team-members';
 
 const mapStateToProps = state => ({
-  teamMembers: teamMembersSelector(state)
+  teamMembers: teamMembersSelector(state),
+  sortBy: teamMembersSortBySelector(state),
+  sortDirection: teamMembersSortDirectionSelector(state)
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
