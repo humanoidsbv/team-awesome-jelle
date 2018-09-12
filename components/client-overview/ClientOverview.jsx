@@ -21,7 +21,11 @@ class ClientOverview extends React.Component {
       webAddress: PropTypes.string.isRequired,
       zipCode: PropTypes.string.isRequired
     })).isRequired,
-    onRequestClients: PropTypes.func.isRequired
+    onChangeSortingDirection: PropTypes.func.isRequired,
+    onChangeSortByProperty: PropTypes.func.isRequired,
+    onRequestClients: PropTypes.func.isRequired,
+    sortBy: PropTypes.string.isRequired,
+    sortDirection: PropTypes.string.isRequired
   }
 
   componentDidMount() {
@@ -29,7 +33,10 @@ class ClientOverview extends React.Component {
   }
 
   render() {
-    const { clients } = this.props;
+    const {
+      clients, onChangeSortingDirection,
+      onChangeSortByProperty, sortBy, sortDirection
+    } = this.props;
     return (
       <div className="client-overview">
         <section className="client-overview__top-wrapper">
@@ -44,20 +51,30 @@ class ClientOverview extends React.Component {
               New Client
             </button>
           </Link>
-          <select className="client-overview__select">
-            <option>
-              First Name
+          <select
+            className="client-overview__select"
+            onChange={({ target: { value } }) => onChangeSortByProperty(value)}
+            name="sortBy"
+            value={sortBy}
+          >
+            <option value="clientName">
+              Client name
             </option>
-            <option>
-              Last Name
+            <option value="city">
+              City
             </option>
           </select>
-          <select className="client-overview__select">
-            <option>
-              First Name
+          <select
+            className="client-overview__select"
+            onChange={({ target: { value } }) => onChangeSortingDirection(value)}
+            name="sortDirection"
+            value={sortDirection}
+          >
+            <option value="ascending">
+              Ascending
             </option>
-            <option>
-              Last Name
+            <option value="descending">
+              Descending
             </option>
           </select>
         </section>

@@ -64,7 +64,7 @@ class Client extends React.Component {
               Phone number
             </p>
           </div>
-          <div className="client__email">
+          <div className="client__email-address">
             <p className="client__title">
               {email}
             </p>

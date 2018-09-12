@@ -5,15 +5,23 @@ import { bindActionCreators } from 'redux';
 import ClientOverview from './ClientOverview';
 
 import {
-  clientsItemSelector,
+  changeSortingDirection,
+  changeSortByProperty,
+  clientsSelector,
+  clientsSortBySelector,
+  clientsSortDirectionSelector,
   requestClients
 } from '../../ducks/clients';
 
 const mapStateToProps = state => ({
-  clients: clientsItemSelector(state)
+  clients: clientsSelector(state),
+  sortBy: clientsSortBySelector(state),
+  sortDirection: clientsSortDirectionSelector(state)
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
+  onChangeSortingDirection: changeSortingDirection,
+  onChangeSortByProperty: changeSortByProperty,
   onRequestClients: requestClients
 }, dispatch);
 
