@@ -18,7 +18,7 @@ function* getClients() {
 }
 
 function* postClient(action) {
-  const client = yield call(fetchPostClient, action.Client);
+  const client = yield call(fetchPostClient, action.client);
   yield put(postClientSuccess(client));
 }
 

@@ -5,8 +5,13 @@ import './client.scss';
 
 class Client extends React.Component {
   static propTypes = {
-    client: PropTypes.string.isRequired,
-    id: PropTypes.number.isRequired
+    avatar: PropTypes.string.isRequired,
+    city: PropTypes.string.isRequired,
+    clientName: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    phoneNumber: PropTypes.string.isRequired,
+    remarks: PropTypes.string.isRequired,
+    webAddress: PropTypes.string.isRequired
   }
 
   state = {
@@ -19,7 +24,10 @@ class Client extends React.Component {
 
   render() {
     const { isClientExpanded } = this.state;
-    const { client, id } = this.props;
+    const {
+      avatar, city, clientName, email,
+      phoneNumber, remarks, webAddress
+    } = this.props;
     return (
       <div className="client">
         <div className={`
@@ -30,19 +38,19 @@ class Client extends React.Component {
           <img
             alt="client avatar"
             className="client__avatar"
-            src="/static/icons/humanoids-avatar.jpg"
+            src={avatar}
           />
           <div className="client__name">
             <p className="client__title">
-              {client}
+              {clientName}
             </p>
             <p className="client__subtitle">
-              {id}
+              {city}
             </p>
           </div>
           <div className="client__web-address">
             <p className="client__title">
-              {client}
+              {webAddress}
             </p>
             <p className="client__subtitle">
               Web address
@@ -50,7 +58,7 @@ class Client extends React.Component {
           </div>
           <div className="client__phone-number">
             <p className="client__title">
-              {client}
+              {phoneNumber}
             </p>
             <p className="client__subtitle">
               Phone number
@@ -58,7 +66,7 @@ class Client extends React.Component {
           </div>
           <div className="client__email">
             <p className="client__title">
-              {client}
+              {email}
             </p>
             <p className="client__subtitle">
               Email address
@@ -82,22 +90,22 @@ class Client extends React.Component {
         `}
         >
           <div className="client__expand-detail-title">
-            {`Detailed information about ${id}`}
+            {remarks}
           </div>
           <div className="client__expand-phone-number">
             <p className="client__expand-title">
-              {id}
+              {phoneNumber}
             </p>
             <p className="client__expand-subtitle">
-              Current employer
+              Phone number
             </p>
           </div>
           <div className="client__expand-email">
             <p className="client__expand-title">
-              26
+              {email}
             </p>
             <p className="client__expand-subtitle">
-              Starting date
+              Email address
             </p>
           </div>
         </div>

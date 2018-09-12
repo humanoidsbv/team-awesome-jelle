@@ -130,16 +130,43 @@
   ],
   "clients": [
     {
-      "client": "Port of Rotterdam",
-      "id": 1
+      "avatar": "static/icons/port-of-rotterdam.png",
+      "address": "van Eysingalaan 240",
+      "city": "Rotterdam",
+      "clientName": "Port of Rotterdam",
+      "email": "info@portofr.nl",
+      "id": 1,
+      "phoneNumber": "+31620459694",
+      "remarks": "A very local Rotterdam company",
+      "vatNumber": "1234567-89",
+      "webAddress": "portofr.nl",
+      "zipCode": "2345WA"
     },
     {
-      "client": "Hike One",
-      "id": 2
+      "avatar": "static/icons/hike-one.png",
+      "address": "van Eysingalaan 240",
+      "city": "Utrecht",
+      "clientName": "Hike One",
+      "email": "info@hikeone.nl",
+      "id": 2,
+      "phoneNumber": "+31620459694",
+      "remarks": "A very local Utrecht company",
+      "vatNumber": "1234567-89",
+      "webAddress": "hikeone.nl",
+      "zipCode": "2345WA"
     },
     {
-      "client": "Humanoids",
-      "id": 3
+      "avatar": "static/icons/reinforcements.png",
+      "address": "van Eysingalaan 240",
+      "city": "Roffa",
+      "clientName": "Reinforcements BV.",
+      "email": "info@reinforcementsbv.nl",
+      "id": 3,
+      "phoneNumber": "+31620459694",
+      "remarks": "A very local Roffa company",
+      "vatNumber": "1234567-89",
+      "webAddress": "reinforcementsbv.nl",
+      "zipCode": "2345WA"
     }
   ]
 }

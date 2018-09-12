@@ -9,8 +9,17 @@ import './client-overview.scss';
 class ClientOverview extends React.Component {
   static propTypes = {
     clients: PropTypes.arrayOf(PropTypes.shape({
-      client: PropTypes.string.isRequired,
-      id: PropTypes.number.isRequired
+      avatar: PropTypes.string.isRequired,
+      address: PropTypes.string.isRequired,
+      city: PropTypes.string.isRequired,
+      clientName: PropTypes.string.isRequired,
+      email: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
+      phoneNumber: PropTypes.string.isRequired,
+      remarks: PropTypes.string.isRequired,
+      vatNumber: PropTypes.string.isRequired,
+      webAddress: PropTypes.string.isRequired,
+      zipCode: PropTypes.string.isRequired
     })).isRequired,
     onRequestClients: PropTypes.func.isRequired
   }
@@ -56,8 +65,13 @@ class ClientOverview extends React.Component {
           {clients.map(client => (
             <li key={client.id}>
               <Client
-                client={client.client}
-                id={client.id}
+                avatar={client.avatar}
+                city={client.city}
+                clientName={client.clientName}
+                email={client.email}
+                phoneNumber={client.phoneNumber}
+                remarks={client.remarks}
+                webAddress={client.webAddress}
               />
             </li>
           ))}

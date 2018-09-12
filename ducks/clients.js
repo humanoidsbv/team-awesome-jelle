@@ -35,7 +35,7 @@ export function clientReducer(state = initialState, action) {
       return {
         ...state,
         isFormSaving: false,
-        items: [...state.items, action.newClient]
+        items: [...state.items, action.client]
       };
     default:
       return state;
@@ -51,11 +51,12 @@ export const requestClientsSuccess = clients => ({
   clients
 });
 
-export const postClient = () => ({
-  type: POST_CLIENT
+export const postClient = client => ({
+  type: POST_CLIENT,
+  client
 });
 
-export const postClientSuccess = newClient => ({
+export const postClientSuccess = client => ({
   type: POST_CLIENT_SUCCESS,
-  newClient
+  client
 });
