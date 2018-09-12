@@ -7,13 +7,6 @@ import './team-member-overview.scss';
 import TeamMember from '../team-member/TeamMember';
 
 class TeamMemberOverview extends React.Component {
-  static defaultState = {
-    sorting: {
-      sortBy: 'firstName',
-      sortDirection: 'ascending'
-    }
-  }
-
   static propTypes = {
     teamMembers: PropTypes.arrayOf(PropTypes.shape({
       address: PropTypes.string.isRequired,

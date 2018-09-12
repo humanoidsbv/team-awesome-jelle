@@ -25,14 +25,14 @@ const Header = ({ isMenuVisible, onToggleMenu }) => (
       >
         <img
           alt="menu-button"
-          className="menu-button__icon--open"
+          className="header__menu-button-icon--open"
           width="20px"
           height="20px"
           src="/static/icons/hamburger.svg"
         />
         <img
           alt="menu-button-close"
-          className="menu-button__icon--close"
+          className="header__menu-button-icon--close"
           height="20px"
           width="20px"
           src="/static/icons/close.svg"

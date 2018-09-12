@@ -2,7 +2,7 @@ import { call, put, takeEvery } from 'redux-saga/effects';
 
 import {
   REQUEST_CLIENTS,
-  getClientsSuccess,
+  requestClientsSuccess,
   POST_CLIENT,
   postClientSuccess
 } from '../ducks/clients';
@@ -14,7 +14,7 @@ import {
 
 function* getClients() {
   const clients = yield call(fetchGetClients);
-  yield put(getClientsSuccess(clients));
+  yield put(requestClientsSuccess(clients));
 }
 
 function* postClient(action) {

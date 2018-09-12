@@ -42,11 +42,11 @@ export function clientReducer(state = initialState, action) {
   }
 }
 
-export const getClients = () => ({
+export const requestClients = () => ({
   type: REQUEST_CLIENTS
 });
 
-export const getClientsSuccess = clients => ({
+export const requestClientsSuccess = clients => ({
   type: REQUEST_CLIENTS_SUCCESS,
   clients
 });

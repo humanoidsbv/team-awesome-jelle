@@ -1,0 +1,95 @@
+@import "../../shared/styles/main";
+
+.client-overview {
+  padding-top: 33px;
+  width: 100%;
+
+  &__top-wrapper {
+    display: flex;
+
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      width: auto;
+    }
+  }
+
+  &__top-title {
+    display: none;
+
+    @include tablet {
+      display: block;
+      font-size: 24px;
+      font-weight: 400;
+      margin-right: auto;
+    }
+  }
+
+  &__add-button {
+    align-items: baseline;
+    background: linear-gradient($color-accent-alt-7, $color-accent-alt-8 98%);
+    border: solid 1px $color-accent-7;
+    border-radius: 4px;
+    color: $color-monochrome-1;
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+    font-weight: 400;
+    height: 36px;
+    justify-content: center;
+    margin-bottom: 12px;
+    padding: 9px 21px 8px 14px;
+    width: 100%;
+
+    @include tablet {
+      margin-bottom: 0;
+      min-height: 36px;
+      width: auto;
+    }
+
+    &::before {
+      background: url("/static/icons/plus.svg");
+      content: "";
+      height: 10px;
+      margin-right: 14px;
+      width: 10px;
+    }
+
+    &-icon {
+      color: $color-monochrome-1;
+      margin-right: 15px;
+      @include tablet {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__select {
+    display: none;
+
+    @include tablet {
+      align-items: center;
+      background-color: $color-monochrome-1;
+      border: solid 1px $color-accent-8;
+      border-radius: 4px;
+      color: $color-accent-6;
+      display: flex;
+      flex-direction: row;
+      font-size: 14px;
+      font-weight: 400;
+      justify-content: space-between;
+      margin-left: 12px;
+      width: 120px;
+    }
+  }
+
+  &__content-wrapper {
+    margin: 0 auto;
+    width: 100%;
+
+    @include tablet {
+      width: 100%;
+    }
+  }
+}

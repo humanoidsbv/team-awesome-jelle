@@ -127,5 +127,19 @@
       "startingDate": "2018-07-29T11:00:00.000Z",
       "id": 5
     }
+  ],
+  "clients": [
+    {
+      "client": "Port of Rotterdam",
+      "id": 1
+    },
+    {
+      "client": "Hike One",
+      "id": 2
+    },
+    {
+      "client": "Humanoids",
+      "id": 3
+    }
   ]
 }
