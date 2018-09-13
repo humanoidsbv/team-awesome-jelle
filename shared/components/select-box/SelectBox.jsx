@@ -3,11 +3,15 @@ import PropTypes from 'prop-types';
 
 import './select-box.scss';
 
-const SelectBox = ({ activeValue, onChange, options }) => (
+const SelectBox = ({
+  activeValue, name,
+  onChange, options
+}) => (
   <div className="select-box">
     <select
       className="select-box__select"
-      onChange={({ target: { value } }) => onChange(value)}
+      name={name}
+      onChange={event => onChange(event)}
       value={activeValue}
     >
       {options.map(option => (
@@ -22,6 +26,7 @@ const SelectBox = ({ activeValue, onChange, options }) => (
 SelectBox.propTypes = {
   onChange: PropTypes.func.isRequired,
   activeValue: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   options: PropTypes.arrayOf((PropTypes.shape({
     label: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired

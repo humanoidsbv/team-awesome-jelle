@@ -130,6 +130,7 @@ class TimesheetInput extends React.Component {
             </label>
             <SelectBox
               activeValue={employer}
+              name="employer"
               onChange={this.handleChange}
               options={[{ label: 'Port of Rotterdam', value: 'Port of Rotterdam' },
                 { label: 'Hike One', value: 'Hike One' },
@@ -147,6 +148,7 @@ class TimesheetInput extends React.Component {
             </label>
             <SelectBox
               activeValue={activity}
+              name={activity}
               onChange={this.handleChange}
               options={[{ label: 'Design', value: 'Design' },
                 { label: 'Meeting', value: 'Meeting' }

@@ -15,6 +15,7 @@ const TimesheetSearchBar = ({ activeFilter, onChangeActiveFilter }) => (
     </p>
     <SelectBox
       activeValue={activeFilter}
+      name="filter-clients"
       onChange={onChangeActiveFilter}
       options={[{ label: 'All Clients', value: '' },
         { label: 'Port of Rotterdam', value: 'Port of Rotterdam' },

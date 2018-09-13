@@ -66,6 +66,7 @@ class TeamMemberOverview extends React.Component {
           </Link>
           <SelectBox
             activeValue={sortBy}
+            name="sort-by"
             onChange={onChangeSortByProperty}
             options={[{ label: 'First Name', value: 'firstName' },
               { label: 'Last name', value: 'lastName' }
@@ -73,6 +74,7 @@ class TeamMemberOverview extends React.Component {
           />
           <SelectBox
             activeValue={sortDirection}
+            name="sort-direction"
             onChange={onChangeSortingDirection}
             options={[{ label: 'Ascending', value: 'ascending' },
               { label: 'Descending', value: 'descending' }
