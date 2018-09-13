@@ -1,0 +1,281 @@
+@import "../../shared/styles/main";
+
+.add-client {
+  margin: 0 auto;
+
+  &__title-wrapper {
+    padding-top: 24px;
+    width: 100%;
+
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      padding-top: 33px;
+      width: auto;
+    }
+  }
+
+  &__title {
+    display: none;
+
+    @include tablet {
+      display: block;
+      font-size: 24px;
+      font-weight: 400;
+      height: 29px;
+      margin-right: auto;
+    }
+  }
+
+  &__cancel-button {
+    background-color: $color-accent-alt-10;
+    border: solid 1px $color-accent-8;
+    border-radius: 4px;
+    color: $color-accent-9;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 12px;
+    min-height: 36px;
+    width: 100%;
+
+    @include tablet {
+      margin-right: 12px;
+      min-width: 100px;
+      width: auto;
+    }
+  }
+
+  &__save-button {
+    background: linear-gradient($color-accent-alt-7, $color-accent-alt-8 98%);
+    border-radius: 4px;
+    color: $color-monochrome-1;
+    font-size: 14px;
+    font-weight: 400;
+    height: 36px;
+    margin-bottom: 12px;
+    width: 100%;
+
+    @include tablet {
+      align-items: center;
+      border: solid 1px $color-accent-7;
+      display: flex;
+      flex-direction: row;
+      height: 36px;
+      justify-content: space-evenly;
+      margin-bottom: 0;
+      min-width: 100px;
+      width: auto;
+    }
+
+    &[disabled] {
+      background: $color-accent-alt-10;
+      border: solid 1px $color-accent-8;
+      color: $color-accent-9;
+    }
+  }
+
+  &__form-wrapper {
+    border-left: solid 4px $color-primary;
+    border-radius: 4px;
+    @include tablet {
+      margin: 20px auto;
+    }
+  }
+
+  &__form-header {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    height: 52px;
+  }
+
+  &__header-item {
+    background-color: $color-monochrome-1;
+    border: solid 1px $color-accent-3;
+    border-bottom: none;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 15px 33px;
+    width: 201px;
+  }
+
+  &__form-fields {
+    border: solid 1px $color-accent-3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top: -1px;
+    padding: 45px 0;
+    width: 100%;
+
+    @include tablet {
+      flex-direction: row;
+    }
+  }
+
+  &__left-form-column {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    padding: 0 30px;
+
+    @include tablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__middle-form-column {
+    border-right: solid 1px $color-accent-alt-9;
+    display: flex;
+    flex-direction: column;
+    padding: 0 30px;
+    width: 100%;
+  }
+
+  &__right-form-column {
+    display: flex;
+    flex-direction: column;
+    padding: 0 30px;
+    width: 100%;
+  }
+
+  &__label {
+    color: $color-accent-6;
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    width: 100%;
+  }
+
+  &__input {
+    border: solid 1px $color-accent-alt-9;
+    border-radius: 4px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    height: 36px;
+    margin-top: 7px;
+    padding: 0 0 0 13px;
+    width: 100%;
+  }
+
+  &__input-contact-information {
+    border: solid 1px $color-accent-alt-9;
+    border-radius: 0 4px 4px 0;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    height: 36px;
+    margin-top: 7px;
+    padding: 0 0 0 13px;
+    width: 100%;
+  }
+
+  &__textarea {
+    border: solid 1px $color-accent-alt-9;
+    border-radius: 4px;
+    font-size: 14px;
+    font-style: normal;
+    margin-top: 7px;
+    min-height: 118px;
+    padding: 9px 13px;
+    width: 100%;
+  }
+
+  &__location-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 19px;
+  }
+
+  &__contact-information-input-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  &__avatar {
+    border-radius: 50%;
+    height: 100px;
+    margin: 10px auto;
+    width: 100px;
+  }
+
+  &__avatar-label {
+    margin: 10px auto 0;
+  }
+
+  &__client-name {
+    width: 100%;
+  }
+
+  &__vatNumber {
+    margin-top: 19px;
+  }
+
+  &__remarks {
+    margin-top: 19px;
+  }
+
+  &__zip-code {
+    margin-right: 10px;
+    width: 100%;
+  }
+
+  &__city {
+    width: 100%;
+  }
+
+  &__contact-information {
+    margin-top: 19px;
+  }
+
+  &__phone-number-box {
+    background-image: linear-gradient(to top, $color-accent-alt-9, $color-accent-8);
+    border-radius: 0 4px 4px 0;
+    display: flex;
+    height: 36px;
+    margin-top: 7px;
+    width: 36px;
+  }
+
+  &__email-icon-box {
+    background-image: linear-gradient(to top, $color-accent-alt-9, $color-accent-8);
+    border-radius: 0 4px 4px 0;
+    display: flex;
+    height: 36px;
+    margin-top: 7px;
+    width: 36px;
+  }
+
+  &__web-icon-box {
+    background-image: linear-gradient(to top, $color-accent-alt-9, $color-accent-8);
+    border-radius: 0 4px 4px 0;
+    display: flex;
+    height: 36px;
+    margin-top: 7px;
+    width: 36px;
+  }
+
+  &__phone-number-icon {
+    height: 13px;
+    margin: 12px 10px 11px;
+    width: 16px;
+  }
+
+  &__email-icon {
+    height: 13px;
+    justify-content: space-evenly;
+    margin: 12px 10px 11px;
+    width: 16px;
+  }
+
+  &__web-icon {
+    height: 13px;
+    justify-content: space-evenly;
+    margin: 12px 10px 11px;
+    width: 16px;
+  }
+}

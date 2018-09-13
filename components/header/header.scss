@@ -56,17 +56,17 @@
       display: none;
     }
 
-    &__icon--close {
+    &-icon--close {
       display: none;
     }
 
     &--clicked {
 
-      .menu-button__icon--open {
+      .header__menu-button-icon--open {
         display: none;
         }
 
-      .menu-button__icon--close {
+      .header__menu-button-icon--close {
         border: none;
         display: block;
         outline: none;
