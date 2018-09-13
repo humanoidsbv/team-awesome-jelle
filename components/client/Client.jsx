@@ -87,26 +87,26 @@ class Client extends React.Component {
           </button>
         </div>
         <div className={`
-          client__expand
-          client__expand${isClientExpanded ? '--expanded' : '--collapsed'}
+          client__detail
+          client__detail${isClientExpanded ? '--expanded' : '--collapsed'}
         `}
         >
-          <div className="client__expand-detail-title">
+          <div className="client__detail-title">
             {remarks}
           </div>
-          <div className="client__expand-phone-number">
-            <p className="client__expand-title">
+          <div className="client__phone-number client__phone-number--expand">
+            <p className="client__title">
               {phoneNumber}
             </p>
-            <p className="client__expand-subtitle">
+            <p className="client__subtitle">
               Phone number
             </p>
           </div>
           <div className="client__expand-email">
-            <p className="client__expand-title">
+            <p className="client__title">
               {email}
             </p>
-            <p className="client__expand-subtitle">
+            <p className="client__subtitle">
               Email address
             </p>
           </div>

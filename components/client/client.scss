@@ -73,6 +73,12 @@
       padding-right: 54px;
       width: 33%;
     }
+
+    &--expand {
+      display: block;
+      margin-left: 25px;
+      margin-top: 16px;
+    }
   }
 
   &__email-address {
@@ -99,7 +105,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-
   }
 
   &__subtitle {
@@ -113,7 +118,7 @@
     border-bottom: none;
   }
 
-  &__expand {
+  &__detail {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -126,7 +131,7 @@
     }
   }
 
-  &__expand-detail-title {
+  &__detail-title {
     background-color: $color-accent-2;
     border: solid 1px $color-accent-3;
     color: $color-accent-6;
@@ -142,19 +147,5 @@
   &__expand-email {
     margin-left: 25px;
     margin-top: 16px;
-  }
-
-  &__expand-title {
-    color: $color-accent-5;
-    font-size: 16px;
-    font-weight: 400;
-    height: 19px;
-  }
-
-  &__expand-subtitle {
-    color: $color-accent-6;
-    font-size: 14px;
-    font-weight: 400;
-    height: 17px;
   }
 }
