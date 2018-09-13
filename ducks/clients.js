@@ -53,7 +53,10 @@ export const clientsSelector = createSelector(
 export function clientReducer(state = initialState, action) {
   switch (action.type) {
     case REQUEST_CLIENTS:
-      return { ...state };
+      return {
+        ...state,
+        isLoading: true
+      };
     case REQUEST_CLIENTS_SUCCESS:
       return {
         ...state,
