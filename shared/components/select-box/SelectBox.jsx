@@ -11,7 +11,7 @@ const SelectBox = ({ activeValue, onChange, options }) => (
       value={activeValue}
     >
       {options.map(option => (
-        <option value={option.value}>
+        <option key={option.value} value={option.value}>
           {option.label}
         </option>
       ))}
