@@ -49,11 +49,20 @@
     }
   }
 
+  &__contact-information {
+    display: flex;
+    width: 50%;
+    @include tablet {
+      flex-direction: row;
+    }
+  }
+
   &__web-address {
     display: none;
     @include tablet {
       display: block;
       padding-right: 54px;
+      width: 33%;
     }
   }
 
@@ -62,6 +71,7 @@
     @include tablet {
       display: block;
       padding-right: 54px;
+      width: 33%;
     }
   }
 
@@ -70,6 +80,7 @@
     @include tablet {
       display: block;
       padding-right: 54px;
+      width: 33%;
     }
   }
 
@@ -85,6 +96,10 @@
     font-size: 16px;
     font-weight: 400;
     height: 19px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
   }
 
   &__subtitle {

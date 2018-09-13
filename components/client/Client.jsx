@@ -48,29 +48,31 @@ class Client extends React.Component {
               {city}
             </p>
           </div>
-          <div className="client__web-address">
-            <p className="client__title">
-              {webAddress}
-            </p>
-            <p className="client__subtitle">
-              Web address
-            </p>
-          </div>
-          <div className="client__phone-number">
-            <p className="client__title">
-              {phoneNumber}
-            </p>
-            <p className="client__subtitle">
-              Phone number
-            </p>
-          </div>
-          <div className="client__email-address">
-            <p className="client__title">
-              {email}
-            </p>
-            <p className="client__subtitle">
-              Email address
-            </p>
+          <div className="client__contact-information">
+            <div className="client__web-address">
+              <p className="client__title">
+                {webAddress}
+              </p>
+              <p className="client__subtitle">
+                Web address
+              </p>
+            </div>
+            <div className="client__phone-number">
+              <p className="client__title">
+                {phoneNumber}
+              </p>
+              <p className="client__subtitle">
+                Phone number
+              </p>
+            </div>
+            <div className="client__email-address">
+              <p className="client__title">
+                {email}
+              </p>
+              <p className="client__subtitle">
+                Email address
+              </p>
+            </div>
           </div>
           <button
             className="client__expand-button"
