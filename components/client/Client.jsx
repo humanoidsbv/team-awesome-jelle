@@ -18,7 +18,7 @@ class Client extends React.Component {
     isClientExpanded: false
   }
 
-  toggleExpand = () => {
+  toggleDetail = () => {
     this.setState(({ isClientExpanded }) => ({ isClientExpanded: !isClientExpanded }));
   }
 
@@ -76,7 +76,7 @@ class Client extends React.Component {
           </div>
           <button
             className="client__expand-button"
-            onClick={this.toggleExpand}
+            onClick={this.toggleDetail}
             type="button"
           >
             <img

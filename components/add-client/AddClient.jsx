@@ -50,11 +50,9 @@ class AddClient extends React.Component {
       ...client,
       avatar: 'static/icons/humanoids-avatar.jpg'
     };
-    this.handleAddClient(newClient);
+    this.props.onPostClient(newClient);
     Router.push('/clients');
   }
-
-  handleAddClient = newClient => this.props.onPostClient(newClient);
 
   render() {
     const {
