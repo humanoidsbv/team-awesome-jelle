@@ -114,5 +114,5 @@ export const requestTimeEntriesSuccess = timesheetEntries => ({
 
 export const changeActiveFilter = newActiveFilter => ({
   type: CHANGE_ACTIVE_FILTER,
-  newActiveFilter: newActiveFilter.target.value
+  newActiveFilter
 });
