@@ -107,10 +107,10 @@ export const postClientSuccess = client => ({
 
 export const changeSortingDirection = sortingDirection => ({
   type: CHANGE_CLIENT_SORTING_DIRECTION,
-  sortingDirection
+  sortingDirection: sortingDirection.target.value
 });
 
 export const changeSortByProperty = sortByProperty => ({
   type: CHANGE_SORT_BY_PROPERTY,
-  sortByProperty
+  sortByProperty: sortByProperty.target.value
 });
