@@ -8,13 +8,6 @@ import TeamMember from '../team-member/TeamMember';
 import SelectBox from '../../shared/components/select-box/SelectBox';
 
 class TeamMemberOverview extends React.Component {
-  static defaultState = {
-    sorting: {
-      sortBy: 'firstName',
-      sortDirection: 'ascending'
-    }
-  }
-
   static propTypes = {
     teamMembers: PropTypes.arrayOf(PropTypes.shape({
       address: PropTypes.string.isRequired,
