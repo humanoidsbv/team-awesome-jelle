@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import TimesheetSearchBar from '../timesheet-search-bar/TimesheetSearchBar';
 import TimesheetDate from '../timesheet-date/TimesheetDate';
 import TimesheetEntry from '../timesheet-entry/TimesheetEntry';
-import TimesheetInput from '../timesheet-input/TimesheetInput';
+import AddTimesheet from '../add-timesheet/AddTimesheet';
 
 import { calculateCumulativeDuration } from '../../services/convert-time/convert-time';
 
@@ -50,7 +50,7 @@ class Timesheet extends React.Component {
           activeFilter={activeFilter}
         />
         <div className="timesheet__wrapper">
-          <TimesheetInput
+          <AddTimesheet
             onSave={this.handleAddTimesheetEntry}
             isFormSaving={isFormSaving}
           />
