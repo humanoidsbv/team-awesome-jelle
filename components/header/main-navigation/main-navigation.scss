@@ -30,6 +30,7 @@
   }
 
   &--open {
+    overflow-y: auto;
     transform: translate(0, 0);
 
     @include tablet {
