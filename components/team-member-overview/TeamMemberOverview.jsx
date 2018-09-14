@@ -5,15 +5,9 @@ import Link from 'next/link';
 import './team-member-overview.scss';
 
 import TeamMember from '../team-member/TeamMember';
+import SelectBox from '../../shared/components/select-box/SelectBox';
 
 class TeamMemberOverview extends React.Component {
-  static defaultState = {
-    sorting: {
-      sortBy: 'firstName',
-      sortDirection: 'ascending'
-    }
-  }
-
   static propTypes = {
     teamMembers: PropTypes.arrayOf(PropTypes.shape({
       address: PropTypes.string.isRequired,
@@ -63,41 +57,22 @@ class TeamMemberOverview extends React.Component {
               New Humanoid
             </button>
           </Link>
-
-          <select
-            className="team-member-overview__select"
-            onChange={({ target: { value } }) => onChangeSortByProperty(value)}
-            name="sortBy"
-            value={sortBy}
-          >
-            <option
-              value="firstName"
-            >
-              First Name
-            </option>
-            <option
-              value="lastName"
-            >
-              Last Name
-            </option>
-          </select>
-          <select
-            className="team-member-overview__select"
-            onChange={({ target: { value } }) => onChangeSortingDirection(value)}
-            name="sortDirection"
-            value={sortDirection}
-          >
-            <option
-              value="ascending"
-            >
-              Ascending
-            </option>
-            <option
-              value="descending"
-            >
-              Descending
-            </option>
-          </select>
+          <SelectBox
+            activeValue={sortBy}
+            name="sort-by"
+            onChange={event => onChangeSortByProperty(event.target.value)}
+            options={[{ label: 'First Name', value: 'firstName' },
+              { label: 'Last name', value: 'lastName' }
+            ]}
+          />
+          <SelectBox
+            activeValue={sortDirection}
+            name="sort-direction"
+            onChange={event => onChangeSortingDirection(event.target.value)}
+            options={[{ label: 'Ascending', value: 'ascending' },
+              { label: 'Descending', value: 'descending' }
+            ]}
+          />
         </section>
         <ul className="team-member-overview__content-wrapper">
           {teamMembers.map(teamMember => (

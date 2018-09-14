@@ -14,7 +14,7 @@ const MainNavigation = ({ isMenuVisible }) => (
     >
       <Link href="/timesheets">
         <a className="main-navigation__item main-navigation__item--active">
-        Timesheets
+          Timesheets
         </a>
       </Link>
       <Link href="/team-members">
@@ -25,9 +25,11 @@ const MainNavigation = ({ isMenuVisible }) => (
       <a className="main-navigation__item">
          Projects
       </a>
-      <a className="main-navigation__item">
-         Clients
-      </a>
+      <Link href="/clients">
+        <a className="main-navigation__item">
+           Clients
+        </a>
+      </Link>
       <a className="main-navigation__item">
          Documents
       </a>

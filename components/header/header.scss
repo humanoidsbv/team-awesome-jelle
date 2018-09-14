@@ -56,9 +56,19 @@
       display: none;
     }
 
+<<<<<<< HEAD
     &--clicked {
 
       .header__menu-button-icon--burger {
+=======
+    &-icon--close {
+      display: none;
+    }
+
+    &--clicked {
+
+      .header__menu-button-icon--open {
+>>>>>>> master
         display: none;
         }
 

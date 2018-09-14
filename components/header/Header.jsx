@@ -5,6 +5,10 @@ import MainNavigation from './main-navigation/MainNavigation';
 
 import './header.scss';
 
+const changeBodyClass = isMenuVisible => (
+  isMenuVisible ? document.body.classList.remove('test') : document.body.classList.add('test')
+);
+
 const Header = ({ isMenuVisible, onToggleMenu }) => (
   <header className="header">
     <div className="header__mobile-controls">
@@ -21,7 +25,10 @@ const Header = ({ isMenuVisible, onToggleMenu }) => (
           header__menu-button--${isMenuVisible ? 'clicked' : ''}
           `}
         type="submit"
-        onClick={onToggleMenu}
+        onClick={() => {
+          changeBodyClass(isMenuVisible);
+          onToggleMenu();
+        }}
       >
         <img
           alt="menu-button"

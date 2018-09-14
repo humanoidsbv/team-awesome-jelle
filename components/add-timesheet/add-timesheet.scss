@@ -7,7 +7,7 @@
   margin-bottom: 33px;
   position: relative;
 
-  @include tablet {
+  @include desktop {
     align-items: center;
     flex-direction: row;
     justify-content: space-around;
@@ -16,7 +16,7 @@
   &__employer {
     padding: 16px 0 0;
     width: 100%;
-    @include tablet {
+    @include desktop {
       flex-basis: 245px;
       margin-right: 13px;
       padding: 12px 0 4px;
@@ -26,7 +26,7 @@
   &__activity {
     padding: 16px 0 0;
     width: 100%;
-    @include tablet {
+    @include desktop {
       flex-basis: 245px;
       margin-right: 13px;
       padding: 12px 0 4px;
@@ -36,7 +36,7 @@
   &__date {
     padding: 16px 0 0;
     width: 100%;
-    @include tablet {
+    @include desktop {
       flex-basis: 130px;
       margin-right: 13px;
       padding: 12px 0 4px;
@@ -49,7 +49,7 @@
     justify-content: space-between;
     padding: 16px 0 0;
 
-    @include tablet {
+    @include desktop {
       justify-content: flex-start;
       padding: 12px 0 4px;
     }
@@ -58,14 +58,14 @@
   &__start-time {
     margin-right: 10px;
     width: 100%;
-    @include tablet {
+    @include desktop {
       flex-basis: 63px;
     }
   }
 
   &__end-time {
     width: 100%;
-    @include tablet {
+    @include desktop {
       flex-basis: 63px;
       width: auto;
     }
@@ -80,7 +80,7 @@
     position: relative;
     width: 100%;
 
-    @include tablet {
+    @include desktop {
       display: flex;
       flex-direction: row;
       flex-wrap: nowrap;
@@ -96,7 +96,7 @@
     &--closed {
       display: none;
 
-      @include tablet {
+      @include desktop {
         display: flex;
       }
     }
@@ -116,7 +116,7 @@
     padding: 9px 0 8px;
     text-align: center;
     width: 100%;
-    @include tablet {
+    @include desktop {
       display: none;
     }
 
@@ -136,7 +136,7 @@
   &__add-button-wrapper {
     padding: 42px 0 32px;
 
-    @include tablet {
+    @include desktop {
       padding: 32px 0 26px;
     }
   }
@@ -149,7 +149,7 @@
     height: 36px;
     width: 100%;
 
-    @include tablet {
+    @include desktop {
       height: 36px;
       margin-left: auto;
       min-width: 90px;
@@ -180,7 +180,7 @@
       display: none;
     }
 
-    @include tablet {
+    @include desktop {
       display: none;
     }
   }
@@ -194,6 +194,7 @@
     font-weight: 600;
     letter-spacing: normal;
     line-height: normal;
+    margin-bottom: 12px;
     opacity: .5;
     width: 100%;
   }
@@ -224,7 +225,7 @@
     flex-direction: row;
     margin: 16px auto 8px;
 
-    @include tablet {
+    @include desktop {
       justify-content: flex-start;
       margin-left: 16px;
     }
