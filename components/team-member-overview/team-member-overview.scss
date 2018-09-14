@@ -39,6 +39,7 @@
     height: 36px;
     justify-content: center;
     margin-bottom: 12px;
+    margin-right: 12px;
     padding: 9px 21px 8px 14px;
     width: 100%;
 
@@ -80,7 +81,7 @@
       font-weight: 400;
       justify-content: space-between;
       margin-left: 12px;
-      width: 120px;
+      min-width: 120px;
     }
   }
 

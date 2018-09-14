@@ -19,6 +19,11 @@ body {
     font-size: $default-font-size;
     padding-top: $padding-top-desktop;
   }
+
+  &.test {
+    height: 100%;
+    overflow: hidden;
+  }
 }
 
 input {

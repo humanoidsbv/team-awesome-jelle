@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './timesheet-search-bar.scss';
 
-import ClientSelector from './client-selector/ClientSelector';
+import SelectBox from '../../shared/components/select-box/SelectBox';
 
 const TimesheetSearchBar = ({ activeFilter, onChangeActiveFilter }) => (
   <div className="timesheet-search-bar">
@@ -13,9 +13,15 @@ const TimesheetSearchBar = ({ activeFilter, onChangeActiveFilter }) => (
     <p className="timesheet-search-bar__entry-counter">
       12 entries
     </p>
-    <ClientSelector
-      activeFilter={activeFilter}
-      onChangeActiveFilter={onChangeActiveFilter}
+    <SelectBox
+      activeValue={activeFilter}
+      name="filter-clients"
+      onChange={event => onChangeActiveFilter(event.target.value)}
+      options={[{ label: 'All Clients', value: '' },
+        { label: 'Port of Rotterdam', value: 'Port of Rotterdam' },
+        { label: 'Hike One', value: 'Hike One' },
+        { label: 'Humanoids', value: 'Humanoids' }
+      ]}
     />
     <div className="timesheet-search-bar__search-box-wrapper">
       <input

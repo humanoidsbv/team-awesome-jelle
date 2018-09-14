@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Link from 'next/link';
 
 import Client from '../client/Client';
+import SelectBox from '../../shared/components/select-box/SelectBox';
 
 import './client-overview.scss';
 
@@ -51,32 +52,22 @@ class ClientOverview extends React.Component {
               New Client
             </button>
           </Link>
-          <select
-            className="client-overview__select"
-            onChange={({ target: { value } }) => onChangeSortByProperty(value)}
-            name="sortBy"
-            value={sortBy}
-          >
-            <option value="clientName">
-              Client name
-            </option>
-            <option value="city">
-              City
-            </option>
-          </select>
-          <select
-            className="client-overview__select"
-            onChange={({ target: { value } }) => onChangeSortingDirection(value)}
-            name="sortDirection"
-            value={sortDirection}
-          >
-            <option value="ascending">
-              Ascending
-            </option>
-            <option value="descending">
-              Descending
-            </option>
-          </select>
+          <SelectBox
+            activeValue={sortBy}
+            name="sort-by"
+            onChange={onChangeSortByProperty}
+            options={[{ label: 'Client Name', value: 'clientName' },
+              { label: 'City', value: 'city' }
+            ]}
+          />
+          <SelectBox
+            activeValue={sortDirection}
+            name="sort-direction"
+            onChange={onChangeSortingDirection}
+            options={[{ label: 'Ascending', value: 'ascending' },
+              { label: 'Descending', value: 'descending' }
+            ]}
+          />
         </section>
         <ul className="client-overview__content-wrapper">
           {clients.map(client => (

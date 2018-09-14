@@ -2,6 +2,7 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
+import SelectBox from '../../shared/components/select-box/SelectBox';
 import { convertDateToIso, convertTimeToIso } from '../../services/convert-time/convert-time';
 import './timesheet-input.scss';
 
@@ -126,23 +127,16 @@ class TimesheetInput extends React.Component {
               id="employer"
             >
             EMPLOYER
-              <select
-                className="timesheet-input__select"
-                id="employer"
-                onChange={this.handleChange}
-                name="employer"
-                required
-                type="text"
-                value={employer}
-              >
-                <option>
-                  Port of Rotterdam
-                </option>
-                <option>
-                  Hike One
-                </option>
-              </select>
             </label>
+            <SelectBox
+              activeValue={employer}
+              name="employer"
+              onChange={this.handleChange}
+              options={[{ label: 'Port of Rotterdam', value: 'Port of Rotterdam' },
+                { label: 'Hike One', value: 'Hike One' },
+                { label: 'Humanoids', value: 'Humanoids' }
+              ]}
+            />
           </div>
           <div className="timesheet-input__activity">
             <label
@@ -151,24 +145,15 @@ class TimesheetInput extends React.Component {
               id="activity"
             >
               ACTIVITY
-              <select
-                className="timesheet-input__select"
-                id="activity"
-                readOnly
-                required
-                type="text"
-                name="activity"
-                onChange={this.handleChange}
-                value={activity}
-              >
-                <option>
-                  Design
-                </option>
-                <option>
-                  Meeting
-                </option>
-              </select>
             </label>
+            <SelectBox
+              activeValue={activity}
+              name="activity"
+              onChange={this.handleChange}
+              options={[{ label: 'Design', value: 'Design' },
+                { label: 'Meeting', value: 'Meeting' }
+              ]}
+            />
           </div>
           <div className="timesheet-input__date">
             <label
