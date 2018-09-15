@@ -55,7 +55,7 @@ class ClientOverview extends React.Component {
           <SelectBox
             activeValue={sortBy}
             name="sort-by"
-            onChange={onChangeSortByProperty}
+            onChange={event => onChangeSortByProperty(event.target.value)}
             options={[{ label: 'Client Name', value: 'clientName' },
               { label: 'City', value: 'city' }
             ]}
@@ -63,7 +63,7 @@ class ClientOverview extends React.Component {
           <SelectBox
             activeValue={sortDirection}
             name="sort-direction"
-            onChange={onChangeSortingDirection}
+            onChange={event => onChangeSortingDirection(event.target.value)}
             options={[{ label: 'Ascending', value: 'ascending' },
               { label: 'Descending', value: 'descending' }
             ]}
