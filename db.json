@@ -1,7 +1,7 @@
 {
   "timesheets": [
     {
-      "employer": "Port of Rotterdam",
+      "clientName": "Port of Rotterdam",
       "activity": "Design",
       "date": "2012-12-13",
       "startTime": "2012-12-13T12:00:00.000Z",
@@ -9,7 +9,7 @@
       "id": 2
     },
     {
-      "employer": "Port of Rotterdam",
+      "clientName": "Port of Rotterdam",
       "activity": "Design",
       "date": "2018-07-29",
       "startTime": "2018-07-29T11:00:00.000Z",
@@ -17,7 +17,7 @@
       "id": 3
     },
     {
-      "employer": "Port of Rotterdam",
+      "clientName": "Port of Rotterdam",
       "activity": "Design",
       "date": "2018-12-21",
       "startTime": "2018-12-21T09:00:00.000Z",
@@ -25,7 +25,7 @@
       "id": 4
     },
     {
-      "employer": "Port of Rotterdam",
+      "clientName": "Port of Rotterdam",
       "activity": "Design",
       "date": "2018-12-21",
       "startTime": "2018-12-21T12:00:00.000Z",
@@ -33,7 +33,7 @@
       "id": 5
     },
     {
-      "employer": "Port of Rotterdam",
+      "clientName": "Port of Rotterdam",
       "activity": "Design",
       "date": "2018-12-21",
       "startTime": "2018-12-21T12:00:00.000Z",

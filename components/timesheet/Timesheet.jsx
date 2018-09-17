@@ -14,7 +14,7 @@ import './timesheet.scss';
 class Timesheet extends React.Component {
   static propTypes = {
     timesheetEntries: PropTypes.arrayOf(PropTypes.shape({
-      employer: PropTypes.string.isRequired,
+      clientName: PropTypes.string.isRequired,
       id: PropTypes.number.isRequired,
       startTime: PropTypes.string.isRequired,
       endTime: PropTypes.string.isRequired,
@@ -66,7 +66,7 @@ class Timesheet extends React.Component {
                 />
                 )}
                 <TimesheetEntry
-                  employer={timesheetEntry.employer}
+                  clientName={timesheetEntry.clientName}
                   endTime={timesheetEntry.endTime}
                   id={timesheetEntry.id}
                   onDelete={this.handleDeleteTimesheetEntry}

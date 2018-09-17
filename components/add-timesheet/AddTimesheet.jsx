@@ -9,14 +9,14 @@ import './add-timesheet.scss';
 class AddTimesheet extends React.Component {
   static defaultState = {
     defaultFormValues: {
-      employer: 'Port of Rotterdam',
+      clientName: 'Port of Rotterdam',
       activity: 'Design',
       date: '',
       startTime: '',
       endTime: ''
     },
     defaultValidity: {
-      employer: true,
+      clientName: true,
       activity: true,
       date: true,
       startTime: true,
@@ -89,7 +89,7 @@ class AddTimesheet extends React.Component {
       isFormVisible, timeEntry, validity
     } = this.state;
     const {
-      employer, activity, date, startTime, endTime
+      clientName, activity, date, startTime, endTime
     } = timeEntry;
 
     return (
@@ -129,8 +129,8 @@ class AddTimesheet extends React.Component {
             EMPLOYER
             </label>
             <SelectBox
-              activeValue={employer}
-              name="employer"
+              activeValue={clientName}
+              name="clientName"
               onChange={this.handleChange}
               options={[{ label: 'Port of Rotterdam', value: 'Port of Rotterdam' },
                 { label: 'Hike One', value: 'Hike One' },
