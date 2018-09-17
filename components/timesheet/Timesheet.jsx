@@ -54,23 +54,27 @@ class Timesheet extends React.Component {
             onSave={this.handleAddTimesheetEntry}
             isFormSaving={isFormSaving}
           />
-          {timesheetEntries.map((timesheetEntry, index, array) => (
-            <React.Fragment key={timesheetEntry.id}>
-              {(!index || (timesheetEntry.date !== array[index - 1].date)) && (
-              <TimesheetDate
-                date={timesheetEntry.date}
-                totalTime={calculateCumulativeDuration(timesheetEntry.startTime, timesheetEntries)}
-              />
-              )}
-              <TimesheetEntry
-                employer={timesheetEntry.employer}
-                endTime={timesheetEntry.endTime}
-                id={timesheetEntry.id}
-                onDelete={this.handleDeleteTimesheetEntry}
-                startTime={timesheetEntry.startTime}
-              />
-            </React.Fragment>
-          ))}
+          <ul>
+            {timesheetEntries.map((timesheetEntry, index, array) => (
+              <React.Fragment key={timesheetEntry.id}>
+                {(!index || (timesheetEntry.date !== array[index - 1].date)) && (
+                <TimesheetDate
+                  date={timesheetEntry.date}
+                  totalTime={calculateCumulativeDuration(
+                    timesheetEntry.startTime, timesheetEntries
+                  )}
+                />
+                )}
+                <TimesheetEntry
+                  employer={timesheetEntry.employer}
+                  endTime={timesheetEntry.endTime}
+                  id={timesheetEntry.id}
+                  onDelete={this.handleDeleteTimesheetEntry}
+                  startTime={timesheetEntry.startTime}
+                />
+              </React.Fragment>
+            ))}
+          </ul>
         </div>
       </div>
     );

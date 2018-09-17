@@ -5,17 +5,19 @@ import PropTypes from 'prop-types';
 import './timesheet-date.scss';
 
 const TimesheetDate = ({ date, totalTime }) => (
-  <div className="timesheet-date">
-    <p className="timesheet-date__date">
-      {`
-        ${new Date(date).toLocaleDateString('en-NL', { weekday: 'long' })}
-        ${new Date(date).toLocaleDateString('nl-NL', { day: 'numeric', month: 'numeric' })}
-      `}
-    </p>
-    <p className="timesheet-date__total-time">
-      {totalTime}
-    </p>
-  </div>
+  <li>
+    <h2 className="timesheet-date">
+      <span className="timesheet-date__date">
+        {`
+          ${new Date(date).toLocaleDateString('en-NL', { weekday: 'long' })}
+          ${new Date(date).toLocaleDateString('nl-NL', { day: 'numeric', month: 'numeric' })}
+        `}
+      </span>
+      <span className="timesheet-date__total-time">
+        {totalTime}
+      </span>
+    </h2>
+  </li>
 );
 
 TimesheetDate.propTypes = {

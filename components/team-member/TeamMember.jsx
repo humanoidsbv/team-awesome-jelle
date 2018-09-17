@@ -49,34 +49,36 @@ class TeamMember extends React.Component {
               {jobTitle}
             </p>
           </div>
-          <div className="team-member__employee-id">
-            <p className="team-member__title">
-              {employeeNumber}
-            </p>
-            <p className="team-member__subtitle">
-              Employee number
-            </p>
-          </div>
-          <div className="team-member__current-employer">
-            <p className="team-member__title">
-              {currentEmployer}
-            </p>
-            <p className="team-member__subtitle">
-              Current employer
-            </p>
-          </div>
-          <div className="team-member__starting-date">
-            <p className="team-member__title">
-              {new Date(startingDate)
-                .toLocaleDateString(
-                  'en-NL',
-                  { year: 'numeric', month: 'long' }
-                )
-              }
-            </p>
-            <p className="team-member__subtitle">
-              Starting date
-            </p>
+          <div className="team-member__employee-information">
+            <div className="team-member__employee-id">
+              <p className="team-member__title">
+                {employeeNumber}
+              </p>
+              <p className="team-member__subtitle">
+                Employee number
+              </p>
+            </div>
+            <div className="team-member__current-employer">
+              <p className="team-member__title">
+                {currentEmployer}
+              </p>
+              <p className="team-member__subtitle">
+                Current employer
+              </p>
+            </div>
+            <div className="team-member__starting-date">
+              <p className="team-member__title">
+                {new Date(startingDate)
+                  .toLocaleDateString(
+                    'en-NL',
+                    { year: 'numeric', month: 'long' }
+                  )
+                }
+              </p>
+              <p className="team-member__subtitle">
+                Starting date
+              </p>
+            </div>
           </div>
           <button
             className="team-member__expand-button"

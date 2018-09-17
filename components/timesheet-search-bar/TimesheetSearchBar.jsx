@@ -7,12 +7,12 @@ import SelectBox from '../../shared/components/select-box/SelectBox';
 
 const TimesheetSearchBar = ({ activeFilter, onChangeActiveFilter }) => (
   <div className="timesheet-search-bar">
-    <p className="timesheet-search-bar__title">
+    <h1 className="timesheet-search-bar__title">
       Timesheets
-    </p>
-    <p className="timesheet-search-bar__entry-counter">
+    </h1>
+    <h1 className="timesheet-search-bar__entry-counter">
       12 entries
-    </p>
+    </h1>
     <SelectBox
       activeValue={activeFilter}
       name="filter-clients"

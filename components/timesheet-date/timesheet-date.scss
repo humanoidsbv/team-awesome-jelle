@@ -3,12 +3,14 @@
 .timesheet-date {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   margin-bottom: 25px;
   margin-top: 32px;
 
   &__date {
     color: $color-accent-6;
     font-size: 16px;
+    font-weight: 400;
 
     @include tablet {
       font-size: 24px;
@@ -18,7 +20,7 @@
   &__total-time {
     color: $color-accent-6;
     font-size: 16px;
-    margin-left: auto;
+    font-weight: 400;
 
     @include tablet {
       font-size: 24px;

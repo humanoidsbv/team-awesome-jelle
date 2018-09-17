@@ -2,7 +2,6 @@
 
 .select-box {
   display: none;
-  margin-right: 12px;
   position: relative;
 
   @include tablet {
@@ -22,10 +21,9 @@
     font-size: 14px;
     font-weight: 400;
     height: 36px;
-
     min-width: 120px;
     padding-left: 12px;
-    width:100%;
+    width: 100%;
   }
 
   &::after {

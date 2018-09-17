@@ -93,7 +93,7 @@ class AddTimesheet extends React.Component {
     } = timeEntry;
 
     return (
-      <div className="add-timesheet">
+      <section className="add-timesheet">
         <button
           className={`
             add-timesheet__new-button
@@ -238,7 +238,7 @@ class AddTimesheet extends React.Component {
             </button>
           </div>
         </form>
-      </div>
+      </section>
     );
   }
 }
