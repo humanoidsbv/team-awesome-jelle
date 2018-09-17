@@ -37,8 +37,8 @@ export const clientNameAndIdSelector = createSelector(
     items.reduce((acc, item) => ([
       ...acc,
       {
-        label: item.clientName,
-        value: item.id
+        name: item.clientName,
+        id: item.id
       }
     ]
     ), []))

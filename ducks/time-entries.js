@@ -46,8 +46,8 @@ export const timesheetEntriesSelector = createSelector(
       .map(item => ({
         ...item,
         clientLabelName: clients.find(client => (
-          client.value === item.clientName
-        )).label
+          client.id === item.clientName
+        )).name
       }))
       .sort((a, b) => {
         if (a.startTime < b.startTime) {

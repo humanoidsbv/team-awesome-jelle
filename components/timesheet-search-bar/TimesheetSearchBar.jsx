@@ -5,7 +5,7 @@ import './timesheet-search-bar.scss';
 
 import SelectBox from '../../shared/components/select-box/SelectBox';
 
-const TimesheetSearchBar = ({ activeFilter, onChangeActiveFilter }) => (
+const TimesheetSearchBar = ({ activeFilter, clients, onChangeActiveFilter }) => (
   <div className="timesheet-search-bar">
     <h1 className="timesheet-search-bar__title">
       Timesheets
@@ -17,11 +17,7 @@ const TimesheetSearchBar = ({ activeFilter, onChangeActiveFilter }) => (
       activeValue={activeFilter}
       name="filter-clients"
       onChange={event => onChangeActiveFilter(event.target.value)}
-      options={[{ label: 'All Clients', value: '' },
-        { label: 'Port of Rotterdam', value: 'Port of Rotterdam' },
-        { label: 'Hike One', value: 'Hike One' },
-        { label: 'Humanoids', value: 'Humanoids' }
-      ]}
+      options={clients}
     />
     <div className="timesheet-search-bar__search-box-wrapper">
       <input
@@ -42,7 +38,11 @@ const TimesheetSearchBar = ({ activeFilter, onChangeActiveFilter }) => (
 
 TimesheetSearchBar.propTypes = {
   activeFilter: PropTypes.string.isRequired,
-  onChangeActiveFilter: PropTypes.func.isRequired
+  onChangeActiveFilter: PropTypes.func.isRequired,
+  clients: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired
+  })).isRequired
 };
 
 

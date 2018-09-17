@@ -14,7 +14,7 @@ import './timesheet.scss';
 class Timesheet extends React.Component {
   static propTypes = {
     timesheetEntries: PropTypes.arrayOf(PropTypes.shape({
-      clientName: PropTypes.number.isRequired,
+      clientName: PropTypes.string.isRequired,
       clientLabelName: PropTypes.string.isRequired,
       id: PropTypes.number.isRequired,
       startTime: PropTypes.string.isRequired,
@@ -22,8 +22,8 @@ class Timesheet extends React.Component {
       date: PropTypes.string.isRequired
     })).isRequired,
     clientNameAndId: PropTypes.arrayOf(PropTypes.shape({
-      label: PropTypes.string.isRequired,
-      value: PropTypes.number.isRequired
+      name: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired
     })).isRequired,
     isFormSaving: PropTypes.bool.isRequired,
     onDeleteTimesheetEntry: PropTypes.func.isRequired,
@@ -57,6 +57,7 @@ class Timesheet extends React.Component {
         <TimesheetSearchBar
           onChangeActiveFilter={onChangeActiveFilter}
           activeFilter={activeFilter}
+          clients={clientNameAndId}
         />
         <div className="timesheet__wrapper">
           <AddTimesheet

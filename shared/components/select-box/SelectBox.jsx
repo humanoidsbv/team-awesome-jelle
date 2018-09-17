@@ -15,8 +15,8 @@ const SelectBox = ({
       value={activeValue}
     >
       {options.map(option => (
-        <option key={option.value} value={option.value}>
-          {option.label}
+        <option key={option.id} value={option.id}>
+          {option.name}
         </option>
       ))}
     </select>
@@ -28,8 +28,8 @@ SelectBox.propTypes = {
   activeValue: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   options: PropTypes.arrayOf((PropTypes.shape({
-    label: PropTypes.string.isRequired,
-    value: PropTypes.oneOfType([
+    name: PropTypes.string.isRequired,
+    id: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.number]).isRequired
   }))).isRequired
