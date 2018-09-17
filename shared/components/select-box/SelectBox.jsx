@@ -29,7 +29,9 @@ SelectBox.propTypes = {
   name: PropTypes.string.isRequired,
   options: PropTypes.arrayOf((PropTypes.shape({
     label: PropTypes.string.isRequired,
-    value: PropTypes.string.isRequired
+    value: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number]).isRequired
   }))).isRequired
 };
 

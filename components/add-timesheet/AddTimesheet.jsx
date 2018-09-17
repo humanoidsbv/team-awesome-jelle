@@ -27,7 +27,11 @@ class AddTimesheet extends React.Component {
 
   static propTypes = {
     onSave: PropTypes.func.isRequired,
-    isFormSaving: PropTypes.bool.isRequired
+    isFormSaving: PropTypes.bool.isRequired,
+    clients: PropTypes.arrayOf(PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      value: PropTypes.number.isRequired
+    })).isRequired
   };
 
   constructor(props) {
@@ -84,7 +88,7 @@ class AddTimesheet extends React.Component {
     .every(formItem => formItem.validity.valid)
 
   render() {
-    const { isFormSaving } = this.props;
+    const { clients, isFormSaving } = this.props;
     const {
       isFormVisible, timeEntry, validity
     } = this.state;
@@ -132,10 +136,7 @@ class AddTimesheet extends React.Component {
               activeValue={clientName}
               name="clientName"
               onChange={this.handleChange}
-              options={[{ label: 'Port of Rotterdam', value: 'Port of Rotterdam' },
-                { label: 'Hike One', value: 'Hike One' },
-                { label: 'Humanoids', value: 'Humanoids' }
-              ]}
+              options={clients}
             />
           </div>
           <div className="add-timesheet__activity">

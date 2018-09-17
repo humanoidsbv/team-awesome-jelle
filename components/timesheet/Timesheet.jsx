@@ -14,22 +14,29 @@ import './timesheet.scss';
 class Timesheet extends React.Component {
   static propTypes = {
     timesheetEntries: PropTypes.arrayOf(PropTypes.shape({
-      clientName: PropTypes.string.isRequired,
+      clientName: PropTypes.number.isRequired,
+      clientLabelName: PropTypes.string.isRequired,
       id: PropTypes.number.isRequired,
       startTime: PropTypes.string.isRequired,
       endTime: PropTypes.string.isRequired,
       date: PropTypes.string.isRequired
     })).isRequired,
+    clientNameAndId: PropTypes.arrayOf(PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      value: PropTypes.number.isRequired
+    })).isRequired,
     isFormSaving: PropTypes.bool.isRequired,
     onDeleteTimesheetEntry: PropTypes.func.isRequired,
     onPostTimesheetEntry: PropTypes.func.isRequired,
     onRequestTimeEntries: PropTypes.func.isRequired,
+    onRequestClients: PropTypes.func.isRequired,
     onChangeActiveFilter: PropTypes.func.isRequired,
     activeFilter: PropTypes.string.isRequired
   }
 
   componentDidMount() {
     this.props.onRequestTimeEntries();
+    this.props.onRequestClients();
   }
 
   handleAddTimesheetEntry = newEntry => this.props.onPostTimesheetEntry(newEntry);
@@ -41,8 +48,10 @@ class Timesheet extends React.Component {
   render() {
     const {
       timesheetEntries, isFormSaving,
-      onChangeActiveFilter, activeFilter
+      onChangeActiveFilter, activeFilter,
+      clientNameAndId
     } = this.props;
+
     return (
       <div className="timesheet">
         <TimesheetSearchBar
@@ -51,6 +60,7 @@ class Timesheet extends React.Component {
         />
         <div className="timesheet__wrapper">
           <AddTimesheet
+            clients={clientNameAndId}
             onSave={this.handleAddTimesheetEntry}
             isFormSaving={isFormSaving}
           />
@@ -66,7 +76,7 @@ class Timesheet extends React.Component {
                 />
                 )}
                 <TimesheetEntry
-                  clientName={timesheetEntry.clientName}
+                  clientName={timesheetEntry.clientLabelName}
                   endTime={timesheetEntry.endTime}
                   id={timesheetEntry.id}
                   onDelete={this.handleDeleteTimesheetEntry}

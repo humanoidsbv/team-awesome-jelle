@@ -32,6 +32,18 @@ export const clientsSortDirectionSelector = createSelector(
   clients => clients.sortDirection
 );
 
+export const clientNameAndIdSelector = createSelector(
+  clientsItemSelector, items => (
+    items.reduce((acc, item) => ([
+      ...acc,
+      {
+        label: item.clientName,
+        value: item.id
+      }
+    ]
+    ), []))
+);
+
 export const clientsSelector = createSelector(
   [clientsItemSelector, clientsSortBySelector, clientsSortDirectionSelector],
   (items, sortBy, sortDirection) => (
