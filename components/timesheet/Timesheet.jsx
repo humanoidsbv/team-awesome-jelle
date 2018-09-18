@@ -14,22 +14,29 @@ import './timesheet.scss';
 class Timesheet extends React.Component {
   static propTypes = {
     timesheetEntries: PropTypes.arrayOf(PropTypes.shape({
-      employer: PropTypes.string.isRequired,
+      clientId: PropTypes.string.isRequired,
+      clientName: PropTypes.string.isRequired,
       id: PropTypes.number.isRequired,
       startTime: PropTypes.string.isRequired,
       endTime: PropTypes.string.isRequired,
       date: PropTypes.string.isRequired
     })).isRequired,
+    clientOptions: PropTypes.arrayOf(PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      value: PropTypes.string.isRequired
+    })).isRequired,
     isFormSaving: PropTypes.bool.isRequired,
     onDeleteTimesheetEntry: PropTypes.func.isRequired,
     onPostTimesheetEntry: PropTypes.func.isRequired,
     onRequestTimeEntries: PropTypes.func.isRequired,
+    onRequestClients: PropTypes.func.isRequired,
     onChangeActiveFilter: PropTypes.func.isRequired,
     activeFilter: PropTypes.string.isRequired
   }
 
   componentDidMount() {
     this.props.onRequestTimeEntries();
+    this.props.onRequestClients();
   }
 
   handleAddTimesheetEntry = newEntry => this.props.onPostTimesheetEntry(newEntry);
@@ -41,16 +48,20 @@ class Timesheet extends React.Component {
   render() {
     const {
       timesheetEntries, isFormSaving,
-      onChangeActiveFilter, activeFilter
+      onChangeActiveFilter, activeFilter,
+      clientOptions
     } = this.props;
+
     return (
       <div className="timesheet">
         <TimesheetSearchBar
           onChangeActiveFilter={onChangeActiveFilter}
           activeFilter={activeFilter}
+          clientOptions={clientOptions}
         />
         <div className="timesheet__wrapper">
           <AddTimesheet
+            clientOptions={clientOptions}
             onSave={this.handleAddTimesheetEntry}
             isFormSaving={isFormSaving}
           />
@@ -66,7 +77,7 @@ class Timesheet extends React.Component {
                 />
                 )}
                 <TimesheetEntry
-                  employer={timesheetEntry.employer}
+                  clientName={timesheetEntry.clientName}
                   endTime={timesheetEntry.endTime}
                   id={timesheetEntry.id}
                   onDelete={this.handleDeleteTimesheetEntry}
