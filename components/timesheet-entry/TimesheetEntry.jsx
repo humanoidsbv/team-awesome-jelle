@@ -31,7 +31,7 @@ class TimesheetEntry extends React.Component {
     } = this.props;
 
     return (
-      <li className="timesheet-entry">
+      <div className="timesheet-entry">
         <p className="timesheet-entry__employer">
           {clientName}
         </p>
@@ -54,7 +54,7 @@ class TimesheetEntry extends React.Component {
             {calculateDuration(startTime, endTime)}
           </p>
         </div>
-      </li>
+      </div>
     );
   }
 }

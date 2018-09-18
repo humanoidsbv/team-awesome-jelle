@@ -10,9 +10,9 @@ const TimesheetSearchBar = ({ activeFilter, clientOptions, onChangeActiveFilter 
     <h1 className="timesheet-search-bar__title">
       Timesheets
     </h1>
-    <h1 className="timesheet-search-bar__entry-counter">
+    <h2 className="timesheet-search-bar__entry-counter">
       12 entries
-    </h1>
+    </h2>
     <SelectBox
       activeValue={activeFilter}
       name="filter-clients"

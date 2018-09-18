@@ -67,20 +67,24 @@ class Timesheet extends React.Component {
             {timesheetEntries.map((timesheetEntry, index, array) => (
               <React.Fragment key={timesheetEntry.id}>
                 {(!index || (timesheetEntry.date !== array[index - 1].date)) && (
-                <TimesheetDate
-                  date={timesheetEntry.date}
-                  totalTime={calculateCumulativeDuration(
-                    timesheetEntry.startTime, timesheetEntries
-                  )}
-                />
+                <li>
+                  <TimesheetDate
+                    date={timesheetEntry.date}
+                    totalTime={calculateCumulativeDuration(
+                      timesheetEntry.startTime, timesheetEntries
+                    )}
+                  />
+                </li>
                 )}
-                <TimesheetEntry
-                  clientName={timesheetEntry.clientName}
-                  endTime={timesheetEntry.endTime}
-                  id={timesheetEntry.id}
-                  onDelete={this.handleDeleteTimesheetEntry}
-                  startTime={timesheetEntry.startTime}
-                />
+                <li>
+                  <TimesheetEntry
+                    clientName={timesheetEntry.clientName}
+                    endTime={timesheetEntry.endTime}
+                    id={timesheetEntry.id}
+                    onDelete={this.handleDeleteTimesheetEntry}
+                    startTime={timesheetEntry.startTime}
+                  />
+                </li>
               </React.Fragment>
             ))}
           </ul>

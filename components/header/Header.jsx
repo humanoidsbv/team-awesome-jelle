@@ -19,9 +19,9 @@ const Header = ({ isMenuVisible, onToggleMenu }) => (
     </a>
     <button
       className={`
-        header__menu-button
-        header__menu-button--${isMenuVisible ? 'clicked' : ''}
-        `}
+      header__menu-button
+      header__menu-button--${isMenuVisible ? 'clicked' : ''}
+      `}
       type="submit"
       onClick={() => {
         changeBodyClass(isMenuVisible);
