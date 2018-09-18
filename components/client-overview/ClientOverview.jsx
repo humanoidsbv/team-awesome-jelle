@@ -15,7 +15,7 @@ class ClientOverview extends React.Component {
       city: PropTypes.string.isRequired,
       clientName: PropTypes.string.isRequired,
       email: PropTypes.string.isRequired,
-      id: PropTypes.number.isRequired,
+      id: PropTypes.string.isRequired,
       phoneNumber: PropTypes.string.isRequired,
       remarks: PropTypes.string.isRequired,
       vatNumber: PropTypes.string.isRequired,
@@ -59,6 +59,7 @@ class ClientOverview extends React.Component {
             options={[{ label: 'Client Name', value: 'clientName' },
               { label: 'City', value: 'city' }
             ]}
+            type="sort"
           />
           <SelectBox
             activeValue={sortDirection}
@@ -67,6 +68,7 @@ class ClientOverview extends React.Component {
             options={[{ label: 'Ascending', value: 'ascending' },
               { label: 'Descending', value: 'descending' }
             ]}
+            type="sort"
           />
         </section>
         <ul className="client-overview__content-wrapper">

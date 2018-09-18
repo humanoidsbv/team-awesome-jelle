@@ -8,6 +8,14 @@
     display: block;
   }
 
+  &--sort {
+    margin-left: 12px;
+  }
+
+  &--filter {
+    margin-right: 12px;
+  }
+
   &__select {
     -moz-appearance: none;
     -webkit-appearance: none;
@@ -24,6 +32,10 @@
     min-width: 120px;
     padding-left: 12px;
     width: 100%;
+
+    &--form {
+      background: linear-gradient(to top, $color-accent-alt-5, $color-monochrome-1);
+    }
   }
 
   &::after {

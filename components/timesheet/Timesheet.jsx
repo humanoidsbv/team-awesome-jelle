@@ -29,14 +29,12 @@ class Timesheet extends React.Component {
     onDeleteTimesheetEntry: PropTypes.func.isRequired,
     onPostTimesheetEntry: PropTypes.func.isRequired,
     onRequestTimeEntries: PropTypes.func.isRequired,
-    onRequestClients: PropTypes.func.isRequired,
     onChangeActiveFilter: PropTypes.func.isRequired,
     activeFilter: PropTypes.string.isRequired
   }
 
   componentDidMount() {
     this.props.onRequestTimeEntries();
-    this.props.onRequestClients();
   }
 
   handleAddTimesheetEntry = newEntry => this.props.onPostTimesheetEntry(newEntry);

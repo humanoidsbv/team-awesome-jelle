@@ -137,6 +137,7 @@ class AddTimesheet extends React.Component {
               name="clientId"
               onChange={this.handleChange}
               options={clientOptions}
+              type="form"
             />
           </div>
           <div className="add-timesheet__activity">
@@ -154,6 +155,7 @@ class AddTimesheet extends React.Component {
               options={[{ label: 'Design', value: 'Design' },
                 { label: 'Meeting', value: 'Meeting' }
               ]}
+              type="form"
             />
           </div>
           <div className="add-timesheet__date">

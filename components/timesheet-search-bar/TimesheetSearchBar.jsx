@@ -18,6 +18,7 @@ const TimesheetSearchBar = ({ activeFilter, clientOptions, onChangeActiveFilter 
       name="filter-clients"
       onChange={event => onChangeActiveFilter(event.target.value)}
       options={[{ label: 'All Clients', value: '' }, ...clientOptions]}
+      type="filter"
     />
     <div className="timesheet-search-bar__search-box-wrapper">
       <input

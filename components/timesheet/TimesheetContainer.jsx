@@ -13,7 +13,7 @@ import {
 }
   from '../../ducks/time-entries';
 
-import { clientOptionsSelector, requestClients } from '../../ducks/clients';
+import { clientOptionsSelector } from '../../ducks/clients';
 
 import Timesheet from './Timesheet';
 
@@ -26,7 +26,6 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   onDeleteTimesheetEntry: deleteTimesheetEntry,
-  onRequestClients: requestClients,
   onRequestTimeEntries: requestTimeEntries,
   onPostTimesheetEntry: postTimesheetEntry,
   onChangeActiveFilter: changeActiveFilter
