@@ -52,9 +52,7 @@ export const timesheetEntriesSelector = createSelector(
     items
       .filter(item => !activeFilter || item.clientId === activeFilter)
       .map((item) => {
-        const matchedClient = clients.find(client => (
-          client.id === item.clientId
-        ));
+        const matchedClient = clients.find(client => (client.id === item.clientId));
         return ({
           ...item,
           clientName: matchedClient === undefined ? 'undefined' : matchedClient.clientName
