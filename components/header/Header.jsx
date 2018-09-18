@@ -20,7 +20,7 @@ const Header = ({ isMenuVisible, onToggleMenu }) => (
     <button
       className={`
       header__menu-button
-      header__menu-button--${isMenuVisible ? 'clicked' : ''}
+      header__menu-button${isMenuVisible ? '--clicked' : '--unclicked'}
       `}
       type="submit"
       onClick={() => {
