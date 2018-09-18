@@ -1,44 +1,37 @@
 {
   "timesheets": [
     {
-      "clientName": "Port of Rotterdam",
-      "activity": "Design",
-      "date": "2012-12-13",
-      "startTime": "2012-12-13T12:00:00.000Z",
-      "endTime": "2012-12-13T13:00:00.000Z",
-      "id": 2
-    },
-    {
-      "clientName": "Port of Rotterdam",
-      "activity": "Design",
-      "date": "2018-07-29",
-      "startTime": "2018-07-29T11:00:00.000Z",
-      "endTime": "2018-07-29T12:00:00.000Z",
-      "id": 3
-    },
-    {
-      "clientName": "Port of Rotterdam",
+      "clientId": "4",
       "activity": "Design",
       "date": "2018-12-21",
       "startTime": "2018-12-21T09:00:00.000Z",
-      "endTime": "2018-12-21T09:00:00.000Z",
-      "id": 4
+      "endTime": "2018-12-21T12:00:00.000Z",
+      "id": 3
     },
     {
-      "clientName": "Port of Rotterdam",
+      "clientId": "2",
       "activity": "Design",
       "date": "2018-12-21",
       "startTime": "2018-12-21T12:00:00.000Z",
       "endTime": "2018-12-21T13:00:00.000Z",
-      "id": 5
+      "Design": "Meeting",
+      "id": 11
     },
     {
-      "clientName": "Port of Rotterdam",
+      "clientId": "1",
       "activity": "Design",
-      "date": "2018-12-21",
-      "startTime": "2018-12-21T12:00:00.000Z",
-      "endTime": "2018-12-21T13:00:00.000Z",
-      "id": 6
+      "date": "2018-12-31",
+      "startTime": "2018-12-31T12:00:00.000Z",
+      "endTime": "2018-12-31T16:00:00.000Z",
+      "id": 12
+    },
+    {
+      "clientId": "3",
+      "activity": "Design",
+      "date": "2018-07-29",
+      "startTime": "2018-07-29T11:00:00.000Z",
+      "endTime": "2018-07-29T17:00:00.000Z",
+      "id": 13
     }
   ],
   "team-members": [
@@ -77,55 +70,21 @@
       "zipCode": "2316AZ"
     },
     {
-      "address": "Lelylaan 3",
-      "avatar": "static/icons/jelle.jpg",
-      "bio": "dafjaldjfladjf",
-      "city": "Mexico",
-      "currentEmployer": "Humanoids",
-      "email": "bouwman.jelle@gmail.com",
-      "employeeNumber": "HUM_",
-      "facebookHandle": "@bouwman",
       "firstName": "@bouwman",
-      "id": 3,
-      "jobTitle": "Junior IT",
-      "lastName": "Bouwman",
-      "startingDate": "2018-07-29T11:00:00.000Z",
-      "twitterHandle": "@jelle",
-      "zipCode": "4223WH"
-    },
-    {
-      "firstName": "@bouwman",
+      "lastName": "yea",
       "email": "bouwman.jelle@gmail.com",
       "address": "Lelylaan 3",
       "zipCode": "4223WH",
       "city": "Mexico",
-      "facebookHandle": "@bouwman",
-      "lastName": "Bouwman",
-      "bio": "dafjaldjfladjf",
-      "twitterHandle": "@jelle",
+      "bio": "afad",
+      "twitterHandle": "adf",
+      "facebookHandle": "adf",
       "avatar": "static/icons/jelle.jpg",
       "currentEmployer": "Humanoids",
       "employeeNumber": "HUM_",
       "jobTitle": "Junior IT",
       "startingDate": "2018-07-29T11:00:00.000Z",
-      "id": 4
-    },
-    {
-      "firstName": "@bouwman",
-      "email": "bouwman.jelle@gmail.com",
-      "address": "Lelylaan 3",
-      "zipCode": "4223WH",
-      "city": "Mexico",
-      "facebookHandle": "@bouwman",
-      "lastName": "Bouwman",
-      "bio": "dafjaldjfladjf",
-      "twitterHandle": "@jelle",
-      "avatar": "static/icons/jelle.jpg",
-      "currentEmployer": "Humanoids",
-      "employeeNumber": "HUM_",
-      "jobTitle": "Junior IT",
-      "startingDate": "2018-07-29T11:00:00.000Z",
-      "id": 5
+      "id": 3
     }
   ],
   "clients": [
@@ -135,7 +94,7 @@
       "city": "Rotterdam",
       "clientName": "Port of Rotterdam",
       "email": "info@portofr.nl",
-      "id": 1,
+      "id": "1",
       "phoneNumber": "+31620459694",
       "remarks": "A very local Rotterdam company",
       "vatNumber": "1234567-89",
@@ -148,7 +107,7 @@
       "city": "Utrecht",
       "clientName": "Hike One",
       "email": "info@hikeone.nl",
-      "id": 2,
+      "id": "2",
       "phoneNumber": "+31620459694",
       "remarks": "A very local Utrecht company",
       "vatNumber": "1234567-89",
@@ -161,12 +120,25 @@
       "city": "Roffa",
       "clientName": "Reinforcements BV.",
       "email": "info@reinforcementsbv.nl",
-      "id": 3,
+      "id": "3",
       "phoneNumber": "+31620459694",
       "remarks": "A very local Roffa company",
       "vatNumber": "1234567-89",
       "webAddress": "reinforcementsbv.nl",
       "zipCode": "2345WA"
+    },
+    {
+      "clientName": "Humanoids",
+      "vatNumber": "99-86877",
+      "remarks": "Humanoids is very young but awesome company!",
+      "address": "Groot Handelsgebouw Unit2",
+      "zipCode": "2345BC",
+      "city": "Rotterdam",
+      "phoneNumber": "+31689797979",
+      "email": "info@humanoids.nl",
+      "webAddress": "humanoids.nl",
+      "avatar": "static/icons/humanoids-avatar.jpg",
+      "id": "4"
     }
   ]
 }
