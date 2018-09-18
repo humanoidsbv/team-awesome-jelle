@@ -14,16 +14,16 @@ import './timesheet.scss';
 class Timesheet extends React.Component {
   static propTypes = {
     timesheetEntries: PropTypes.arrayOf(PropTypes.shape({
+      clientId: PropTypes.string.isRequired,
       clientName: PropTypes.string.isRequired,
-      clientLabelName: PropTypes.string.isRequired,
       id: PropTypes.number.isRequired,
       startTime: PropTypes.string.isRequired,
       endTime: PropTypes.string.isRequired,
       date: PropTypes.string.isRequired
     })).isRequired,
-    clientNameAndId: PropTypes.arrayOf(PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      id: PropTypes.string.isRequired
+    clientOptions: PropTypes.arrayOf(PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      value: PropTypes.string.isRequired
     })).isRequired,
     isFormSaving: PropTypes.bool.isRequired,
     onDeleteTimesheetEntry: PropTypes.func.isRequired,
@@ -49,7 +49,7 @@ class Timesheet extends React.Component {
     const {
       timesheetEntries, isFormSaving,
       onChangeActiveFilter, activeFilter,
-      clientNameAndId
+      clientOptions
     } = this.props;
 
     return (
@@ -57,11 +57,11 @@ class Timesheet extends React.Component {
         <TimesheetSearchBar
           onChangeActiveFilter={onChangeActiveFilter}
           activeFilter={activeFilter}
-          clients={clientNameAndId}
+          clientOptions={clientOptions}
         />
         <div className="timesheet__wrapper">
           <AddTimesheet
-            clients={clientNameAndId}
+            clientOptions={clientOptions}
             onSave={this.handleAddTimesheetEntry}
             isFormSaving={isFormSaving}
           />
@@ -77,7 +77,7 @@ class Timesheet extends React.Component {
                 />
                 )}
                 <TimesheetEntry
-                  clientName={timesheetEntry.clientLabelName}
+                  clientName={timesheetEntry.clientName}
                   endTime={timesheetEntry.endTime}
                   id={timesheetEntry.id}
                   onDelete={this.handleDeleteTimesheetEntry}
