@@ -35,6 +35,8 @@
 
     &--form {
       background: linear-gradient(to top, $color-accent-alt-5, $color-monochrome-1);
+      border: solid 1px $color-accent-3;
+      font-weight: 600;
     }
   }
 

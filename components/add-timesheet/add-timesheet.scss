@@ -167,17 +167,28 @@
   }
 
   &__close-button {
-    -webkit-mask: url("/static/icons/close.svg")   no-repeat;
-    -webkit-mask-size: 7px 7px;
-    background-color: $color-monochrome-6;
+    background-color: $color-accent-2;
     border-style: none;
     border-width: 0;
     cursor: pointer;
-    height: 7px;
+    height: 30px;
     position: absolute;
-    right: 16px;
-    top: 16px;
+    right: 6px;
+    top: 10px;
+    width: 30px;
     z-index: 20;
+
+    &::before {
+      background-image: url("/static/icons/close.svg");
+      content: "";
+      height: 7px;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 7px;
+      z-index: 40;
+    }
 
     &--invisible {
       display: none;
@@ -207,7 +218,6 @@
     border: solid 1px $color-accent-3;
     border-radius: 4px;
     font-size: 14px;
-    font-style: normal;
     font-weight: 600;
     height: 36px;
     margin: 12px 0 0;
