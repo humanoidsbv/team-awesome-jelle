@@ -7,6 +7,11 @@ export const REQUEST_CLIENTS_SUCCESS = 'GET_CLIENTS_SUCCESS';
 export const POST_CLIENT = 'POST_CLIENT';
 export const POST_CLIENT_SUCCESS = 'POST_CLIENT_SUCCESS';
 
+export interface ClientOptionModel {
+  label: string;
+  value: string;
+}
+
 export const initialState = {
   items: [],
   isLoading: false,

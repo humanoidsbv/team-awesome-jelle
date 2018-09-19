@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import TimesheetSearchBar from '../timesheet-search-bar/TimesheetSearchBar';
 import TimesheetDate from '../timesheet-date/TimesheetDate';
@@ -8,31 +7,23 @@ import AddTimesheet from '../add-timesheet/AddTimesheet';
 
 import { calculateCumulativeDuration } from '../../services/convert-time/convert-time';
 
+import { TimesheetEntryModel } from '../../ducks/time-entries';
+import { ClientOptionModel } from '../../ducks/clients'
 
 import './timesheet.scss';
 
-class Timesheet extends React.Component {
-  static propTypes = {
-    timesheetEntries: PropTypes.arrayOf(PropTypes.shape({
-      clientId: PropTypes.string.isRequired,
-      clientName: PropTypes.string.isRequired,
-      id: PropTypes.number.isRequired,
-      startTime: PropTypes.string.isRequired,
-      endTime: PropTypes.string.isRequired,
-      date: PropTypes.string.isRequired
-    })).isRequired,
-    clientOptions: PropTypes.arrayOf(PropTypes.shape({
-      label: PropTypes.string.isRequired,
-      value: PropTypes.string.isRequired
-    })).isRequired,
-    isFormSaving: PropTypes.bool.isRequired,
-    onDeleteTimesheetEntry: PropTypes.func.isRequired,
-    onPostTimesheetEntry: PropTypes.func.isRequired,
-    onRequestTimeEntries: PropTypes.func.isRequired,
-    onChangeActiveFilter: PropTypes.func.isRequired,
-    activeFilter: PropTypes.string.isRequired
-  }
+interface TimesheetProps {
+  activeFilter: string;
+  timesheetEntries: TimesheetEntryModel[];
+  clientOptions: ClientOptionModel[];
+  isFormSaving: boolean;
+  onDeleteTimesheetEntry;
+  onPostTimesheetEntry;
+  onRequestTimeEntries;
+  onChangeActiveFilter;
+}
 
+class Timesheet extends React.Component<TimesheetProps, null> {
   componentDidMount() {
     this.props.onRequestTimeEntries();
   }
@@ -43,7 +34,7 @@ class Timesheet extends React.Component {
     this.props.onDeleteTimesheetEntry(timesheetEntryId);
   }
 
-  render() {
+  render(){
     const {
       timesheetEntries, isFormSaving,
       onChangeActiveFilter, activeFilter,

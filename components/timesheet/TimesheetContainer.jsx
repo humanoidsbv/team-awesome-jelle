@@ -11,11 +11,11 @@ import {
   timesheetActiveFilterSelector,
   changeActiveFilter
 }
-  from '../../ducks/time-entries';
+  from '../../ducks/time-entries.ts';
 
-import { clientOptionsSelector } from '../../ducks/clients';
+import { clientOptionsSelector } from '../../ducks/clients.ts';
 
-import Timesheet from './Timesheet';
+import Timesheet from './Timesheet.tsx';
 
 const mapStateToProps = state => ({
   timesheetEntries: timesheetEntriesSelector(state),
