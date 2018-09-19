@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Timesheet from '../Timesheet';
+import Timesheet from '../Timesheet.tsx';
 
 const deleteTimesheetEntry = () => {};
 const requestTimeEntries = () => {};

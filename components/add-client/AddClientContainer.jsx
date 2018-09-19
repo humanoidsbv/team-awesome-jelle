@@ -6,7 +6,7 @@ import AddClient from './AddClient';
 
 import {
   postClient
-} from '../../ducks/clients';
+} from '../../ducks/clients.ts';
 
 const mapStateToProps = () => ({});
 

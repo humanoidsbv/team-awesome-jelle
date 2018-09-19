@@ -7,7 +7,7 @@ import {
   deleteTimesheetEntrySuccess,
   postTimesheetEntrySuccess,
   requestTimeEntriesSuccess
-} from '../ducks/time-entries';
+} from '../ducks/time-entries.ts';
 
 import {
   fetchDeleteTimesheetEntry,
@@ -21,7 +21,7 @@ import {
 
 import {
   requestClientsSuccess
-} from '../ducks/clients';
+} from '../ducks/clients.ts';
 
 function* deleteTimesheetEntry(action) {
   yield call(fetchDeleteTimesheetEntry, action.timesheetEntryId);
