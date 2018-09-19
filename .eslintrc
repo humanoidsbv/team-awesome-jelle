@@ -24,6 +24,10 @@
                 "some": [ "nesting", "id" ]
             },
             "allowChildren": false
+    }],
+    "jsx-a11y/label-has-associated-control": [ 2, {
+      "controlComponents": ["SelectBox"],
+      "depth": 3,
     }]
   }
 }

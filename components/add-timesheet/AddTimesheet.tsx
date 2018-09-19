@@ -1,15 +1,46 @@
 import React from 'react';
 
-import PropTypes from 'prop-types';
-
 import SelectBox from '../../shared/components/select-box/SelectBox';
 import { convertDateToIso, convertTimeToIso } from '../../services/convert-time/convert-time';
+
+import { ClientOptionModel } from '../../ducks/clients';
+
 import './add-timesheet.scss';
 
-class AddTimesheet extends React.Component {
+interface AddTimesheetProps {
+  clientOptions: ClientOptionModel[];
+  isFormSaving: boolean;
+  onSave;
+}
+
+interface defaultValidity {
+  clientId: boolean;
+  activity: boolean;
+  date: boolean;
+  startTime: boolean;
+  endTime: boolean;
+}
+
+interface defaultFormValues {
+  clientId: string;
+  activity: string;
+  date: string;
+  startTime: string;
+  endTime: string;
+}
+
+interface AddTimesheetState {
+  validity: defaultValidity;
+  timeEntry: defaultFormValues;
+  isFormVisible: boolean;
+}
+
+class AddTimesheet extends React.Component<AddTimesheetProps, AddTimesheetState> {
+  inputForm: React.RefObject<HTMLFormElement>;
+
   static defaultState = {
     defaultFormValues: {
-      clientId: 'Port of Rotterdam',
+      clientId: '',
       activity: 'Design',
       date: '',
       startTime: '',
@@ -24,15 +55,6 @@ class AddTimesheet extends React.Component {
     },
     isFormVisible: false
   }
-
-  static propTypes = {
-    onSave: PropTypes.func.isRequired,
-    isFormSaving: PropTypes.bool.isRequired,
-    clientOptions: PropTypes.arrayOf(PropTypes.shape({
-      label: PropTypes.string.isRequired,
-      value: PropTypes.string.isRequired
-    })).isRequired
-  };
 
   constructor(props) {
     super(props);
@@ -85,7 +107,17 @@ class AddTimesheet extends React.Component {
 
   validateForm = () => this.inputForm.current && Array
     .from(this.inputForm.current.elements)
-    .every(formItem => formItem.validity.valid)
+    .every((formItem: HTMLInputElement) => formItem.validity.valid)
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+      return (nextProps.clientOptions.length && !prevState.timeEntry.clientId.length)
+        ? {
+          timeEntry: {
+            ...prevState.timeEntry,
+            clientId: nextProps.clientOptions[0].value
+          }
+        } : {};
+    }
 
   render() {
     const { clientOptions, isFormSaving } = this.props;
@@ -127,10 +159,10 @@ class AddTimesheet extends React.Component {
           <div className="add-timesheet__employer">
             <label
               className="add-timesheet__label"
-              htmlFor="employer"
-              id="employer"
+              id="clientId"
+              htmlFor="clientId"
             >
-            EMPLOYER
+              CLIENT
             </label>
             <SelectBox
               activeValue={clientId}
@@ -144,7 +176,6 @@ class AddTimesheet extends React.Component {
             <label
               className="add-timesheet__label"
               htmlFor="activity"
-              id="activity"
             >
               ACTIVITY
             </label>
@@ -162,7 +193,6 @@ class AddTimesheet extends React.Component {
             <label
               className="add-timesheet__label"
               htmlFor="date"
-              id="date"
             >
               DATE
               <input
@@ -170,7 +200,6 @@ class AddTimesheet extends React.Component {
                   add-timesheet__select
                   add-timesheet__select${validity.date ? '--valid' : '--invalid'}
                 `}
-                id="date"
                 onChange={this.handleChange}
                 onBlur={this.handleBlur}
                 name="date"
@@ -234,7 +263,6 @@ class AddTimesheet extends React.Component {
                 add-timesheet__add-button${isFormSaving ? '--saving' : ''}
               `}
               type="submit"
-              readOnly
               disabled={isFormSaving || !this.validateForm()}
             >
               {isFormSaving ? 'Saving' : 'Add'}

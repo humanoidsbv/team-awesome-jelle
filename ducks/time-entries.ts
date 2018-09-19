@@ -121,7 +121,7 @@ export function timeEntriesReducer(state: TimeEntriesState = initialState, actio
   }
 }
 
-export const deleteTimesheetEntry = timesheetEntryId => ({
+export const deleteTimesheetEntry = (timesheetEntryId: TimesheetEntryModel["id"]) => ({
   type: DELETE_TIMESHEET_ENTRY,
   timesheetEntryId
 });
@@ -136,7 +136,7 @@ export const postTimesheetEntry = (timesheetEntry: TimesheetEntryModel) => ({
   timesheetEntry
 });
 
-export const postTimesheetEntrySuccess = timesheetEntry => ({
+export const postTimesheetEntrySuccess = (timesheetEntry: TimesheetEntryModel) => ({
   type: POST_TIMESHEET_ENTRY_SUCCESS,
   timesheetEntry
 });
@@ -145,12 +145,12 @@ export const requestTimeEntries = () => ({
   type: REQUEST_TIMESHEET_ENTRIES
 });
 
-export const requestTimeEntriesSuccess = timesheetEntries => ({
+export const requestTimeEntriesSuccess = (timesheetEntries : TimesheetEntryModel[]) => ({
   type: REQUEST_TIMESHEET_ENTRIES_SUCCESS,
   timesheetEntries
 });
 
-export const changeActiveFilter = newActiveFilter => ({
+export const changeActiveFilter = (newActiveFilter : TimeEntriesState["activeFilter"]) => ({
   type: CHANGE_ACTIVE_FILTER,
   newActiveFilter
 });
