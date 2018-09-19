@@ -1,5 +1,7 @@
 import { createSelector } from 'reselect';
 
+import { clientsItemSelector } from './clients';
+
 export const DELETE_TIMESHEET_ENTRY = 'DELETE_TIMESHEET_ENTRY';
 export const DELETE_TIMESHEET_ENTRY_SUCCESS = 'DELETE_TIMESHEET_ENTRY_SUCCESS';
 export const POST_TIMESHEET_ENTRY = 'POST_TIMESHEET_ENTRY';
@@ -35,10 +37,27 @@ const timesheetSortDirectionSelector = createSelector(
 );
 
 export const timesheetEntriesSelector = createSelector(
-  [timesheetEntriesItemsSelector, timesheetActiveFilterSelector, timesheetSortDirectionSelector],
-  (items, activeFilter, sortDirection) => (
+  [
+    timesheetEntriesItemsSelector,
+    timesheetActiveFilterSelector,
+    timesheetSortDirectionSelector,
+    clientsItemSelector
+  ],
+  (
+    items,
+    activeFilter,
+    sortDirection,
+    clients
+  ) => (
     items
-      .filter(item => !activeFilter || item.employer === activeFilter)
+      .filter(item => !activeFilter || item.clientId === activeFilter)
+      .map((item) => {
+        const matchedClient = clients.find(client => (client.id === item.clientId));
+        return ({
+          ...item,
+          clientName: matchedClient === undefined ? 'undefined' : matchedClient.clientName
+        });
+      })
       .sort((a, b) => {
         if (a.startTime < b.startTime) {
           return sortDirection === 'descending' ? 1 : -1;

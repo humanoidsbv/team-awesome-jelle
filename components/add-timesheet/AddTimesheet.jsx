@@ -4,19 +4,19 @@ import PropTypes from 'prop-types';
 
 import SelectBox from '../../shared/components/select-box/SelectBox';
 import { convertDateToIso, convertTimeToIso } from '../../services/convert-time/convert-time';
-import './timesheet-input.scss';
+import './add-timesheet.scss';
 
-class TimesheetInput extends React.Component {
+class AddTimesheet extends React.Component {
   static defaultState = {
     defaultFormValues: {
-      employer: 'Port of Rotterdam',
+      clientId: 'Port of Rotterdam',
       activity: 'Design',
       date: '',
       startTime: '',
       endTime: ''
     },
     defaultValidity: {
-      employer: true,
+      clientId: true,
       activity: true,
       date: true,
       startTime: true,
@@ -27,7 +27,11 @@ class TimesheetInput extends React.Component {
 
   static propTypes = {
     onSave: PropTypes.func.isRequired,
-    isFormSaving: PropTypes.bool.isRequired
+    isFormSaving: PropTypes.bool.isRequired,
+    clientOptions: PropTypes.arrayOf(PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      value: PropTypes.string.isRequired
+    })).isRequired
   };
 
   constructor(props) {
@@ -36,8 +40,8 @@ class TimesheetInput extends React.Component {
   }
 
   state = {
-    timeEntry: TimesheetInput.defaultState.defaultFormValues,
-    validity: TimesheetInput.defaultState.defaultValidity,
+    timeEntry: AddTimesheet.defaultState.defaultFormValues,
+    validity: AddTimesheet.defaultState.defaultValidity,
     isFormVisible: false
   }
 
@@ -66,7 +70,7 @@ class TimesheetInput extends React.Component {
       endTime: convertTimeToIso(timeEntry.endTime, timeEntry.date)
     };
     onSave(newEntry);
-    this.setState({ timeEntry: TimesheetInput.defaultState.defaultFormValues });
+    this.setState({ timeEntry: AddTimesheet.defaultState.defaultFormValues });
     this.toggleForm();
   }
 
@@ -84,20 +88,20 @@ class TimesheetInput extends React.Component {
     .every(formItem => formItem.validity.valid)
 
   render() {
-    const { isFormSaving } = this.props;
+    const { clientOptions, isFormSaving } = this.props;
     const {
       isFormVisible, timeEntry, validity
     } = this.state;
     const {
-      employer, activity, date, startTime, endTime
+      clientId, activity, date, startTime, endTime
     } = timeEntry;
 
     return (
-      <div className="timesheet-input">
+      <section className="add-timesheet">
         <button
           className={`
-            timesheet-input__new-button
-            timesheet-input__new-button${isFormVisible ? '--invisible' : '--visible'}
+            add-timesheet__new-button
+            add-timesheet__new-button${isFormVisible ? '--invisible' : '--visible'}
           `}
           onClick={this.toggleForm}
           type="button"
@@ -106,8 +110,8 @@ class TimesheetInput extends React.Component {
         </button>
         <button
           className={`
-            timesheet-input__close-button
-            timesheet-input__close-button${isFormVisible ? '--visible' : '--invisible'}
+            add-timesheet__close-button
+            add-timesheet__close-button${isFormVisible ? '--visible' : '--invisible'}
           `}
           onClick={this.toggleForm}
           type="button"
@@ -116,31 +120,29 @@ class TimesheetInput extends React.Component {
           ref={this.inputForm}
           onSubmit={this.handleSubmit}
           className={`
-            timesheet-input__form
-            timesheet-input__form${isFormVisible ? '--open' : '--closed'}
+            add-timesheet__form
+            add-timesheet__form${isFormVisible ? '--open' : '--closed'}
             `}
         >
-          <div className="timesheet-input__employer">
+          <div className="add-timesheet__employer">
             <label
-              className="timesheet-input__label"
+              className="add-timesheet__label"
               htmlFor="employer"
               id="employer"
             >
             EMPLOYER
             </label>
             <SelectBox
-              activeValue={employer}
-              name="employer"
+              activeValue={clientId}
+              name="clientId"
               onChange={this.handleChange}
-              options={[{ label: 'Port of Rotterdam', value: 'Port of Rotterdam' },
-                { label: 'Hike One', value: 'Hike One' },
-                { label: 'Humanoids', value: 'Humanoids' }
-              ]}
+              options={clientOptions}
+              type="form"
             />
           </div>
-          <div className="timesheet-input__activity">
+          <div className="add-timesheet__activity">
             <label
-              className="timesheet-input__label"
+              className="add-timesheet__label"
               htmlFor="activity"
               id="activity"
             >
@@ -153,19 +155,20 @@ class TimesheetInput extends React.Component {
               options={[{ label: 'Design', value: 'Design' },
                 { label: 'Meeting', value: 'Meeting' }
               ]}
+              type="form"
             />
           </div>
-          <div className="timesheet-input__date">
+          <div className="add-timesheet__date">
             <label
-              className="timesheet-input__label"
+              className="add-timesheet__label"
               htmlFor="date"
               id="date"
             >
               DATE
               <input
                 className={`
-                  timesheet-input__select
-                  timesheet-input__select${validity.date ? '--valid' : '--invalid'}
+                  add-timesheet__select
+                  add-timesheet__select${validity.date ? '--valid' : '--invalid'}
                 `}
                 id="date"
                 onChange={this.handleChange}
@@ -178,17 +181,17 @@ class TimesheetInput extends React.Component {
               />
             </label>
           </div>
-          <div className="timesheet-input__time">
-            <div className="timesheet-input__start-time">
+          <div className="add-timesheet__time">
+            <div className="add-timesheet__start-time">
               <label
-                className="timesheet-input__label"
+                className="add-timesheet__label"
                 htmlFor="from"
               >
               FROM
                 <input
                   className={`
-                    timesheet-input__select
-                    timesheet-input__select${validity.startTime ? '--valid' : '--invalid'}
+                    add-timesheet__select
+                    add-timesheet__select${validity.startTime ? '--valid' : '--invalid'}
                   `}
                   id="from"
                   onChange={this.handleChange}
@@ -201,16 +204,16 @@ class TimesheetInput extends React.Component {
                 />
               </label>
             </div>
-            <div className="timesheet-input__end-time">
+            <div className="add-timesheet__end-time">
               <label
-                className="timesheet-input__label"
+                className="add-timesheet__label"
                 htmlFor="to"
               >
                 TO
                 <input
                   className={`
-                    timesheet-input__select
-                    timesheet-input__select${validity.endTime ? '--valid' : '--invalid'}
+                    add-timesheet__select
+                    add-timesheet__select${validity.endTime ? '--valid' : '--invalid'}
                   `}
                   id="to"
                   onChange={this.handleChange}
@@ -224,11 +227,11 @@ class TimesheetInput extends React.Component {
               </label>
             </div>
           </div>
-          <div className="timesheet-input__add-button-wrapper">
+          <div className="add-timesheet__add-button-wrapper">
             <button
               className={`
-                timesheet-input__add-button
-                timesheet-input__add-button${isFormSaving ? '--saving' : ''}
+                add-timesheet__add-button
+                add-timesheet__add-button${isFormSaving ? '--saving' : ''}
               `}
               type="submit"
               readOnly
@@ -238,8 +241,8 @@ class TimesheetInput extends React.Component {
             </button>
           </div>
         </form>
-      </div>
+      </section>
     );
   }
 }
-export default TimesheetInput;
+export default AddTimesheet;

@@ -1,12 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import TimesheetInput from '../TimesheetInput';
+import AddTimesheet from '../AddTimesheet';
 
 test('ComponentName', () => {
-  const timesheetInput = shallow(<TimesheetInput />);
+  const addTimesheet = shallow(<AddTimesheet />);
 
-  expect(timesheetInput.state()).toEqual({
+  expect(addTimesheet.state()).toEqual({
     isFormVisible: false,
     timeEntry: {
       employer: 'Port of Rotterdam',
@@ -29,7 +29,7 @@ const isFormSavingSelector = false;
 
 it('TimesheetInput should render without crashing', () => {
   const wrapper = shallow(
-    <TimesheetInput
+    <AddTimesheet
       isFormSaving={isFormSavingSelector}
       onSave={handleAddTimesheetEntry}
     />

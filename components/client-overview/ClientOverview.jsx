@@ -15,7 +15,7 @@ class ClientOverview extends React.Component {
       city: PropTypes.string.isRequired,
       clientName: PropTypes.string.isRequired,
       email: PropTypes.string.isRequired,
-      id: PropTypes.number.isRequired,
+      id: PropTypes.string.isRequired,
       phoneNumber: PropTypes.string.isRequired,
       remarks: PropTypes.string.isRequired,
       vatNumber: PropTypes.string.isRequired,
@@ -55,18 +55,20 @@ class ClientOverview extends React.Component {
           <SelectBox
             activeValue={sortBy}
             name="sort-by"
-            onChange={onChangeSortByProperty}
+            onChange={event => onChangeSortByProperty(event.target.value)}
             options={[{ label: 'Client Name', value: 'clientName' },
               { label: 'City', value: 'city' }
             ]}
+            type="sort"
           />
           <SelectBox
             activeValue={sortDirection}
             name="sort-direction"
-            onChange={onChangeSortingDirection}
+            onChange={event => onChangeSortingDirection(event.target.value)}
             options={[{ label: 'Ascending', value: 'ascending' },
               { label: 'Descending', value: 'descending' }
             ]}
+            type="sort"
           />
         </section>
         <ul className="client-overview__content-wrapper">

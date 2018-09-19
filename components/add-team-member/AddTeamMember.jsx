@@ -106,7 +106,7 @@ class AddTeamMember extends React.Component {
               </div>
             </div>
             <div className="add-team-member__form-fields">
-              <div className="add-team-member__left-form-column">
+              <fieldset className="add-team-member__left-form-column">
                 <img
                   alt="avatar"
                   className="add-team-member__avatar"
@@ -117,8 +117,8 @@ class AddTeamMember extends React.Component {
                 >
                     Edit avatar
                 </div>
-              </div>
-              <div className="add-team-member__middle-form-column">
+              </fieldset>
+              <fieldset className="add-team-member__middle-form-column">
                 <div className="add-team-member__name-wrapper">
                   <div className="add-team-member__first-name">
                     <label
@@ -193,8 +193,8 @@ class AddTeamMember extends React.Component {
                     />
                   </label>
                 </div>
-              </div>
-              <div className="add-team-member__right-form-column">
+              </fieldset>
+              <fieldset className="add-team-member__right-form-column">
                 <div className="add-team-member__address">
                   <label
                     className="add-team-member__label"
@@ -297,7 +297,7 @@ class AddTeamMember extends React.Component {
                     </span>
                   </label>
                 </div>
-              </div>
+              </fieldset>
             </div>
           </div>
         </form>

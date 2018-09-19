@@ -94,7 +94,7 @@ class AddClient extends React.Component {
               </div>
             </div>
             <div className="add-client__form-fields">
-              <div className="add-client__left-form-column">
+              <fieldset className="add-client__left-form-column">
                 <img
                   alt="avatar"
                   className="add-client__avatar"
@@ -105,8 +105,8 @@ class AddClient extends React.Component {
                 >
                     Edit logo
                 </div>
-              </div>
-              <div className="add-client__middle-form-column">
+              </fieldset>
+              <fieldset className="add-client__middle-form-column">
                 <div className="add-client__client-name">
                   <label
                     className="add-client__label"
@@ -160,8 +160,8 @@ class AddClient extends React.Component {
                     />
                   </label>
                 </div>
-              </div>
-              <div className="add-client__right-form-column">
+              </fieldset>
+              <fieldset className="add-client__right-form-column">
                 <div className="add-client__address">
                   <label
                     className="add-client__label"
@@ -283,7 +283,7 @@ class AddClient extends React.Component {
                     </span>
                   </label>
                 </div>
-              </div>
+              </fieldset>
             </div>
           </div>
         </form>

@@ -2,11 +2,18 @@
 
 .select-box {
   display: none;
-  margin-right: 12px;
   position: relative;
 
   @include tablet {
     display: block;
+  }
+
+  &--sort {
+    margin-left: 12px;
+  }
+
+  &--filter {
+    margin-right: 12px;
   }
 
   &__select {
@@ -22,10 +29,15 @@
     font-size: 14px;
     font-weight: 400;
     height: 36px;
-
     min-width: 120px;
     padding-left: 12px;
-    width:100%;
+    width: 100%;
+
+    &--form {
+      background: linear-gradient(to top, $color-accent-alt-5, $color-monochrome-1);
+      border: solid 1px $color-accent-3;
+      font-weight: 600;
+    }
   }
 
   &::after {

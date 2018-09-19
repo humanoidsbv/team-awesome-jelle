@@ -32,6 +32,11 @@ export const clientsSortDirectionSelector = createSelector(
   clients => clients.sortDirection
 );
 
+export const clientOptionsSelector = createSelector(
+  clientsItemSelector,
+  items => items.map(({ clientName, id }) => ({ label: clientName, value: id }))
+);
+
 export const clientsSelector = createSelector(
   [clientsItemSelector, clientsSortBySelector, clientsSortDirectionSelector],
   (items, sortBy, sortDirection) => (

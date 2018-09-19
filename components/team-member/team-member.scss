@@ -18,23 +18,33 @@
     justify-content: space-around;
     margin: 0 auto;
     min-height: 82px;
-    padding: 16px 0;
+    padding: 16px 20px;
     width: 100%;
 
     @include tablet {
       align-items: center;
-      flex-direction: row;
       justify-content: space-evenly;
-      padding: 16px;
       width: 100%;
+    }
+  }
+
+  &__employee-information {
+    display: flex;
+    width: 50%;
+    @include tablet {
+      flex-direction: row;
     }
   }
 
   &__avatar {
     border-radius: 50%;
     height: 50px;
-    margin-left: 25px;
+    margin-left: 20px;
     width: 50px;
+
+    @include tablet {
+      margin-left: 0;
+    }
   }
 
   &__name {
@@ -54,6 +64,7 @@
     @include tablet {
       display: block;
       padding-right: 54px;
+      width: 33.3333%;
     }
   }
 
@@ -62,6 +73,7 @@
     @include tablet {
       display: block;
       padding-right: 54px;
+      width: 33.3333%;
     }
   }
 
@@ -70,12 +82,14 @@
     @include tablet {
       display: block;
       padding-right: 54px;
+      width: 33.3333%;
     }
   }
 
   &__expand-button {
     background-color: $color-monochrome-1;
     border: none;
+    cursor: pointer;
     margin-right: 22px;
     outline: none;
   }
@@ -85,6 +99,9 @@
     font-size: 16px;
     font-weight: 400;
     height: 19px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   &__subtitle {
@@ -92,6 +109,9 @@
     font-size: 14px;
     font-weight: 400;
     height: 17px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   &--expanded {
@@ -105,6 +125,7 @@
     margin: 0 auto;
     padding-bottom: 24px;
     width: 100%;
+
 
     &--collapsed {
       display: none;

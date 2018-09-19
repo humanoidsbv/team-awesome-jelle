@@ -5,23 +5,20 @@ import './timesheet-search-bar.scss';
 
 import SelectBox from '../../shared/components/select-box/SelectBox';
 
-const TimesheetSearchBar = ({ activeFilter, onChangeActiveFilter }) => (
+const TimesheetSearchBar = ({ activeFilter, clientOptions, onChangeActiveFilter }) => (
   <div className="timesheet-search-bar">
-    <p className="timesheet-search-bar__title">
+    <h1 className="timesheet-search-bar__title">
       Timesheets
-    </p>
-    <p className="timesheet-search-bar__entry-counter">
+    </h1>
+    <h2 className="timesheet-search-bar__entry-counter">
       12 entries
-    </p>
+    </h2>
     <SelectBox
       activeValue={activeFilter}
       name="filter-clients"
       onChange={event => onChangeActiveFilter(event.target.value)}
-      options={[{ label: 'All Clients', value: '' },
-        { label: 'Port of Rotterdam', value: 'Port of Rotterdam' },
-        { label: 'Hike One', value: 'Hike One' },
-        { label: 'Humanoids', value: 'Humanoids' }
-      ]}
+      options={[{ label: 'All Clients', value: '' }, ...clientOptions]}
+      type="filter"
     />
     <div className="timesheet-search-bar__search-box-wrapper">
       <input
@@ -42,7 +39,11 @@ const TimesheetSearchBar = ({ activeFilter, onChangeActiveFilter }) => (
 
 TimesheetSearchBar.propTypes = {
   activeFilter: PropTypes.string.isRequired,
-  onChangeActiveFilter: PropTypes.func.isRequired
+  onChangeActiveFilter: PropTypes.func.isRequired,
+  clientOptions: PropTypes.arrayOf(PropTypes.shape({
+    label: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired
+  })).isRequired
 };
 
 
