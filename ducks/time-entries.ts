@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect';
 
-import { clientsItemSelector, ClientOptionModel } from './clients';
+import { clientsItemSelector, ClientModel } from './clients';
 
 export const DELETE_TIMESHEET_ENTRY = 'DELETE_TIMESHEET_ENTRY';
 export const DELETE_TIMESHEET_ENTRY_SUCCESS = 'DELETE_TIMESHEET_ENTRY_SUCCESS';
@@ -66,15 +66,15 @@ export const timesheetEntriesSelector = createSelector(
     items: TimesheetEntryModel[],
     activeFilter,
     sortDirection,
-    clients: ClientOptionModel[]
+    clients : ClientModel[]
   ) => (
     items
       .filter(item => !activeFilter || item.clientId === activeFilter)
       .map((item) => {
-        const matchedClient = clients.find(client => (client.value === item.clientId));
+        const matchedClient = clients.find(client => (client.id === item.clientId));
         return ({
           ...item,
-          clientName: matchedClient === undefined ? 'undefined' : matchedClient.label
+          clientName: matchedClient === undefined ? 'undefined' : matchedClient.clientName
         });
       })
       .sort((a, b) => {

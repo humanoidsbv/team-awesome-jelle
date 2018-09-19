@@ -7,6 +7,21 @@ export const REQUEST_CLIENTS_SUCCESS = 'GET_CLIENTS_SUCCESS';
 export const POST_CLIENT = 'POST_CLIENT';
 export const POST_CLIENT_SUCCESS = 'POST_CLIENT_SUCCESS';
 
+export interface ClientModel {
+  avatar: string;
+  address: string;
+  city: string;
+  clientName: string;
+  email: string;
+  id: string;
+  phoneNumber: string;
+  remarks: string;
+  vatNumber: string;
+  webAddress: string;
+  zipCode: string;
+  clientId: string;
+}
+
 export interface ClientOptionModel {
   label: string;
   value: string;

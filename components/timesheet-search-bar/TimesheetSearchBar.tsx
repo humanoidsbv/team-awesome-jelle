@@ -1,11 +1,18 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
-import './timesheet-search-bar.scss';
 
 import SelectBox from '../../shared/components/select-box/SelectBox';
 
-const TimesheetSearchBar = ({ activeFilter, clientOptions, onChangeActiveFilter }) => (
+import { ClientOptionModel } from '../../ducks/clients';
+
+import './timesheet-search-bar.scss';
+
+interface TimesheetSearchBarProps {
+  activeFilter: string;
+  onChangeActiveFilter;
+  clientOptions: ClientOptionModel[];
+}
+
+const TimesheetSearchBar = ({ activeFilter, clientOptions, onChangeActiveFilter } : TimesheetSearchBarProps) => (
   <div className="timesheet-search-bar">
     <h1 className="timesheet-search-bar__title">
       Timesheets
@@ -36,15 +43,5 @@ const TimesheetSearchBar = ({ activeFilter, clientOptions, onChangeActiveFilter 
     </div>
   </div>
 );
-
-TimesheetSearchBar.propTypes = {
-  activeFilter: PropTypes.string.isRequired,
-  onChangeActiveFilter: PropTypes.func.isRequired,
-  clientOptions: PropTypes.arrayOf(PropTypes.shape({
-    label: PropTypes.string.isRequired,
-    value: PropTypes.string.isRequired
-  })).isRequired
-};
-
 
 export default TimesheetSearchBar;
