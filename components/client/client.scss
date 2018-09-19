@@ -23,7 +23,6 @@
 
     @include tablet {
       align-items: center;
-      flex-direction: row;
       justify-content: space-evenly;
       padding: 16px;
       width: 100%;
@@ -62,7 +61,7 @@
     @include tablet {
       display: block;
       padding-right: 54px;
-      width: 33%;
+      width: 33.3333%;
     }
   }
 
@@ -71,7 +70,7 @@
     @include tablet {
       display: block;
       padding-right: 54px;
-      width: 33%;
+      width: 33.3333%;
     }
 
     &--expand {
@@ -86,7 +85,7 @@
     @include tablet {
       display: block;
       padding-right: 54px;
-      width: 33%;
+      width: 33.3333%;
     }
   }
 

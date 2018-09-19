@@ -1,5 +1,7 @@
 @import "../shared/styles/main";
 
 .page-wrapper {
+  overflow-y: auto;
+  height: 100%;
   @include container
 }

@@ -8,7 +8,7 @@ import { calculateDuration } from '../../services/convert-time/convert-time';
 
 class TimesheetEntry extends React.Component {
   static propTypes = {
-    employer: PropTypes.string.isRequired,
+    clientName: PropTypes.string.isRequired,
     endTime: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
     onDelete: PropTypes.func.isRequired,
@@ -27,13 +27,13 @@ class TimesheetEntry extends React.Component {
 
   render() {
     const {
-      employer, endTime, startTime
+      clientName, endTime, startTime
     } = this.props;
 
     return (
       <div className="timesheet-entry">
         <p className="timesheet-entry__employer">
-          {employer}
+          {clientName}
         </p>
 
         <button

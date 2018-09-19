@@ -13,12 +13,15 @@ import {
 }
   from '../../ducks/time-entries';
 
+import { clientOptionsSelector } from '../../ducks/clients';
+
 import Timesheet from './Timesheet';
 
 const mapStateToProps = state => ({
   timesheetEntries: timesheetEntriesSelector(state),
   isFormSaving: isFormSavingSelector(state),
-  activeFilter: timesheetActiveFilterSelector(state)
+  activeFilter: timesheetActiveFilterSelector(state),
+  clientOptions: clientOptionsSelector(state)
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({

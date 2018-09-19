@@ -15,12 +15,22 @@ import {
   fetchPostTimesheetEntry
 } from '../services/fetch-timesheet-entries/fetch-timesheet-entries';
 
+import {
+  fetchGetClients
+} from '../services/fetch-clients/fetch-clients';
+
+import {
+  requestClientsSuccess
+} from '../ducks/clients';
+
 function* deleteTimesheetEntry(action) {
   yield call(fetchDeleteTimesheetEntry, action.timesheetEntryId);
   yield put(deleteTimesheetEntrySuccess(action.timesheetEntryId));
 }
 
 function* getTimesheetEntries() {
+  const clients = yield call(fetchGetClients);
+  yield put(requestClientsSuccess(clients));
   const timesheetEntries = yield call(fetchGetTimesheetEntries);
   yield put(requestTimeEntriesSuccess(timesheetEntries));
 }

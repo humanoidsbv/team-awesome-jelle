@@ -64,6 +64,7 @@ class TeamMemberOverview extends React.Component {
             options={[{ label: 'First Name', value: 'firstName' },
               { label: 'Last name', value: 'lastName' }
             ]}
+            type="sort"
           />
           <SelectBox
             activeValue={sortDirection}
@@ -72,6 +73,7 @@ class TeamMemberOverview extends React.Component {
             options={[{ label: 'Ascending', value: 'ascending' },
               { label: 'Descending', value: 'descending' }
             ]}
+            type="sort"
           />
         </section>
         <ul className="team-member-overview__content-wrapper">

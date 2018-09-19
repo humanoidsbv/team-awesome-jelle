@@ -11,41 +11,38 @@ const changeBodyClass = isMenuVisible => (
 
 const Header = ({ isMenuVisible, onToggleMenu }) => (
   <header className="header">
-    <div className="header__mobile-controls">
-      <a
-        className="header__company-logo"
-        href="#link"
-      >
+    <a
+      className="header__company-logo"
+      href="#link"
+    >
       team awesome
-      </a>
-
-      <button
-        className={`
-          header__menu-button
-          header__menu-button--${isMenuVisible ? 'clicked' : ''}
-          `}
-        type="submit"
-        onClick={() => {
-          changeBodyClass(isMenuVisible);
-          onToggleMenu();
-        }}
-      >
-        <img
-          alt="menu-button"
-          className="header__menu-button-icon--open"
-          width="20px"
-          height="20px"
-          src="/static/icons/hamburger.svg"
-        />
-        <img
-          alt="menu-button-close"
-          className="header__menu-button-icon--close"
-          height="20px"
-          width="20px"
-          src="/static/icons/close.svg"
-        />
-      </button>
-    </div>
+    </a>
+    <button
+      className={`
+      header__menu-button
+      header__menu-button${isMenuVisible ? '--clicked' : '--unclicked'}
+      `}
+      type="submit"
+      onClick={() => {
+        changeBodyClass(isMenuVisible);
+        onToggleMenu();
+      }}
+    >
+      <img
+        alt="menu-button"
+        className="header__menu-button-icon--burger"
+        width="20px"
+        height="20px"
+        src="/static/icons/hamburger.svg"
+      />
+      <img
+        alt="menu-button-close"
+        className="header__menu-button-icon--closed"
+        height="20px"
+        width="20px"
+        src="/static/icons/close.svg"
+      />
+    </button>
     <MainNavigation
       isMenuVisible={isMenuVisible}
     />
