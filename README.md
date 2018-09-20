@@ -2,7 +2,7 @@
 
 # Team Awesome
 
-A demo project created while taking part of the first Front-End Development PostMaster organised by Humanoids.
+A demo project created while taking part of the first Front-End Development PostMaster organised by Humanoids. The TeamAwesome project allows users to add timesheets when they have been working, checkout and add team-members and clients.
 
 ## Getting Started
 
