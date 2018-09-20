@@ -8,7 +8,7 @@ import './timesheet-search-bar.scss';
 
 interface TimesheetSearchBarProps {
   activeFilter: string;
-  onChangeActiveFilter;
+  onChangeActiveFilter: (newActiveValue: string) => void;
   clientOptions: ClientOptionModel[];
 }
 

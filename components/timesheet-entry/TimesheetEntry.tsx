@@ -9,7 +9,7 @@ import { TimesheetEntryModel } from '../../ducks/time-entries';
 
 interface TimesheetEntryProps {
   timesheet: TimesheetEntryModel;
-  onDelete;
+  onDelete: (id: number) => void;
 }
 
 const TimesheetEntry = ({timesheet, onDelete} : TimesheetEntryProps ) => {

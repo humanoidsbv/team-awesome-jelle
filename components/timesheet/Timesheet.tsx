@@ -17,10 +17,10 @@ interface TimesheetProps {
   timesheetEntries: TimesheetEntryModel[];
   clientOptions: ClientOptionModel[];
   isFormSaving: boolean;
-  onDeleteTimesheetEntry;
-  onPostTimesheetEntry;
-  onRequestTimeEntries;
-  onChangeActiveFilter;
+  onDeleteTimesheetEntry: (id: number) => void;
+  onPostTimesheetEntry: (newTimesheet: TimesheetEntryModel[]) => void;
+  onRequestTimeEntries: () => void;
+  onChangeActiveFilter: (newActiveFilter: string) => void;
 }
 
 class Timesheet extends React.Component<TimesheetProps> {
