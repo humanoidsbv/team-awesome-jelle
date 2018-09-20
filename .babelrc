@@ -8,11 +8,12 @@
     },
     "production": {
       "presets": [
-        "next/babel"
+        "next/babel",
+        "@zeit/next-typescript/babel"
       ]
     },
     "test": {
       "presets": [["next/babel", { "preset-env": { "modules": "commonjs" } }]]
     }
-  }
+  } 
 }
