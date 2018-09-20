@@ -13,7 +13,7 @@ interface AddTimesheetProps {
   onSave;
 }
 
-interface defaultValidity {
+interface TimesheetFormValidity {
   clientId: boolean;
   activity: boolean;
   date: boolean;
@@ -21,7 +21,7 @@ interface defaultValidity {
   endTime: boolean;
 }
 
-interface defaultFormValues {
+interface TimesheetFormValues {
   clientId: string;
   activity: string;
   date: string;
@@ -30,8 +30,8 @@ interface defaultFormValues {
 }
 
 interface AddTimesheetState {
-  validity: defaultValidity;
-  timeEntry: defaultFormValues;
+  validity: TimesheetFormValidity;
+  timeEntry: TimesheetFormValues;
   isFormVisible: boolean;
 }
 
@@ -162,7 +162,7 @@ class AddTimesheet extends React.Component<AddTimesheetProps, AddTimesheetState>
               id="clientId"
               htmlFor="clientId"
             >
-              CLIENT
+              client
             </label>
             <SelectBox
               activeValue={clientId}
@@ -177,7 +177,7 @@ class AddTimesheet extends React.Component<AddTimesheetProps, AddTimesheetState>
               className="add-timesheet__label"
               htmlFor="activity"
             >
-              ACTIVITY
+              activity
             </label>
             <SelectBox
               activeValue={activity}
@@ -194,7 +194,7 @@ class AddTimesheet extends React.Component<AddTimesheetProps, AddTimesheetState>
               className="add-timesheet__label"
               htmlFor="date"
             >
-              DATE
+              date
               <input
                 className={`
                   add-timesheet__select
@@ -216,7 +216,7 @@ class AddTimesheet extends React.Component<AddTimesheetProps, AddTimesheetState>
                 className="add-timesheet__label"
                 htmlFor="from"
               >
-              FROM
+              from
                 <input
                   className={`
                     add-timesheet__select
@@ -238,7 +238,7 @@ class AddTimesheet extends React.Component<AddTimesheetProps, AddTimesheetState>
                 className="add-timesheet__label"
                 htmlFor="to"
               >
-                TO
+                to
                 <input
                   className={`
                     add-timesheet__select

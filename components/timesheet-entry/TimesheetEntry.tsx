@@ -4,25 +4,25 @@ import './timesheet-entry.scss';
 
 import { calculateDuration } from '../../services/convert-time/convert-time';
 
+import { TimesheetEntryModel } from '../../ducks/time-entries';
+
+
 interface TimesheetEntryProps {
-  clientName: string;
-  endTime: string;
-  id: number;
+  timesheet: TimesheetEntryModel;
   onDelete;
-  startTime: string;
 }
 
-const TimesheetEntry = ({ clientName, endTime, id, onDelete, startTime } : TimesheetEntryProps ) => {
+const TimesheetEntry = ({timesheet, onDelete} : TimesheetEntryProps ) => {
   const handleDelete = () => {
     if (window.confirm('Are you sure you want to delete this item?')) {
-      onDelete(id);
+      onDelete(timesheet.id);
     }
   }
 
   return (
     <div className="timesheet-entry">
       <p className="timesheet-entry__employer">
-        {clientName}
+        {timesheet.clientName}
       </p>
 
       <button
@@ -37,10 +37,10 @@ const TimesheetEntry = ({ clientName, endTime, id, onDelete, startTime } : Times
       </button>
       <div className="timesheet-entry__time">
         <p className="timesheet-entry__time-range">
-          {`${new Date(startTime).toLocaleTimeString('nl-NL', { hour: 'numeric', minute: 'numeric' })} - ${new Date(endTime).toLocaleTimeString('nl-NL', { hour: 'numeric', minute: 'numeric' })}`}
+          {`${new Date(timesheet.startTime).toLocaleTimeString('nl-NL', { hour: 'numeric', minute: 'numeric' })} - ${new Date(timesheet.endTime).toLocaleTimeString('nl-NL', { hour: 'numeric', minute: 'numeric' })}`}
         </p>
         <p className="timesheet-entry__cumulative-time">
-          {calculateDuration(startTime, endTime)}
+          {calculateDuration(timesheet.startTime, timesheet.endTime)}
         </p>
       </div>
     </div>

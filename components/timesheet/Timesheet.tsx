@@ -23,7 +23,7 @@ interface TimesheetProps {
   onChangeActiveFilter;
 }
 
-class Timesheet extends React.Component<TimesheetProps, null> {
+class Timesheet extends React.Component<TimesheetProps> {
   componentDidMount() {
     this.props.onRequestTimeEntries();
   }
@@ -69,11 +69,8 @@ class Timesheet extends React.Component<TimesheetProps, null> {
                 )}
                 <li>
                   <TimesheetEntry
-                    clientName={timesheetEntry.clientName}
-                    endTime={timesheetEntry.endTime}
-                    id={timesheetEntry.id}
+                    timesheet={timesheetEntry}
                     onDelete={this.handleDeleteTimesheetEntry}
-                    startTime={timesheetEntry.startTime}
                   />
                 </li>
               </React.Fragment>
