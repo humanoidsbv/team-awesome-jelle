@@ -10,10 +10,6 @@ class AddClient extends React.Component {
     onPostClient: PropTypes.func.isRequired
   }
 
-
-
-
-
   constructor(props) {
     super(props);
     this.clientForm = React.createRef();
