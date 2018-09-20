@@ -42,3 +42,6 @@ This project is licensed under the ISC License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 
 * **Rik Frieling** - *For lovely feedback* - [rikfrieling](https://github.com/RikFrieling)
+* **Boris Arkenaar** - *For lovely feedback* - [boris-arkenaar](https://github.com/boris-arkenaar)
+* **Robbin Habermehl** - *For lovely feedback* - [RobbinHabermehl](https://github.com/RobbinHabermehl)
+* **Aron Martin** - *For lovely feedback* - [aronmartin](https://github.com/aronmartin)
