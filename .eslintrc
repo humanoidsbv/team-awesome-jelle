@@ -24,9 +24,9 @@
             },
             "allowChildren": false
     }],
-    “jsx-a11y/label-has-associated-control”: [ “error”, {
-     “controlComponents”: [“SelectBox”],
-     “depth”: 3,
-   }]
+    "jsx-a11y/label-has-associated-control": [ "error", {
+      "controlComponents": ["SelectBox"],
+      "depth": 3,
+    }]
   }
 }
