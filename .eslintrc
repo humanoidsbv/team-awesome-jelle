@@ -24,9 +24,26 @@
             },
             "allowChildren": false
     }],
+
     "jsx-a11y/label-has-associated-control": [ "error", {
       "controlComponents": ["SelectBox"],
       "depth": 3,
     }]
-  }
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
+  "overrides": [
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "parser": "typescript-eslint-parser",
+      "rules": {
+        "no-undef": "off"
+      }
+    }
+  ]
 }
