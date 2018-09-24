@@ -1,5 +1,3 @@
-# team-awesome-jelle
-
 # Team Awesome
 
 A demo project created while taking part of the first Front-End Development PostMaster organised by Humanoids. The TeamAwesome project allows users to add timesheets when they have been working, checkout and add team-members and clients.
@@ -12,13 +10,11 @@ By running `npm install` all the required modules stated in the `package.json` f
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
+By running `npm run dev` the project is built locally and runs in the browser on port. [http://localhost:3000/](http://localhost:3000/)
+
 ## Running the tests
 
 Tests can be run with the npm command: `npm run test`.
-
-## Deployment
-
-By running `npm run dev` the project is built locally and runs in the browser on port (http://localhost:3000/)[http://localhost:3000/]
 
 ## Built With
 
