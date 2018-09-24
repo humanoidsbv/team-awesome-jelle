@@ -8,7 +8,8 @@
     "dev": "next & json-server --watch api/db.json",
     "lint": "eslint --ext js,jsx .",
     "start": "next start",
-    "test": "NODE_ENV=test jest --watch"
+    "test": "NODE_ENV=test jest --watch",
+    "storybook": "npm run build && start-storybook .storybook -s ./ -p 9001 -c .storybook"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,10 @@
   },
   "homepage": "https://team-awesome-jelle.now.sh",
   "dependencies": {
+    "@babel/core": "^7.1.0",
+    "@storybook/react": "^3.4.11",
+    "@storybook/addon-actions": "^3.4.11",
+    "@storybook/addon-info": "^3.4.11",
     "@zeit/next-sass": "^0.2.0",
     "babel-eslint": "^8.2.6",
     "eslint-plugin-jest": "^21.22.0",
