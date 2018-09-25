@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import TimesheetEntry from '../TimesheetEntry';
+import TimesheetEntry from '../TimesheetEntry.tsx';
 
 const timesheetEntry = {
   employer: 'Port of Rotterdam',

@@ -5,7 +5,7 @@ import {
   requestClientsSuccess,
   POST_CLIENT,
   postClientSuccess
-} from '../ducks/clients';
+} from '../ducks/clients.ts';
 
 import {
   fetchGetClients,

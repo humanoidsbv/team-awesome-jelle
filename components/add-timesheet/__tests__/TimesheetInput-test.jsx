@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import AddTimesheet from '../AddTimesheet';
+import AddTimesheet from '../AddTimesheet.tsx';
 
 test('ComponentName', () => {
   const addTimesheet = shallow(<AddTimesheet />);

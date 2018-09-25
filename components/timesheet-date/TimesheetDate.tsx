@@ -1,10 +1,13 @@
 import React from 'react';
 
-import PropTypes from 'prop-types';
-
 import './timesheet-date.scss';
 
-const TimesheetDate = ({ date, totalTime }) => (
+interface TimesheetDateProps {
+  date: string;
+  totalTime: string;
+}
+
+const TimesheetDate = ({ date, totalTime } : TimesheetDateProps) => (
   <h2 className="timesheet-date">
     <span className="timesheet-date__date">
       {`
@@ -17,10 +20,5 @@ const TimesheetDate = ({ date, totalTime }) => (
     </span>
   </h2>
 );
-
-TimesheetDate.propTypes = {
-  date: PropTypes.string.isRequired,
-  totalTime: PropTypes.string.isRequired
-};
 
 export default TimesheetDate;

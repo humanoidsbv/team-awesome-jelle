@@ -11,7 +11,7 @@ import {
   clientsSortBySelector,
   clientsSortDirectionSelector,
   requestClients
-} from '../../ducks/clients';
+} from '../../ducks/clients.ts';
 
 const mapStateToProps = state => ({
   clients: clientsSelector(state),

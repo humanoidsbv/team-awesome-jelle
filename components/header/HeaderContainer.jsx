@@ -9,7 +9,7 @@ import {
 
 import {
   changeActiveFilter
-} from '../../ducks/time-entries';
+} from '../../ducks/time-entries.ts';
 
 import Header from './Header';
 
