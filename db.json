@@ -1,144 +1,19 @@
 {
-  "timesheets": [
+  "tasks": [
     {
-      "clientId": "4",
-      "activity": "Design",
-      "date": "2018-12-21",
-      "startTime": "2018-12-21T09:00:00.000Z",
-      "endTime": "2018-12-21T12:00:00.000Z",
-      "id": 3
-    },
-    {
-      "clientId": "2",
-      "activity": "Design",
-      "date": "2018-12-21",
-      "startTime": "2018-12-21T12:00:00.000Z",
-      "endTime": "2018-12-21T13:00:00.000Z",
-      "Design": "Meeting",
-      "id": 11
-    },
-    {
-      "clientId": "1",
-      "activity": "Design",
-      "date": "2018-12-31",
-      "startTime": "2018-12-31T12:00:00.000Z",
-      "endTime": "2018-12-31T16:00:00.000Z",
-      "id": 12
-    },
-    {
-      "clientId": "3",
-      "activity": "Design",
-      "date": "2018-07-29",
-      "startTime": "2018-07-29T11:00:00.000Z",
-      "endTime": "2018-07-29T17:00:00.000Z",
-      "id": 13
-    }
-  ],
-  "team-members": [
-    {
-      "address": "Groenoordstraat",
-      "avatar": "static/icons/jelle.jpg",
-      "bio": "This is a super long bio",
-      "city": "Leiden",
-      "currentEmployer": "Humanoids",
-      "email": "bouwman.jelle@gmail.com",
-      "employeeNumber": "HUM_001",
-      "facebookHandle": "@jellebouwman",
-      "firstName": "Jelle",
-      "id": 1,
-      "jobTitle": "Junior Developer",
-      "lastName": "Bouwman",
-      "startingDate": "2018-07-29T11:00:00.000Z",
-      "twitterHandle": "@jellebouwman",
-      "zipCode": "2316AZ"
-    },
-    {
-      "address": "Groenoordstraat",
-      "avatar": "static/icons/jelle.jpg",
-      "bio": "This is a super long bio",
-      "city": "Leiden",
-      "currentEmployer": "Humanoids",
-      "email": "bouwman.jelle@gmail.com",
-      "employeeNumber": "HUM_002",
-      "facebookHandle": "@jellebouwman",
-      "firstName": "Jelle",
-      "id": 2,
-      "jobTitle": "Front-end Developer",
-      "lastName": "Bouwman",
-      "startingDate": "2018-07-29T11:00:00.000Z",
-      "twitterHandle": "@jellebouwman",
-      "zipCode": "2316AZ"
-    },
-    {
-      "firstName": "@bouwman",
-      "lastName": "yea",
-      "email": "bouwman.jelle@gmail.com",
-      "address": "Lelylaan 3",
-      "zipCode": "4223WH",
-      "city": "Mexico",
-      "bio": "afad",
-      "twitterHandle": "adf",
-      "facebookHandle": "adf",
-      "avatar": "static/icons/jelle.jpg",
-      "currentEmployer": "Humanoids",
-      "employeeNumber": "HUM_",
-      "jobTitle": "Junior IT",
-      "startingDate": "2018-07-29T11:00:00.000Z",
-      "id": 3
-    }
-  ],
-  "clients": [
-    {
-      "avatar": "static/icons/port-of-rotterdam.png",
-      "address": "van Eysingalaan 240",
-      "city": "Rotterdam",
-      "clientName": "Port of Rotterdam",
-      "email": "info@portofr.nl",
       "id": "1",
-      "phoneNumber": "+31620459694",
-      "remarks": "A very local Rotterdam company",
-      "vatNumber": "1234567-89",
-      "webAddress": "portofr.nl",
-      "zipCode": "2345WA"
+      "title": "Ga eens wat doen",
+      "isCompleted": true
     },
     {
-      "avatar": "static/icons/hike-one.png",
-      "address": "van Eysingalaan 240",
-      "city": "Utrecht",
-      "clientName": "Hike One",
-      "email": "info@hikeone.nl",
       "id": "2",
-      "phoneNumber": "+31620459694",
-      "remarks": "A very local Utrecht company",
-      "vatNumber": "1234567-89",
-      "webAddress": "hikeone.nl",
-      "zipCode": "2345WA"
+      "title": "Ga eens wat doen",
+      "isCompleted": true
     },
     {
-      "avatar": "static/icons/reinforcements.png",
-      "address": "van Eysingalaan 240",
-      "city": "Roffa",
-      "clientName": "Reinforcements BV.",
-      "email": "info@reinforcementsbv.nl",
       "id": "3",
-      "phoneNumber": "+31620459694",
-      "remarks": "A very local Roffa company",
-      "vatNumber": "1234567-89",
-      "webAddress": "reinforcementsbv.nl",
-      "zipCode": "2345WA"
-    },
-    {
-      "clientName": "Humanoids",
-      "vatNumber": "99-86877",
-      "remarks": "Humanoids is very young but awesome company!",
-      "address": "Groot Handelsgebouw Unit2",
-      "zipCode": "2345BC",
-      "city": "Rotterdam",
-      "phoneNumber": "+31689797979",
-      "email": "info@humanoids.nl",
-      "webAddress": "humanoids.nl",
-      "avatar": "static/icons/humanoids-avatar.jpg",
-      "id": "4"
+      "title": "Ga eens wat doen",
+      "isCompleted": false
     }
   ]
 }
